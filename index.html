@@ -3,81 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Freelancer Portfolio</title>
+    <title>FreelankarX - Olamilekan Muraina</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
+    <!-- Navigation -->
     <nav>
-        <div class="logo">MyPortfolio</div>
+        <h1 class="logo">FreelankarX</h1>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="hero-overlay"></div>
         <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/banner.jpg" alt="Hero Banner" class="hero-image">
         <div class="hero-content">
-            <h2>Transforming Ideas into Reality</h2>
-            <p>Creative solutions for businesses & brands worldwide.</p>
-            <a href="#contact" class="button">Let's Work Together</a>
+            <h2 class="fade-in">Empowering Brands with eCommerce & Digital Marketing</h2>
+            <p class="fade-in">Helping businesses scale with Shopify, Dropshipping, and High-Converting Marketing Strategies.</p>
+            <a href="#contact" class="button">Get in Touch</a>
         </div>
-    </section>
+    </header>
 
     <!-- About Section -->
     <section id="about" class="section reveal">
         <h2>About Me</h2>
-        <p>I am a creative freelancer specializing in design, branding, and web development. My passion is crafting unique experiences that drive engagement and success.</p>
+        <p>I am Olamilekan Muraina, a professional in Shopify, TikTok Shop, and eCommerce marketing, helping brands grow and maximize profits.</p>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="section reveal">
         <h2>Services</h2>
-        <ul>
-            <li>Web Design & Development</li>
-            <li>Graphic Design & Branding</li>
-            <li>SEO & Digital Marketing</li>
-            <li>Social Media Strategy</li>
-        </ul>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Shopify Store Setup</h3>
+                <p>Custom Shopify stores designed for conversions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Email Marketing</h3>
+                <p>Boost sales with automated email sequences.</p>
+            </div>
+            <div class="service-card">
+                <h3>Social Media Ads</h3>
+                <p>Run high-converting TikTok and Meta ads.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section reveal">
-        <h2>Portfolio</h2>
-        <p>Here are some of my recent projects:</p>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="section reveal">
-        <h2>How I Work</h2>
-        <p>My step-by-step process ensures a seamless experience from start to finish.</p>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="section reveal">
-        <h2>Pricing Plans</h2>
-        <p>Choose a plan that fits your needs.</p>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section reveal">
-        <h2>Frequently Asked Questions</h2>
-        <p>Got questions? Here are some common answers.</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section reveal">
+        <h2>What Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Olamilekan helped scale my store to $50K in revenue!"</p>
+                <h4>- John Doe</h4>
+            </div>
+            <div class="testimonial">
+                <p>"His TikTok marketing strategies are game-changing!"</p>
+                <h4>- Jane Smith</h4>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section reveal">
         <h2>Contact Me</h2>
-        <p>Let's collaborate! Get in touch with me.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="button">Send Message</button>
+        </form>
     </section>
 
     <script src="script.js"></script>
