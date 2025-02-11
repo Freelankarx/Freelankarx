@@ -50,6 +50,11 @@ ul li a:hover {
     text-align: center;
     padding: 150px 20px;
     animation: fadeIn 2s ease-in-out;
+    .banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 .hero h2 {
     font-size: 3rem;
