@@ -3,81 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Freelancer Portfolio</title>
+    <title>FreelankarX - Olamilekan Muraina</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">MyPortfolio</div>
+    <header>
+        <nav>
+            <h1 class="logo">FreelankarX</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <img src="banner.jpg" alt="FreelankarX Banner" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Transforming Brands with eCommerce & Digital Marketing</h2>
+                <p>Helping businesses scale with Shopify, Dropshipping, and High-Converting Strategies.</p>
+                <a href="#contact" class="cta-button">Work With Me</a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>With over 7 years of experience and $14M+ revenue generated, I specialize in Shopify, Dropshipping, and digital marketing to help brands scale.</p>
+    </section>
+    
+    <section id="services" class="section">
+        <h2>My Services</h2>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>Shopify Store Setup & Optimization</li>
+            <li>High-Converting Dropshipping Strategies</li>
+            <li>TikTok & Facebook Ads Management</li>
+            <li>Email Marketing Automation</li>
         </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Transforming Ideas into Reality</h2>
-            <p>Creative solutions for businesses & brands worldwide.</p>
-            <a href="#contact" class="button">Let's Work Together</a>
+    </section>
+    
+    <section id="portfolio" class="section">
+        <h2>My Work</h2>
+        <div class="portfolio-gallery">
+            <img src="portfolio1.jpg" alt="Project 1">
+            <img src="portfolio2.jpg" alt="Project 2">
+            <img src="portfolio3.jpg" alt="Project 3">
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="section reveal">
-        <h2>About Me</h2>
-        <p>I am a creative freelancer specializing in design, branding, and web development. My passion is crafting unique experiences that drive engagement and success.</p>
+    
+    <section id="testimonials" class="section">
+        <h2>What My Clients Say</h2>
+        <p>"Olamilekan helped us scale our Shopify store to 6-figures in months!" - Client A</p>
+        <p>"His marketing strategies are a game-changer!" - Client B</p>
     </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section reveal">
-        <h2>Services</h2>
-        <ul>
-            <li>Web Design & Development</li>
-            <li>Graphic Design & Branding</li>
-            <li>SEO & Digital Marketing</li>
-            <li>Social Media Strategy</li>
-        </ul>
+    
+    <section id="contact" class="section">
+        <h2>Let's Work Together</h2>
+        <p>Contact me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-fiverr"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-kwork"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-upwork"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
     </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section reveal">
-        <h2>Portfolio</h2>
-        <p>Here are some of my recent projects:</p>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="section reveal">
-        <h2>How I Work</h2>
-        <p>My step-by-step process ensures a seamless experience from start to finish.</p>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="section reveal">
-        <h2>Pricing Plans</h2>
-        <p>Choose a plan that fits your needs.</p>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section reveal">
-        <h2>Frequently Asked Questions</h2>
-        <p>Got questions? Here are some common answers.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section reveal">
-        <h2>Contact Me</h2>
-        <p>Let's collaborate! Get in touch with me.</p>
-    </section>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
