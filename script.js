@@ -1,44 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-    gsap.from(".hero h2", { opacity: 0, y: -50, duration: 1.5, ease: "power2.out" });
-    gsap.from(".hero p", { opacity: 0, y: 50, duration: 1.5, ease: "power2.out", delay: 0.3 });
-    gsap.from(".hero .social-icons", { opacity: 0, scale: 0.5, duration: 1.5, ease: "elastic.out(1, 0.3)", delay: 0.6 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Reveal Sections on Scroll using Intersection Observer
+  const sections = document.querySelectorAll('.section');
+  const observerOptions = {
+    threshold: 0.3
+  };
 
-    gsap.utils.toArray(".section").forEach((section) => {
-        gsap.from(section, {
-            scrollTrigger: {
-                trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none none"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 1.5,
-            ease: "power2.out"
-        });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
+  }, observerOptions);
 
-    const nav = document.querySelector("nav");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
-    });
+  sections.forEach(section => {
+    revealObserver.observe(section);
+  });
 
-    document.querySelectorAll(".social-icons a").forEach(icon => {
-        icon.addEventListener("mouseenter", () => {
-            gsap.to(icon, { scale: 1.2, duration: 0.3 });
-        });
-        icon.addEventListener("mouseleave", () => {
-            gsap.to(icon, { scale: 1, duration: 0.3 });
-        });
-    });
+  // GSAP Animations for Hero Section
+  gsap.from('.hero-content h1', { 
+    opacity: 0, 
+    y: -50, 
+    duration: 1.5, 
+    ease: 'power2.out' 
+  });
+  gsap.from('.hero-content p', { 
+    opacity: 0, 
+    y: 50, 
+    duration: 1.5, 
+    delay: 0.3, 
+    ease: 'power2.out' 
+  });
+  gsap.from('.btn', { 
+    opacity: 0, 
+    scale: 0.8, 
+    duration: 1.5, 
+    delay: 0.6, 
+    ease: 'back.out(1.7)' 
+  });
 
-    gsap.to("body", {
-        backgroundPosition: "200% 0%",
-        duration: 8,
-        repeat: -1,
-        ease: "linear"
+  // Mobile Navigation Toggle (if a toggle button exists)
+  const navToggle = document.querySelector('.nav-toggle');
+  if(navToggle) {
+    navToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
     });
+  }
+
+  // Optional: Social Icons Hover Effects using GSAP (in case you want extra effects)
+  const socialLinks = document.querySelectorAll('.social-icons a');
+  socialLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      gsap.to(link, { scale: 1.2, duration: 0.3 });
+    });
+    link.addEventListener('mouseleave', () => {
+      gsap.to(link, { scale: 1, duration: 0.3 });
+    });
+  });
 });
