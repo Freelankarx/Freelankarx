@@ -1,29 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth Scroll for Navbar Links
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function (event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    // Reveal Sections on Scroll
-    function revealOnScroll() {
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < window.innerHeight * 0.85) {
-                section.classList.add('active');
+    // GSAP Hero Animation
+    gsap.from(".hero h2", { duration: 1.5, opacity: 0, y: -50, ease: "power2.out" });
+    gsap.from(".hero p", { duration: 1.5, opacity: 0, y: 50, delay: 0.5, ease: "power2.out" });
+    
+    // Scroll Animations for Sections
+    const sections = document.querySelectorAll(".section");
+    
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
             }
         });
-    }
+    }, { threshold: 0.3 });
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
+    // Navbar Background Change on Scroll
+    window.addEventListener("scroll", function () {
+        let navbar = document.querySelector("nav");
+        if (window.scrollY > 50) {
+            navbar.style.background = "rgba(0, 0, 0, 0.9)";
+        } else {
+            navbar.style.background = "rgba(0, 0, 0, 0.8)";
+        }
+    });
 
-    // GSAP Animation for Hero Section
-    gsap.from(".hero-content h2", { opacity: 0, y: 50, duration: 1.2, ease: "power2.out" });
-    gsap.from(".hero-content p", { opacity: 0, y: 30, duration: 1.2, delay: 0.5, ease: "power2.out" });
-    gsap.from(".button", { opacity: 0, scale: 0.8, duration: 1, delay: 1, ease: "power2.out" });
+    // Button Hover Effect
+    document.querySelectorAll(".button").forEach(button => {
+        button.addEventListener("mouseover", () => {
+            gsap.to(button, { scale: 1.1, duration: 0.3, ease: "power1.out" });
+        });
+        button.addEventListener("mouseleave", () => {
+            gsap.to(button, { scale: 1, duration: 0.3, ease: "power1.out" });
+        });
+    });
 });
