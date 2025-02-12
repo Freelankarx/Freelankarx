@@ -47,3 +47,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the popup modal and its elements
+  const popup = document.getElementById('klaviyoPopup');
+  const closeBtn = document.querySelector('.klaviyo-popup .popup-close');
+  const form = document.getElementById('klaviyoForm');
+
+  // Show the popup after a delay (e.g., 7 seconds)
+  setTimeout(() => {
+    popup.style.display = 'block';
+  }, 7000);
+
+  // Close the popup when the close button is clicked
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Close the popup if the user clicks outside the modal content
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+
+  // Handle form submission (for demo purposes; integrate with Klaviyo later)
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = form.email.value;
+    // Replace the alert below with your Klaviyo API integration when ready.
+    alert(`Thank you for subscribing with ${email}!`);
+    popup.style.display = 'none';
+    form.reset();
+  });
+});
+
