@@ -229,8 +229,42 @@ header {
 .testimonial-card:hover {
   transform: scale(1.05);
 }
-.stars {\n  margin: 10px 0;\n  color: #ffcc00;\n  font-size: 1.5rem;\n}
-.testimonial-input {\n  margin-top: 40px;\n}\n.testimonial-input form {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n  max-width: 500px;\n  margin: 0 auto;\n}\n.testimonial-input input,\n.testimonial-input textarea {\n  padding: 10px;\n  border: none;\n  border-radius: 5px;\n  font-size: 1rem;\n}\n.testimonial-input button {\n  background: #ffcc00;\n  color: #1e1e2f;\n  padding: 12px;\n  border: none;\n  border-radius: 5px;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: transform 0.3s, box-shadow 0.3s;\n}\n.testimonial-input button:hover {\n  transform: scale(1.05);\n  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);\n}
+.stars {
+  margin: 10px 0;
+  color: #ffcc00;
+  font-size: 1.5rem;
+}
+.testimonial-input {
+  margin-top: 40px;
+}
+.testimonial-input form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.testimonial-input input,
+.testimonial-input textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.testimonial-input button {
+  background: #ffcc00;
+  color: #1e1e2f;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-input button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
 
 /* Contact Section */
 #contact {
@@ -247,18 +281,16 @@ header {
   display: inline-block;
   width: 50px;
   height: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 204, 0, 0.2);
-  color: #ffcc00;
-  font-size: 1.8rem;
-  transition: transform 0.3s, background 0.3s;
-  text-align: center;
+  transition: transform 0.3s, filter 0.3s;
+}
+.social-icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .social-icons a:hover {
   transform: scale(1.1);
-  background: #ffcc00;
-  color: #1e1e2f;
+  filter: brightness(1.2);
 }
 
 /* Footer */
@@ -285,10 +317,10 @@ footer {
   nav ul li {
     margin: 10px 0;
   }
-  .hero h1 {
+  .hero-content h1 {
     font-size: 2.5rem;
   }
-  .hero p {
+  .hero-content p {
     font-size: 1.2rem;
   }
   #about .about-content {
@@ -301,29 +333,10 @@ footer {
   .services-grid, .portfolio-grid {
     grid-template-columns: 1fr;
   }
-  .social-icons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.social-icons a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s, filter 0.3s;
-}
-
-.social-icons a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.social-icons a:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Keyframe Animations */
