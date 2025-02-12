@@ -63,21 +63,23 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.style.display = 'none';
   });
 
-  // Close the popup if the user clicks outside the modal content
+  // Close the popup if the user clicks outside the popup content
   window.addEventListener('click', (e) => {
     if (e.target === popup) {
       popup.style.display = 'none';
     }
   });
 
-  // Handle form submission (for demo purposes; integrate with Klaviyo later)
+  // Handle form submission (integrated with Klaviyo endpoint)
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = form.email.value;
-    // Replace the alert below with your Klaviyo API integration when ready.
-    alert(`Thank you for subscribing with ${email}!`);
-    popup.style.display = 'none';
-    form.reset();
+
+    // Option 1: Let the form submit normally to Klaviyo by not intercepting (if using server-side submission)
+    // Option 2: If you want to show a custom thank-you message:
+    form.innerHTML = '<p class="thank-you">Thank you for subscribing! Check your inbox for a welcome message.</p>';
+
+    // Optionally, you can also trigger your Klaviyo integration via AJAX here if desired.
   });
 });
 
