@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const observerOptions = { threshold: 0.3 };
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
   gsap.from('.hero-content p', { opacity: 0, y: 50, duration: 1.5, delay: 0.3, ease: 'power2.out' });
   gsap.from('.btn', { opacity: 0, scale: 0.8, duration: 1.5, delay: 0.6, ease: 'back.out(1.7)' });
 
-  // Optional: Mobile Navigation Toggle
+  // Optional: Mobile Navigation Toggle (if you add a toggle button later)
   const navToggle = document.querySelector('.nav-toggle');
-  if(navToggle) {
+  if (navToggle) {
     navToggle.addEventListener('click', () => {
       document.querySelector('nav ul').classList.toggle('active');
     });
   }
 
-  // Social Icons Hover Effects with GSAP
+  // Social Icons Hover Effects using GSAP
   const socialLinks = document.querySelectorAll('.social-icons a');
   socialLinks.forEach(link => {
     link.addEventListener('mouseenter', () => {
@@ -36,4 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
       gsap.to(link, { scale: 1, duration: 0.3 });
     });
   });
+
+  // Optional: Handle testimonial form submission (demo purpose)
+  const testimonialForm = document.getElementById('testimonial-form');
+  if (testimonialForm) {
+    testimonialForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your review!');
+      testimonialForm.reset();
+    });
+  }
 });
