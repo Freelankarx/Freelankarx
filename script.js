@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Optional: Handle testimonial form submission (demo purpose)
+  // Handle testimonial form submission (demo purpose)
   const testimonialForm = document.getElementById('testimonial-form');
   if (testimonialForm) {
     testimonialForm.addEventListener('submit', (e) => {
