@@ -484,3 +484,69 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Reviews Display Styles */
+.review {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+}
+.review h4 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.review p {
+  margin-bottom: 10px;
+}
+.review video {
+  display: block;
+  margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+.delete-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Review Form Styles (if not already styled) */
+.testimonial-input {
+  margin-top: 40px;
+}
+.testimonial-input form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.testimonial-input input,
+.testimonial-input textarea,
+.testimonial-input input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+.testimonial-input button {
+  background: #ffcc00;
+  color: #1e1e2f;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-input button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
+
