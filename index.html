@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-site-verification" content="WlYZuXBSoVmMkiGWiKsEb8AAkkEVGfLxbF51BDhYjrI" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>freelankarx - Olamilekan Muraina</title>
   <!-- Updated Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/a2590660717835bde6386362eb94d2884a98d332/freelankarx%20logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Klaviyo (if needed) -->
   <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WQBANM"></script>
-  <!-- Firebase App (the core Firebase SDK) -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<!-- Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<!-- Firebase Storage -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <!-- Firebase and Cloudinary scripts (using Firebase v9 compat, loaded via CDN) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
 </head>
 <body>
   <!-- Header Section with Video Banner -->
@@ -35,14 +35,11 @@
       </ul>
     </nav>
     <section class="hero">
-      <!-- Video Banner (raw URL) -->
       <video autoplay loop muted playsinline class="hero-video">
         <source src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/7b808773e9f3aad67c21e7bb5084ce8267d5a7d5/1000067383-vmake.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <!-- Tinted Overlay -->
       <div class="overlay"></div>
-      <!-- Hero Content -->
       <div class="hero-content">
         <h1>Your Digital Growth Partner</h1>
         <p>Expert in Shopify, eCommerce, and Digital Marketing</p>
@@ -99,7 +96,6 @@
           <p>This is how I ensure amazing results for your business.</p>
         </div>
         <div class="results-image">
-          <!-- Updated image for the section -->
           <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/a2590660717835bde6386362eb94d2884a98d332/result.png" alt="Recent Results">
         </div>
       </div>
@@ -127,7 +123,7 @@
         <div class="step">
           <i class="fas fa-chart-line"></i>
           <h3>Results</h3>
-          <p>We analyze the outcomes and optimize for continuous growth.</p>
+          <p>We analyze outcomes and optimize for continuous growth.</p>
         </div>
       </div>
     </section>
@@ -202,25 +198,25 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section (Reviews) -->
     <section id="testimonials" class="section">
       <h2>Testimonials</h2>
-      <div class="testimonial-card">
-        <p>“freelankarx transformed our Shopify store and our revenue skyrocketed. Truly exceptional service!”</p>
-        <div class="stars">
-          <i class="fas fa-star"></i> 
-          <i class="fas fa-star"></i> 
-          <i class="fas fa-star"></i> 
-          <i class="fas fa-star"></i> 
-          <i class="fas fa-star-half-alt"></i>
-        </div>
-        <h4>- Satisfied Client</h4>
-      </div>
+      <div id="reviewsContainer"></div>
       <div class="testimonial-input">
         <h3>Leave Your Review</h3>
-        <form id="testimonial-form">
-          <input type="text" placeholder="Your Name" required>
-          <textarea placeholder="Your Testimonial" required></textarea>
+        <form id="reviewForm">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <textarea name="review" placeholder="Your Review" required></textarea>
+          <label for="rating">Your Rating:</label>
+          <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" required><label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+          </div>
+          <label for="video">Optional: Upload a Video Review</label>
+          <input type="file" id="video" name="video" accept="video/*">
           <button type="submit" class="btn">Submit Review</button>
         </form>
       </div>
