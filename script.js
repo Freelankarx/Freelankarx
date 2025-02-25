@@ -13,13 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const db = firebase.firestore();
   const storage = firebase.storage();
 
-  // Reveal Sections on Scroll using Intersection Observer
+  // Intersection Observer for Section Reveal
   const sections = document.querySelectorAll('.section');
-  const observerOptions = { threshold: 0.3 };
-  const revealObserver = new IntersectionObserver((entries) => {
+  const observerOptions = { threshold: 0.1 };
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        // Stop observing once visible
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -46,32 +48,34 @@ document.addEventListener('DOMContentLoaded', function() {
   // Review Form Handling
   const reviewForm = document.getElementById('reviewForm');
   const reviewsContainer = document.getElementById('reviewsContainer');
-  reviewForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = reviewForm.name.value;
-    const reviewText = reviewForm.review.value;
-    const rating = reviewForm.rating.value;
-    const videoFile = reviewForm.video.files[0];
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = reviewForm.name.value;
+      const reviewText = reviewForm.review.value;
+      const rating = reviewForm.rating.value;
+      const videoFile = reviewForm.video.files[0];
 
-    let videoURL = "";
-    if (videoFile) {
-      videoURL = await uploadVideoToCloudinary(videoFile);
-    }
+      let videoURL = "";
+      if (videoFile) {
+        videoURL = await uploadVideoToCloudinary(videoFile);
+      }
 
-    // Save review to Firestore
-    await db.collection('reviews').add({
-      name: name,
-      review: reviewText,
-      rating: rating,
-      videoURL: videoURL,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      // Save review to Firestore
+      await db.collection('reviews').add({
+        name: name,
+        review: reviewText,
+        rating: rating,
+        videoURL: videoURL,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      
+      reviewForm.reset();
+      loadReviews();
     });
-    
-    reviewForm.reset();
-    loadReviews();
-  });
+  }
 
-  // Load and display reviews
+  // Load and Display Reviews from Firestore
   function loadReviews() {
     reviewsContainer.innerHTML = "";
     db.collection('reviews').orderBy('timestamp', 'desc').get().then((querySnapshot) => {
@@ -88,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         reviewsContainer.appendChild(reviewDiv);
       });
-      // Attach delete functionality
+      // Attach delete functionality (for admin/demo purposes)
       document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const id = btn.getAttribute('data-id');
@@ -111,15 +115,38 @@ document.addEventListener('DOMContentLoaded', function() {
     formData.append("upload_preset", unsignedPreset);
 
     try {
-      const response = await fetch(url, {
-        method: "POST",
-        body: formData
-      });
+      const response = await fetch(url, { method: "POST", body: formData });
       const data = await response.json();
       return data.secure_url;
     } catch (error) {
       console.error("Error uploading video:", error);
       return "";
     }
+  }
+
+  // Klaviyo Pop-Up Handling (if used)
+  const popup = document.getElementById('klaviyoPopup');
+  if (popup) {
+    const closeBtn = document.querySelector('.klaviyo-popup .popup-close');
+    const klaviyoForm = document.getElementById('klaviyoForm');
+    setTimeout(() => {
+      popup.style.display = 'block';
+    }, 7000);
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+    klaviyoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = klaviyoForm.email.value;
+      klaviyoForm.innerHTML = '<p class="thank-you">Thank you for subscribing! Check your inbox for a welcome message.</p>';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000);
+    });
   }
 });
