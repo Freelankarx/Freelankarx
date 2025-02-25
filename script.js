@@ -46,40 +46,30 @@ document.addEventListener('DOMContentLoaded', function() {
       testimonialForm.reset();
     });
   }
-});
-document.addEventListener('DOMContentLoaded', function() {
-  // Get the popup modal and its elements
+
+  // Klaviyo (or custom pop-up) email capture form handler
   const popup = document.getElementById('klaviyoPopup');
   const closeBtn = document.querySelector('.klaviyo-popup .popup-close');
-  const form = document.getElementById('klaviyoForm');
-
-  // Show the popup after a delay (e.g., 7 seconds)
-  setTimeout(() => {
-    popup.style.display = 'block';
-  }, 7000);
-
-  // Close the popup when the close button is clicked
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Close the popup if the user clicks outside the popup content
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
+  const klaviyoForm = document.getElementById('klaviyoForm');
+  if (popup && klaviyoForm) {
+    setTimeout(() => {
+      popup.style.display = 'block';
+    }, 7000);
+    closeBtn.addEventListener('click', () => {
       popup.style.display = 'none';
-    }
-  });
-
-  // Handle form submission (integrated with Klaviyo endpoint)
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = form.email.value;
-
-    // Option 1: Let the form submit normally to Klaviyo by not intercepting (if using server-side submission)
-    // Option 2: If you want to show a custom thank-you message:
-    form.innerHTML = '<p class="thank-you">Thank you for subscribing! Check your inbox for a welcome message.</p>';
-
-    // Optionally, you can also trigger your Klaviyo integration via AJAX here if desired.
-  });
+    });
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+    klaviyoForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = klaviyoForm.email.value;
+      klaviyoForm.innerHTML = '<p class="thank-you">Thank you for subscribing! Check your inbox for a welcome message.</p>';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000);
+    });
+  }
 });
-
