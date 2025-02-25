@@ -384,6 +384,50 @@ header {
   transform: scale(1.1);
   filter: brightness(1.2);
 }
+/* What Sets Me Apart Section */
+#what-sets-me-apart {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 80px 20px;
+}
+#what-sets-me-apart h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ffcc00;
+}
+.results-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.results-text {
+  max-width: 500px;
+}
+.results-text h3 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.results-text p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.results-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Adjustments for What Sets Me Apart Section */
+@media (max-width: 768px) {
+  .results-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 /* Footer */
 footer {
