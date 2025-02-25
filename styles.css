@@ -233,20 +233,41 @@ header {
   font-size: 0.95rem;
 }
 
-/* Portfolio Section */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+/* What Sets Me Apart Section */
+#what-sets-me-apart {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 80px 20px;
+}
+#what-sets-me-apart h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ffcc00;
+}
+.results-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
-.portfolio-item img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
+.results-text {
+  max-width: 500px;
 }
-.portfolio-item img:hover {
-  transform: scale(1.05);
+.results-text h3 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.results-text p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.results-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Pricing Section */
@@ -310,7 +331,7 @@ header {
 }
 
 /* Testimonials Section */
-.testimonial-card {
+#testimonials .testimonial-card {
   background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   margin: 20px auto;
@@ -318,7 +339,7 @@ header {
   max-width: 600px;
   transition: transform 0.3s;
 }
-.testimonial-card:hover {
+#testimonials .testimonial-card:hover {
   transform: scale(1.05);
 }
 .stars {
@@ -358,6 +379,37 @@ header {
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
 }
 
+/* Review Display (loaded reviews) */
+.review {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+}
+.review h4 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.review p {
+  margin-bottom: 10px;
+}
+.review video {
+  display: block;
+  margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+.delete-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* Contact Section */
 #contact {
   padding: 80px 20px;
@@ -383,50 +435,6 @@ header {
 .social-icons a:hover {
   transform: scale(1.1);
   filter: brightness(1.2);
-}
-/* What Sets Me Apart Section */
-#what-sets-me-apart {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 80px 20px;
-}
-#what-sets-me-apart h2 {
-  font-size: 2.8rem;
-  margin-bottom: 30px;
-  color: #ffcc00;
-}
-.results-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-.results-text {
-  max-width: 500px;
-}
-.results-text h3 {
-  font-size: 2rem;
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-.results-text p {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-.results-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsive Adjustments for What Sets Me Apart Section */
-@media (max-width: 768px) {
-  .results-content {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 /* Footer */
@@ -484,69 +492,95 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* Reviews Display Styles */
-.review {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
-  text-align: left;
-}
-.review h4 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-.review p {
-  margin-bottom: 10px;
-}
-.review video {
-  display: block;
-  margin-bottom: 10px;
-  max-width: 100%;
-  border-radius: 5px;
-}
-.delete-btn {
-  background: red;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
+
+/* ----------------------------------------
+   Klaviyo Popup Modal Styles (if used)
+----------------------------------------- */
+.klaviyo-popup {
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  animation: popupFadeIn 0.5s ease;
 }
 
-/* Review Form Styles (if not already styled) */
-.testimonial-input {
-  margin-top: 40px;
+@keyframes popupFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-.testimonial-input form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+
+.popup-content {
+  background: #fff;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.testimonial-input input,
-.testimonial-input textarea,
-.testimonial-input input[type="file"] {
-  padding: 10px;
+
+.popup-content h2 {
+  color: #1e1e2f;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.popup-content p {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.popup-content input[type="email"] {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  width: 100%;
 }
-.testimonial-input button {
+
+.popup-content .btn {
   background: #ffcc00;
   color: #1e1e2f;
-  padding: 12px;
+  padding: 15px 30px;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.testimonial-input button:hover {
+
+.popup-content .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
 }
 
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    width: 90%;
+    margin: 20% auto;
+    padding: 20px;
+  }
+  .popup-content h2 {
+    font-size: 2rem;
+  }
+  .popup-content input[type="email"] {
+    width: 100%;
+  }
+}
