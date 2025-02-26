@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Stop observing once visible
         observer.unobserve(entry.target);
       }
     });
@@ -92,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         reviewsContainer.appendChild(reviewDiv);
       });
-      // Attach delete functionality (for admin/demo purposes)
+      // Attach delete functionality (for demo purposes)
       document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const id = btn.getAttribute('data-id');
