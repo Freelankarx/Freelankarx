@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         reviewsContainer.appendChild(reviewDiv);
       });
-      // Attach delete functionality (for demo purposes)
+      // Attach delete functionality (for admin/demo purposes)
       document.querySelectorAll('.delete-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const id = btn.getAttribute('data-id');
