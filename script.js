@@ -200,3 +200,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+<!-- Portfolio Modal for Image Preview -->
+<div id="portfolioModal">
+  <span id="closeModal" class="close-modal">&times;</span>
+  <img id="modalImage" src="" alt="Portfolio Preview">
+</div>
+
