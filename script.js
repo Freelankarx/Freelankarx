@@ -149,3 +149,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // GSAP Animations for Hero Section
+  gsap.from('.hero-content h1', { opacity: 0, y: -50, duration: 1.5, ease: 'power2.out' });
+  gsap.from('.hero-content p', { opacity: 0, y: 50, duration: 1.5, delay: 0.3, ease: 'power2.out' });
+  gsap.from('.btn', { opacity: 0, scale: 0.8, duration: 1.5, delay: 0.6, ease: 'back.out(1.7)' });
+
+  // Lazy-loading for images (if using loading="lazy", IntersectionObserver is optional)
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  lazyImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+
+  // Portfolio Modal Functionality
+  const modal = document.getElementById('portfolioModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeModal = document.getElementById('closeModal');
+  
+  document.querySelectorAll('.portfolio-item img').forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'flex';
+      modalImg.src = this.src;
+    });
+  });
+  
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+  
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
