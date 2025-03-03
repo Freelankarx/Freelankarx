@@ -264,13 +264,19 @@ header {
   justify-content: center;
 }
 .results-image-grid .results-image {
-  flex: 1 1 120px;
+  flex: 1 1 200px; /* Increased size for better visibility */
 }
 .results-image-grid .results-image img {
   width: 100%;
-  max-width: 120px;
+  max-width: 200px; /* Increased max width */
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.results-image-grid .results-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.8);
 }
 
 /* Portfolio Section */
