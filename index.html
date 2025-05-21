@@ -57,8 +57,6 @@
   <script async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=WQBANM"></script>
 
   <title>Freelankarx | Shopify Expert & Digital Marketing Strategist</title>
-</head>
-<body>
 
   <!-- [BODY CONTENT GOES HERE — YOUR NAV, HERO, SECTIONS, ETC.] -->
   <!-- Add rel="me" to social links for recognition by AI -->
@@ -412,5 +410,159 @@
 </div>
 
   <script src="script.js"></script>
+
+  <!-- === Trusted By Strip === -->
+<section style="background:#f9f9f9;padding:15px;text-align:center;">
+  <h3 style="margin-bottom:10px;font-family:sans-serif;">Trusted By Brands & Platforms</h3>
+  <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;align-items:center;">
+    <img src="https://cdn.shopify.com/static/shopify-favicon.png" alt="Shopify" width="40">
+    <img src="https://static.fiverr.com/favicon.ico" alt="Fiverr" width="40">
+    <img src="https://www.upwork.com/favicon.ico" alt="Upwork" width="40">
+    <img src="https://www.tiktok.com/favicon.ico" alt="TikTok" width="40">
+  </div>
+</section>
+
+<!-- === Sticky CTA Bar === -->
+<div style="position:fixed;bottom:0;left:0;width:100%;background:#00c39a;color:white;text-align:center;padding:10px 20px;font-family:sans-serif;font-size:16px;z-index:999;">
+  Need help launching or scaling? <a href="#quote-estimator" style="color:white;text-decoration:underline;">Get a Free Quote</a> or <a href="https://wa.me/message/GFBML6FCFK35K1" style="color:white;font-weight:bold;">Chat on WhatsApp</a>
+</div>
+
+<!-- === Floating F-LX Assistant === -->
+<div id="flxAssistant" style="position:fixed;bottom:80px;right:20px;z-index:9999;">
+  <button onclick="openAssistant()" style="background:#00c39a;color:white;border:none;border-radius:50px;padding:12px 18px;font-size:16px;box-shadow:0 4px 10px rgba(0,0,0,0.2);cursor:pointer;">
+    💬 Chat with F‑LX
+  </button>
+  <div id="chatBox" style="display:none;background:#fff;border:1px solid #ddd;border-radius:10px;padding:15px;width:330px;max-height:420px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+    <div id="chatContent" style="font-family:sans-serif;font-size:14px;color:#222;"></div>
+    <div id="chatInputContainer" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("1VnhWJJpmeaRQ7At1");
+
+  const avatar = "https://cdn-icons-png.flaticon.com/512/4712/4712109.png";
+  const chatSteps = [
+    { q: "Hi 👋 I'm F‑LX, your assistant. What's your name?", type: "text", id: "name" },
+    {
+      q: "Nice to meet you! What service are you looking for?",
+      type: "select",
+      id: "service",
+      options: [
+        "Shopify Store Setup",
+        "Facebook/TikTok Ads",
+        "Email Automation",
+        "Dropshipping Setup",
+        "Other (Custom)"
+      ]
+    },
+    {
+      q: "Please describe your custom project:",
+      type: "text",
+      id: "customService",
+      condition: () => answers.service === "Other (Custom)"
+    },
+    {
+      q: "How urgent is your project?",
+      type: "select",
+      id: "urgency",
+      options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"]
+    },
+    {
+      q: "What’s your best email?",
+      type: "text",
+      id: "email"
+    }
+  ];
+
+  let answers = {};
+  let currentStep = 0;
+
+  function openAssistant() {
+    document.getElementById('chatBox').style.display = 'block';
+    const audio = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-soft-pop-click-1112.mp3");
+    audio.play();
+    setTimeout(() => showNextQuestion(), 300);
+  }
+
+  function showNextQuestion() {
+    const chat = document.getElementById('chatContent');
+    const inputContainer = document.getElementById('chatInputContainer');
+    inputContainer.innerHTML = "";
+
+    while (chatSteps[currentStep] && chatSteps[currentStep].condition && !chatSteps[currentStep].condition()) {
+      currentStep++;
+    }
+
+    if (currentStep >= chatSteps.length) {
+      const finalService = answers.service === "Other (Custom)" ? answers.customService : answers.service;
+      const message = `Hi I'm ${answers.name}. I'm interested in: ${finalService}. Urgency: ${answers.urgency}. Email: ${answers.email}`;
+      const waLink = "https://wa.me/message/GFBML6FCFK35K1?text=" + encodeURIComponent(message);
+
+      // Append final message
+      chat.innerHTML += `
+        <div style="display:flex;align-items:flex-start;margin:10px 0;">
+          <img src="${avatar}" width="30" style="margin-right:10px;border-radius:50%;">
+          <div style="background:#f1f1f1;padding:10px;border-radius:10px;">
+            Thanks! <br><a href="${waLink}" target="_blank" style="color:#00c39a;font-weight:bold;">Click here to chat on WhatsApp</a>
+          </div>
+        </div>
+      `;
+
+      // Send Email via EmailJS
+      emailjs.send("service_9068526805", "9068526805", {
+        user_name: answers.name,
+        user_service: finalService,
+        user_urgency: answers.urgency,
+        user_email: answers.email
+      });
+
+      return;
+    }
+
+    const step = chatSteps[currentStep];
+    chat.innerHTML += `
+      <div style="display:flex;align-items:flex-start;margin:10px 0;">
+        <img src="${avatar}" width="30" style="margin-right:10px;border-radius:50%;">
+        <div style="background:#f1f1f1;padding:10px;border-radius:10px;">${step.q}</div>
+      </div>
+    `;
+
+    if (step.type === "text") {
+      inputContainer.innerHTML = `
+        <input type="text" id="userInput" placeholder="Type here..." style="width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;">
+        <button onclick="submitAnswer()" style="margin-top:8px;background:#00c39a;color:white;border:none;padding:8px 12px;border-radius:5px;">Next</button>
+      `;
+    } else if (step.type === "select") {
+      let selectHTML = `<select id="userInput" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;">`;
+      step.options.forEach(opt => selectHTML += `<option value="${opt}">${opt}</option>`);
+      selectHTML += `</select><button onclick="submitAnswer()" style="margin-top:8px;background:#00c39a;color:white;border:none;padding:8px 12px;border-radius:5px;">Next</button>`;
+      inputContainer.innerHTML = selectHTML;
+    }
+  }
+
+  function submitAnswer() {
+    const input = document.getElementById('userInput').value;
+    const step = chatSteps[currentStep];
+    if (!input) return alert("Please complete this step.");
+    answers[step.id] = input;
+
+    document.getElementById('chatContent').innerHTML += `
+      <div style="text-align:right;margin:10px 0;">
+        <div style="display:inline-block;background:#00c39a;color:white;padding:10px;border-radius:10px;max-width:80%;">${input}</div>
+      </div>
+    `;
+    currentStep++;
+    setTimeout(() => showNextQuestion(), 400);
+  }
+
+  // Optional: Dark mode detection
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (prefersDark) {
+    document.getElementById('chatBox').style.background = '#1a1a1a';
+    document.getElementById('chatBox').style.color = '#f1f1f1';
+  }
+</script>
 </body>
 </html>
