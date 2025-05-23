@@ -537,7 +537,7 @@ Paste this entire code in your index.html before </body>
     body.innerHTML += `<p><em>Thinking...</em></p>`;
 
     try {
-      const response = await fetch("https://your-render-app-name.onrender.com/chat", {
+      const response = await fetch("https://freelankarx-chatbot.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message, email })
