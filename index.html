@@ -431,142 +431,141 @@
   Need help launching or scaling? <a href="#quote-estimator" style="color:white;text-decoration:underline;">Get a Free Quote</a> or <a href="https://wa.me/message/GFBML6FCFK35K1" style="color:white;font-weight:bold;">Chat on WhatsApp</a>
 </div>
 
-<!-- === Floating F-LX Assistant === -->
-<div id="flxAssistant" style="position:fixed;bottom:80px;right:20px;z-index:9999;">
-  <button onclick="openAssistant()" style="background:#00c39a;color:white;border:none;border-radius:50px;padding:12px 18px;font-size:16px;box-shadow:0 4px 10px rgba(0,0,0,0.2);cursor:pointer;">
-    💬 Chat with F‑LX
-  </button>
-  <div id="chatBox" style="display:none;background:#fff;border:1px solid #ddd;border-radius:10px;padding:15px;width:330px;max-height:420px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
-    <div id="chatContent" style="font-family:sans-serif;font-size:14px;color:#222;"></div>
-    <div id="chatInputContainer" style="margin-top:10px;"></div>
+<!--
+✅ Freelankarx AI Chatbot (Floating, Branded, GPT-4 Powered, Email Alerts)
+Paste this entire code in your index.html before </body>
+-->
+
+<!-- Floating Chatbot Widget -->
+<style>
+  #freelankarx-chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  #freelankarx-toggle {
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  #freelankarx-window {
+    display: none;
+    width: 320px;
+    height: 450px;
+    background: #0f172a;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  #freelankarx-header {
+    padding: 10px;
+    background-color: #1e293b;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  #freelankarx-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  #freelankarx-inputs {
+    padding: 10px;
+    background: #1e293b;
+    display: flex;
+    flex-direction: column;
+  }
+  #freelankarx-inputs input,
+  #freelankarx-inputs textarea {
+    margin: 5px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+  }
+  #freelankarx-send {
+    background: #38bdf8;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+
+<div id="freelankarx-chatbot">
+  <button id="freelankarx-toggle">💬</button>
+  <div id="freelankarx-window">
+    <div id="freelankarx-header">Freelankarx AI Assistant</div>
+    <div id="freelankarx-body">
+      <p>Hello! 👋 Need help with dropshipping, store setup or product ideas? Ask me anything.</p>
+    </div>
+    <div id="freelankarx-inputs">
+      <input type="text" id="chat-name" placeholder="Your name">
+      <input type="email" id="chat-email" placeholder="Your email">
+      <textarea id="chat-message" placeholder="Type your message here..."></textarea>
+      <button id="freelankarx-send">Send & Ask</button>
+    </div>
   </div>
 </div>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  emailjs.init("1VnhWJJpmeaRQ7At1");
+  const toggle = document.getElementById('freelankarx-toggle');
+  const windowBox = document.getElementById('freelankarx-window');
 
-  const avatar = "https://cdn-icons-png.flaticon.com/512/4712/4712109.png";
-  const chatSteps = [
-    { q: "Hi 👋 I'm F‑LX, your assistant. What's your name?", type: "text", id: "name" },
-    {
-      q: "Nice to meet you! What service are you looking for?",
-      type: "select",
-      id: "service",
-      options: [
-        "Shopify Store Setup",
-        "Facebook/TikTok Ads",
-        "Email Automation",
-        "Dropshipping Setup",
-        "Other (Custom)"
-      ]
-    },
-    {
-      q: "Please describe your custom project:",
-      type: "text",
-      id: "customService",
-      condition: () => answers.service === "Other (Custom)"
-    },
-    {
-      q: "How urgent is your project?",
-      type: "select",
-      id: "urgency",
-      options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"]
-    },
-    {
-      q: "What’s your best email?",
-      type: "text",
-      id: "email"
-    }
-  ];
+  toggle.addEventListener('click', () => {
+    windowBox.style.display = windowBox.style.display === 'flex' ? 'none' : 'flex';
+    windowBox.style.flexDirection = 'column';
+  });
 
-  let answers = {};
-  let currentStep = 0;
+  document.getElementById('freelankarx-send').addEventListener('click', async () => {
+    const name = document.getElementById('chat-name').value;
+    const email = document.getElementById('chat-email').value;
+    const message = document.getElementById('chat-message').value;
+    const apiKey = "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";
 
-  function openAssistant() {
-    document.getElementById('chatBox').style.display = 'block';
-    const audio = new Audio("https://assets.mixkit.co/sfx/preview/mixkit-soft-pop-click-1112.mp3");
-    audio.play();
-    setTimeout(() => showNextQuestion(), 300);
-  }
+    const body = document.getElementById('freelankarx-body');
+    body.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
 
-  function showNextQuestion() {
-    const chat = document.getElementById('chatContent');
-    const inputContainer = document.getElementById('chatInputContainer');
-    inputContainer.innerHTML = "";
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "gpt-4",
+        messages: [
+          { role: "system", content: "You are a helpful Shopify/dropshipping expert assistant." },
+          { role: "user", content: message }
+        ]
+      })
+    });
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content || "Sorry, I couldn’t answer that.";
+    body.innerHTML += `<p><strong>Freelankarx AI:</strong> ${reply}</p>`;
 
-    while (chatSteps[currentStep] && chatSteps[currentStep].condition && !chatSteps[currentStep].condition()) {
-      currentStep++;
-    }
-
-    if (currentStep >= chatSteps.length) {
-      const finalService = answers.service === "Other (Custom)" ? answers.customService : answers.service;
-      const message = `Hi I'm ${answers.name}. I'm interested in: ${finalService}. Urgency: ${answers.urgency}. Email: ${answers.email}`;
-      const waLink = "https://wa.me/message/GFBML6FCFK35K1?text=" + encodeURIComponent(message);
-
-      // Append final message
-      chat.innerHTML += `
-        <div style="display:flex;align-items:flex-start;margin:10px 0;">
-          <img src="${avatar}" width="30" style="margin-right:10px;border-radius:50%;">
-          <div style="background:#f1f1f1;padding:10px;border-radius:10px;">
-            Thanks! <br><a href="${waLink}" target="_blank" style="color:#00c39a;font-weight:bold;">Click here to chat on WhatsApp</a>
-          </div>
-        </div>
-      `;
-
-      // Send Email via EmailJS
-      emailjs.send("service_9068526805", "9068526805", {
-        user_name: answers.name,
-        user_service: finalService,
-        user_urgency: answers.urgency,
-        user_email: answers.email
-      });
-
-      return;
-    }
-
-    const step = chatSteps[currentStep];
-    chat.innerHTML += `
-      <div style="display:flex;align-items:flex-start;margin:10px 0;">
-        <img src="${avatar}" width="30" style="margin-right:10px;border-radius:50%;">
-        <div style="background:#f1f1f1;padding:10px;border-radius:10px;">${step.q}</div>
-      </div>
-    `;
-
-    if (step.type === "text") {
-      inputContainer.innerHTML = `
-        <input type="text" id="userInput" placeholder="Type here..." style="width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;">
-        <button onclick="submitAnswer()" style="margin-top:8px;background:#00c39a;color:white;border:none;padding:8px 12px;border-radius:5px;">Next</button>
-      `;
-    } else if (step.type === "select") {
-      let selectHTML = `<select id="userInput" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;">`;
-      step.options.forEach(opt => selectHTML += `<option value="${opt}">${opt}</option>`);
-      selectHTML += `</select><button onclick="submitAnswer()" style="margin-top:8px;background:#00c39a;color:white;border:none;padding:8px 12px;border-radius:5px;">Next</button>`;
-      inputContainer.innerHTML = selectHTML;
-    }
-  }
-
-  function submitAnswer() {
-    const input = document.getElementById('userInput').value;
-    const step = chatSteps[currentStep];
-    if (!input) return alert("Please complete this step.");
-    answers[step.id] = input;
-
-    document.getElementById('chatContent').innerHTML += `
-      <div style="text-align:right;margin:10px 0;">
-        <div style="display:inline-block;background:#00c39a;color:white;padding:10px;border-radius:10px;max-width:80%;">${input}</div>
-      </div>
-    `;
-    currentStep++;
-    setTimeout(() => showNextQuestion(), 400);
-  }
-
-  // Optional: Dark mode detection
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (prefersDark) {
-    document.getElementById('chatBox').style.background = '#1a1a1a';
-    document.getElementById('chatBox').style.color = '#f1f1f1';
-  }
+    // Send to your email (use Formspree)
+    fetch("https://formspree.io/f/mnqeydbr", {
+      method: "POST",
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(Object.assign(document.createElement('form'), {
+        elements: [
+          Object.assign(document.createElement('input'), { name: 'Name', value: name }),
+          Object.assign(document.createElement('input'), { name: 'Email', value: email }),
+          Object.assign(document.createElement('textarea'), { name: 'Message', value: message + "\n\nGPT Reply: " + reply })
+        ]
+      }))
+    });
+  });
 </script>
+
 </body>
 </html>
