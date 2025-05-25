@@ -436,7 +436,7 @@
 Paste this entire code in your index.html before </body>
 -->
   
-<!-- === Freelankarx Assistant V3 — Emotionally Driven, Fully Fixed === -->
+<!-- === Freelankarx Assistant V2 (Humanized Emotional Version + Done Button) === -->
 <style>
   #freelankarx-assistant {
     position: fixed;
@@ -483,9 +483,6 @@ Paste this entire code in your index.html before </body>
     color: black;
     align-self: flex-end;
   }
-  #flx-input {
-    margin-top: 10px;
-  }
   select, input {
     width: 100%;
     margin: 5px 0;
@@ -505,12 +502,10 @@ Paste this entire code in your index.html before </body>
     margin-top: 5px;
   }
 </style>
-
 <div id="freelankarx-assistant">
   <button id="flx-toggle">💬</button>
   <div id="flx-window"></div>
 </div>
-
 <script>
 const assistant = document.getElementById('flx-window');
 const toggle = document.getElementById('flx-toggle');
@@ -522,16 +517,15 @@ toggle.onclick = () => {
 
 let answers = {};
 let currentStep = 0;
-let plan = "";
-let leadScore = 0;
-let waLink = "";
+let showOtherServiceStep = false;
 
 const steps = [
-  { id: 'name', type: 'text', q: "Hey, I’m F‑LX — your growth sidekick. First up, what’s your name?" },
-  { id: 'service', type: 'select', q: "Awesome. What kind of help do you need to level up your business?", options: ["Custom Shopify Store", "Product + Niche Research", "Facebook/TikTok Ads", "Email Automation Setup", "Automated Dropshipping Store", "Something else"] },
-  { id: 'urgency', type: 'select', q: "When are you hoping to launch or grow this?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
-  { id: 'budget', type: 'select', q: "Rough idea of your budget? Don’t worry — this isn’t a commitment.", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
-  { id: 'email', type: 'text', q: "And lastly, what’s the best email I can reach you on?" }
+  { id: 'name', type: 'text', q: "Hey, I’m F‑LX. It’s really good to have you here. May I know your name?" },
+  { id: 'service', type: 'select', q: "Thanks! What do you feel you need most support with right now?", options: ["Shopify Store Setup", "Facebook/TikTok Ads", "Email Automation", "Dropshipping Setup", "Automation Online Store", "Other"] },
+  { id: 'urgency', type: 'select', q: "Got it. How soon are you hoping to get this moving?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
+  { id: 'budget', type: 'select', q: "To better guide you, could you give me an idea of your current budget for this?", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
+  { id: 'email', type: 'text', q: "Where can I reach you with something helpful if needed? (Your email)" },
+  { id: 'whatsapp', type: 'text', q: "Would you like me to create a free, personal action checklist just for you — and send it to WhatsApp? It’s quick, helpful, and made with care. Just drop your number:" }
 ];
 
 function startChat() {
@@ -540,60 +534,81 @@ function startChat() {
 }
 
 function showNext() {
+  if (showOtherServiceStep) {
+    renderStep('I’d love to hear what you’re trying to build. Feel free to describe your idea in your own words:', 'text', 'custom-service', true);
+    showOtherServiceStep = false;
+    return;
+  }
+
   if (currentStep >= steps.length) return finishChat();
   const step = steps[currentStep];
-  const optionsHTML = step.type === 'select'
-    ? `<option value=''>-- Please select --</option>` + step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')
-    : "";
-
-  const inputHTML = step.type === 'select'
-    ? `<select id="flx-input">${optionsHTML}</select>`
-    : `<input id="flx-input" type="text" placeholder="Type here...">`;
-
-  assistant.innerHTML += `<div class='msg msg-bot'>${step.q}</div>${inputHTML}<button class='submit-btn' onclick='submitAnswer()'>Next</button>`;
+  renderStep(step.q, step.type, step.id);
 }
 
-function submitAnswer() {
-  const step = steps[currentStep];
-  const input = document.getElementById('flx-input');
-  const value = input.value;
-  if (!value || value === "") return alert("Please complete the field.");
+function renderStep(question, type, id, isOther = false) {
+  const existing = document.getElementById('flx-input');
+  if (existing) existing.parentElement.remove();
 
-  answers[step.id] = value;
-  assistant.innerHTML += `<div class='msg msg-user'>${value}</div>`;
-  currentStep++;
-  setTimeout(showNext, 300);
+  assistant.innerHTML += `<div class='msg msg-bot'>${question}</div>`;
+  const inputContainer = document.createElement('div');
+  const input = document.createElement(type === 'select' ? 'select' : 'input');
+  input.type = 'text';
+  input.id = 'flx-input';
+
+  if (type === 'select') {
+    input.innerHTML = `<option value=''>Please select...</option>` + steps[currentStep].options.map(opt => `<option value='${opt}'>${opt}</option>`).join('');
+  }
+
+  const btn = document.createElement('button');
+  btn.textContent = 'Continue';
+  btn.className = 'submit-btn';
+  btn.onclick = () => {
+    const val = input.value.trim();
+    if (!val || val === '') return alert('Just a quick fill and we’re good to go.');
+    const key = isOther ? 'service' : id;
+    answers[key] = val;
+    assistant.innerHTML += `<div class='msg msg-user'>${val}</div>`;
+    if (key === 'service' && val === 'Other') {
+      showOtherServiceStep = true;
+    } else {
+      currentStep++;
+    }
+    showNext();
+  };
+
+  inputContainer.appendChild(input);
+  inputContainer.appendChild(btn);
+  assistant.appendChild(inputContainer);
 }
 
 function finishChat() {
-  plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" :
-         answers.budget.includes("700") ? "Builder Path ($700–$1200)" :
-         "Starter Path ($300–$600)";
+  const plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" : answers.budget.includes("700") ? "Builder Path ($700–$1200)" : "Starter Path ($300–$600)";
+  const leadScore = (answers.urgency.includes("ASAP") ? 5 : 2) + (answers.budget.includes("700") || answers.budget.includes("2000") ? 3 : 1);
 
-  leadScore = (answers.urgency.includes("ASAP") ? 5 : 2) + (answers.budget.includes("700") || answers.budget.includes("2000") ? 3 : 1);
+  const waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I'm ${answers.name}. I'm interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}. WhatsApp: ${answers.whatsapp}`)}`;
 
-  waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hey Freelankarx — I’m ${answers.name}, interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
+  assistant.innerHTML += `<div class='msg msg-bot'>Thanks so much ${answers.name}. Based on everything, I believe the <strong>${plan}</strong> would be a strong starting point for you.<br><button class='submit-btn' onclick='finalSubmit()'>✅ Done</button></div>`;
 
-  assistant.innerHTML += `<div class='msg msg-bot'>That’s everything! Based on your answers, I recommend the <strong>${plan}</strong>.<br><button class='submit-btn' onclick='goToWhatsApp()'>✅ Done</button></div>`;
-}
-
-function goToWhatsApp() {
-  fetch("https://freelankarx-chatbot.onrender.com/lead", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: answers.name,
-      email: answers.email,
-      service: answers.service,
-      urgency: answers.urgency,
-      budget: answers.budget,
-      recommendation: plan,
-      score: leadScore
-    })
-  }).then(() => {
-    window.open(waLink, '_blank');
-  });
+  window.finalSubmit = function () {
+    fetch("https://freelankarx-chatbot.onrender.com/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: answers.name,
+        email: answers.email,
+        service: answers.service,
+        urgency: answers.urgency,
+        budget: answers.budget,
+        whatsapp: answers.whatsapp,
+        recommendation: plan,
+        score: leadScore
+      })
+    }).then(() => {
+      window.open(waLink, '_blank');
+    });
+  }
 }
 </script>
+
 </body>
 </html>
