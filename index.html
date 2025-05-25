@@ -537,8 +537,12 @@ function startChat() {
 function showNext() {
   if (currentStep >= steps.length) return finishChat();
   const step = steps[currentStep];
+  const optionsHTML = step.type === 'select'
+    ? `<option value=''>-- Please select --</option>` + step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')
+    : "";
+
   const inputHTML = step.type === 'select'
-    ? `<select id="flx-input">${step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')}</select>`
+    ? `<select id="flx-input">${optionsHTML}</select>`
     : `<input id="flx-input" type="text" placeholder="Type here...">`;
 
   assistant.innerHTML += `<div class='msg msg-bot'>${step.q}</div>${inputHTML}<button class='submit-btn' onclick='submitAnswer()'>Next</button>`;
@@ -548,7 +552,7 @@ function submitAnswer() {
   const step = steps[currentStep];
   const input = document.getElementById('flx-input');
   const value = input.value;
-  if (!value) return alert("Please complete the field.");
+  if (!value || value === "") return alert("Please complete the field.");
 
   answers[step.id] = value;
   assistant.innerHTML += `<div class='msg msg-user'>${value}</div>`;
@@ -585,6 +589,6 @@ function goToWhatsApp() {
     window.open(waLink, '_blank');
   });
 }
-</script>
+  </script>
 </body>
 </html>
