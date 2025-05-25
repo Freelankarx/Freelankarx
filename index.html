@@ -436,8 +436,7 @@
 Paste this entire code in your index.html before </body>
 -->
   
- "<!-- === Freelankarx Assistant V2 === -->
-<style>
+<!-- === Freelankarx Assistant V3 — Emotionally Driven, Fully Fixed === --><style>
   #freelankarx-assistant {
     position: fixed;
     bottom: 80px;
@@ -504,14 +503,10 @@ Paste this entire code in your index.html before </body>
     cursor: pointer;
     margin-top: 5px;
   }
-</style>
-
-<div id="freelankarx-assistant">
+</style><div id="freelankarx-assistant">
   <button id="flx-toggle">💬</button>
   <div id="flx-window"></div>
-</div>
-
-<script>
+</div><script>
 const assistant = document.getElementById('flx-window');
 const toggle = document.getElementById('flx-toggle');
 toggle.onclick = () => {
@@ -527,11 +522,11 @@ let leadScore = 0;
 let waLink = "";
 
 const steps = [
-  { id: 'name', type: 'text', q: "Hi 👋 I'm F‑LX. What's your name?" },
-  { id: 'service', type: 'select', q: "What service are you looking for?", options: ["Shopify Store Setup", "Facebook/TikTok Ads", "Email Automation", "Dropshipping Setup", "Automation Online Store", "Other"] },
-  { id: 'urgency', type: 'select', q: "How urgent is your project?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
-  { id: 'budget', type: 'select', q: "What’s your rough budget?", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
-  { id: 'email', type: 'text', q: "What’s your best email?" }
+  { id: 'name', type: 'text', q: "Hey, I’m F‑LX — your growth sidekick. First up, what’s your name?" },
+  { id: 'service', type: 'select', q: "Awesome. What kind of help do you need to level up your business?", options: ["Custom Shopify Store", "Product + Niche Research", "Facebook/TikTok Ads", "Email Automation Setup", "Automated Dropshipping Store", "Something else"] },
+  { id: 'urgency', type: 'select', q: "When are you hoping to launch or grow this?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
+  { id: 'budget', type: 'select', q: "Rough idea of your budget? Don’t worry — this isn’t a commitment.", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
+  { id: 'email', type: 'text', q: "And lastly, what’s the best email I can reach you on?" }
 ];
 
 function startChat() {
@@ -541,7 +536,6 @@ function startChat() {
 
 function showNext() {
   if (currentStep >= steps.length) return finishChat();
-
   const step = steps[currentStep];
   const inputHTML = step.type === 'select'
     ? `<select id="flx-input">${step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')}</select>`
@@ -553,7 +547,7 @@ function showNext() {
 function submitAnswer() {
   const step = steps[currentStep];
   const input = document.getElementById('flx-input');
-  const value = input.value.trim();
+  const value = input.value;
   if (!value) return alert("Please complete the field.");
 
   answers[step.id] = value;
@@ -566,11 +560,12 @@ function finishChat() {
   plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" :
          answers.budget.includes("700") ? "Builder Path ($700–$1200)" :
          "Starter Path ($300–$600)";
+
   leadScore = (answers.urgency.includes("ASAP") ? 5 : 2) + (answers.budget.includes("700") || answers.budget.includes("2000") ? 3 : 1);
 
-  waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I'm ${answers.name}. Interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
+  waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hey Freelankarx — I’m ${answers.name}, interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
 
-  assistant.innerHTML += `<div class='msg msg-bot'>Thanks ${answers.name}! Based on your needs, I recommend the <strong>${plan}</strong>.<br><button class='submit-btn' onclick='goToWhatsApp()'>✅ Done</button></div>`;
+  assistant.innerHTML += `<div class='msg msg-bot'>That’s everything! Based on your answers, I recommend the <strong>${plan}</strong>.<br><button class='submit-btn' onclick='goToWhatsApp()'>✅ Done</button></div>`;
 }
 
 function goToWhatsApp() {
