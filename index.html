@@ -436,8 +436,7 @@
 Paste this entire code in your index.html before </body>
 -->
 
-<!-- === Freelankarx Assistant V2 === -->
-<style>
+<!-- === Freelankarx Assistant V2 (Humanized Emotional Version) === --><style>
   #freelankarx-assistant {
     position: fixed;
     bottom: 80px;
@@ -482,79 +481,6 @@ Paste this entire code in your index.html before </body>
     background: #38bdf8;
     color: black;
     align-self: flex-end;
-  }
-  #flx-input {
-    margin-top: 10px;
-  }
-  select, input {
-    width: 100%;
-    margin: 5px 0;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-  }
-  button.submit-btn {
-    width: 100%;
-    padding: 8px;
-    background: #38bdf8;
-    color: black;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
-</style>
-
-<div id="freelankarx-assistant">
-<!-- === Freelankarx Assistant V2 (Fixed Service + Other Input) === --><style>
-  #freelankarx-assistant {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    z-index: 9999;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  #flx-toggle {
-    background-color: #2c2c2c;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  }
-  #flx-window {
-    display: none;
-    width: 320px;
-    height: 500px;
-    background: #0f172a;
-    color: white;
-    border-radius: 15px;
-    overflow-y: auto;
-    flex-direction: column;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    padding: 10px;
-  }
-  #flx-window .msg {
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 90%;
-  }
-  .msg-bot {
-    background: #1e293b;
-    align-self: flex-start;
-  }
-  .msg-user {
-    background: #38bdf8;
-    color: black;
-    align-self: flex-end;
-  }
-  #flx-input {
-    margin-top: 10px;
   }
   select, input {
     width: 100%;
@@ -591,11 +517,12 @@ let currentStep = 0;
 let showOtherServiceStep = false;
 
 const steps = [
-  { id: 'name', type: 'text', q: "Hi 👋 I'm F‑LX. What's your name?" },
-  { id: 'service', type: 'select', q: "What service are you looking for?", options: ["Shopify Store Setup", "Facebook/TikTok Ads", "Email Automation", "Dropshipping Setup", "Automation Online Store", "Other"] },
-  { id: 'urgency', type: 'select', q: "How urgent is your project?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
-  { id: 'budget', type: 'select', q: "What’s your rough budget?", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
-  { id: 'email', type: 'text', q: "What’s your best email?" }
+  { id: 'name', type: 'text', q: "Hey, I’m F‑LX. It’s really good to have you here. May I know your name?" },
+  { id: 'service', type: 'select', q: "Thanks! What do you feel you need most support with right now?", options: ["Shopify Store Setup", "Facebook/TikTok Ads", "Email Automation", "Dropshipping Setup", "Automation Online Store", "Other"] },
+  { id: 'urgency', type: 'select', q: "Got it. How soon are you hoping to get this moving?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
+  { id: 'budget', type: 'select', q: "To better guide you, could you give me an idea of your current budget for this?", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
+  { id: 'email', type: 'text', q: "Where can I reach you with something helpful if needed? (Your email)" },
+  { id: 'whatsapp', type: 'text', q: "Would you like me to create a free, personal action checklist just for you — and send it to WhatsApp? It’s quick, helpful, and made with care. Just drop your number:" }
 ];
 
 function startChat() {
@@ -605,58 +532,60 @@ function startChat() {
 
 function showNext() {
   if (showOtherServiceStep) {
-    assistant.innerHTML += `<div class='msg msg-bot'>Please describe the service you need:</div><input id="flx-input" type="text" placeholder="Custom service..."><button class='submit-btn' onclick='submitOtherService()'>Next</button>`;
+    renderStep('I’d love to hear what you’re trying to build. Feel free to describe your idea in your own words:', 'text', 'custom-service', true);
     showOtherServiceStep = false;
     return;
   }
 
   if (currentStep >= steps.length) return finishChat();
-
   const step = steps[currentStep];
-  const inputHTML = step.type === 'select'
-    ? `<select id="flx-input"><option value="">Select...</option>${step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')}</select>`
-    : `<input id="flx-input" type="text" placeholder="Type here...">`;
-
-  assistant.innerHTML += `<div class='msg msg-bot'>${step.q}</div>${inputHTML}<button class='submit-btn' onclick='submitAnswer()'>Next</button>`;
+  renderStep(step.q, step.type, step.id);
 }
 
-function submitAnswer() {
-  const step = steps[currentStep];
-  const input = document.getElementById('flx-input');
-  const value = input.value.trim();
-  if (!value) return alert("Please complete the field.");
+function renderStep(question, type, id, isOther = false) {
+  const existing = document.getElementById('flx-input');
+  if (existing) existing.parentElement.remove();
 
-  answers[step.id] = value;
-  assistant.innerHTML += `<div class='msg msg-user'>${value}</div>`;
+  assistant.innerHTML += `<div class='msg msg-bot'>${question}</div>`;
+  const inputContainer = document.createElement('div');
+  const input = document.createElement(type === 'select' ? 'select' : 'input');
+  input.type = 'text';
+  input.id = 'flx-input';
 
-  if (step.id === 'service' && value === 'Other') {
-    showOtherServiceStep = true;
-  } else {
-    currentStep++;
+  if (type === 'select') {
+    input.innerHTML = `<option value=''>Please select...</option>` + steps[currentStep].options.map(opt => `<option value='${opt}'>${opt}</option>`).join('');
   }
 
-  setTimeout(showNext, 300);
-}
+  const btn = document.createElement('button');
+  btn.textContent = 'Continue';
+  btn.className = 'submit-btn';
+  btn.onclick = () => {
+    const val = input.value.trim();
+    if (!val) return alert('Just a quick fill and we’re good to go.');
+    const key = isOther ? 'service' : id;
+    answers[key] = val;
+    assistant.innerHTML += `<div class='msg msg-user'>${val}</div>`;
+    if (key === 'service' && val === 'Other') {
+      showOtherServiceStep = true;
+    } else {
+      currentStep++;
+    }
+    showNext();
+  };
 
-function submitOtherService() {
-  const input = document.getElementById('flx-input');
-  const value = input.value.trim();
-  if (!value) return alert("Please describe the service.");
-
-  answers.service = value;
-  assistant.innerHTML += `<div class='msg msg-user'>${value}</div>`;
-  currentStep++;
-  setTimeout(showNext, 300);
+  inputContainer.appendChild(input);
+  inputContainer.appendChild(btn);
+  assistant.appendChild(inputContainer);
 }
 
 function finishChat() {
   const plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" : answers.budget.includes("700") ? "Builder Path ($700–$1200)" : "Starter Path ($300–$600)";
   const leadScore = (answers.urgency.includes("ASAP") ? 5 : 2) + (answers.budget.includes("700") || answers.budget.includes("2000") ? 3 : 1);
 
-  const summary = `Thanks ${answers.name}! Based on your needs, I recommend the <strong>${plan}</strong>. Want to chat more on WhatsApp?`;
-  const waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I'm ${answers.name}. Interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
+  const summary = `Thanks so much ${answers.name}. From what you've shared, I believe the <strong>${plan}</strong> would be the best starting point. If it feels right, you can also continue this convo with me on WhatsApp.`;
+  const waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I'm ${answers.name}. I'm interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}. WhatsApp: ${answers.whatsapp}`)}`;
 
-  assistant.innerHTML += `<div class='msg msg-bot'>${summary}<br><a href='${waLink}' target='_blank' style='color:#38bdf8;'>Click to chat now</a></div>`;
+  assistant.innerHTML += `<div class='msg msg-bot'>${summary}<br><a href='${waLink}' target='_blank' style='color:#38bdf8;'>Open WhatsApp</a></div>`;
 
   fetch("https://freelankarx-chatbot.onrender.com/lead", {
     method: "POST",
@@ -667,6 +596,7 @@ function finishChat() {
       service: answers.service,
       urgency: answers.urgency,
       budget: answers.budget,
+      whatsapp: answers.whatsapp,
       recommendation: plan,
       score: leadScore
     })
