@@ -435,8 +435,9 @@
 ✅ Freelankarx AI Chatbot (Floating, Branded, GPT-4 Powered, Email Alerts)
 Paste this entire code in your index.html before </body>
 -->
-
-<!-- === Freelankarx Assistant V2 — Final Polished Version === --><style>
+  
+ "<!-- === Freelankarx Assistant V2 === -->
+<style>
   #freelankarx-assistant {
     position: fixed;
     bottom: 80px;
@@ -482,6 +483,9 @@ Paste this entire code in your index.html before </body>
     color: black;
     align-self: flex-end;
   }
+  #flx-input {
+    margin-top: 10px;
+  }
   select, input {
     width: 100%;
     margin: 5px 0;
@@ -489,21 +493,25 @@ Paste this entire code in your index.html before </body>
     border: none;
     border-radius: 5px;
   }
-  button.submit-btn, .done-btn {
+  button.submit-btn {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     background: #38bdf8;
     color: black;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 5px;
   }
-</style><div id="freelankarx-assistant">
+</style>
+
+<div id="freelankarx-assistant">
   <button id="flx-toggle">💬</button>
   <div id="flx-window"></div>
-</div><script>
+</div>
+
+<script>
 const assistant = document.getElementById('flx-window');
 const toggle = document.getElementById('flx-toggle');
 toggle.onclick = () => {
@@ -516,7 +524,7 @@ let answers = {};
 let currentStep = 0;
 let plan = "";
 let leadScore = 0;
-let whatsappLink = "";
+let waLink = "";
 
 const steps = [
   { id: 'name', type: 'text', q: "Hi 👋 I'm F‑LX. What's your name?" },
@@ -536,8 +544,8 @@ function showNext() {
 
   const step = steps[currentStep];
   const inputHTML = step.type === 'select'
-    ? `<select id='flx-input'>${step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')}</select>`
-    : `<input id='flx-input' type='text' placeholder='Type here...'>`;
+    ? `<select id="flx-input">${step.options.map(opt => `<option value='${opt}'>${opt}</option>`).join('')}</select>`
+    : `<input id="flx-input" type="text" placeholder="Type here...">`;
 
   assistant.innerHTML += `<div class='msg msg-bot'>${step.q}</div>${inputHTML}<button class='submit-btn' onclick='submitAnswer()'>Next</button>`;
 }
@@ -555,12 +563,14 @@ function submitAnswer() {
 }
 
 function finishChat() {
-  plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" : answers.budget.includes("700") ? "Builder Path ($700–$1200)" : "Starter Path ($300–$600)";
+  plan = answers.budget.includes("2000") ? "Boss Path ($2000+)" :
+         answers.budget.includes("700") ? "Builder Path ($700–$1200)" :
+         "Starter Path ($300–$600)";
   leadScore = (answers.urgency.includes("ASAP") ? 5 : 2) + (answers.budget.includes("700") || answers.budget.includes("2000") ? 3 : 1);
 
-  whatsappLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I’m ${answers.name}. I'm interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
+  waLink = `https://wa.me/message/GFBML6FCFK35K1?text=${encodeURIComponent(`Hi, I'm ${answers.name}. Interested in: ${answers.service}. Budget: ${answers.budget}. Urgency: ${answers.urgency}. Email: ${answers.email}`)}`;
 
-  assistant.innerHTML += `<div class='msg msg-bot'>Thanks ${answers.name}! Based on your answers, I recommend the <strong>${plan}</strong>. When you’re ready, just click Done below.</div><button class='done-btn' onclick='goToWhatsApp()'>✅ Done</button>`;
+  assistant.innerHTML += `<div class='msg msg-bot'>Thanks ${answers.name}! Based on your needs, I recommend the <strong>${plan}</strong>.<br><button class='submit-btn' onclick='goToWhatsApp()'>✅ Done</button></div>`;
 }
 
 function goToWhatsApp() {
@@ -577,7 +587,7 @@ function goToWhatsApp() {
       score: leadScore
     })
   }).then(() => {
-    window.open(whatsappLink, '_blank');
+    window.open(waLink, '_blank');
   });
 }
 </script>
