@@ -436,7 +436,8 @@
 Paste this entire code in your index.html before </body>
 -->
   
-<!-- === Freelankarx Assistant V3 — Emotionally Driven, Fully Fixed === --><style>
+<!-- === Freelankarx Assistant V3 — Emotionally Driven, Fully Fixed === -->
+<style>
   #freelankarx-assistant {
     position: fixed;
     bottom: 80px;
@@ -503,10 +504,14 @@ Paste this entire code in your index.html before </body>
     cursor: pointer;
     margin-top: 5px;
   }
-</style><div id="freelankarx-assistant">
+</style>
+
+<div id="freelankarx-assistant">
   <button id="flx-toggle">💬</button>
   <div id="flx-window"></div>
-</div><script>
+</div>
+
+<script>
 const assistant = document.getElementById('flx-window');
 const toggle = document.getElementById('flx-toggle');
 toggle.onclick = () => {
@@ -589,6 +594,6 @@ function goToWhatsApp() {
     window.open(waLink, '_blank');
   });
 }
-  </script>
+</script>
 </body>
 </html>
