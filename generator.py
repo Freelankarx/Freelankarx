@@ -20,7 +20,7 @@ with open(KEYWORDS_FILE, 'r', encoding='utf-8') as f:
 
 # Setup Jinja2
 env = Environment(loader=FileSystemLoader(TEMPLATE_FOLDER))
-templates = env.get_template('page.html')
+template = env.get_template('page.html')
 
 # Utility to slugify for filenames and URLs
 def slugify(text):
