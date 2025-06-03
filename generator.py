@@ -19,8 +19,8 @@ with open(KEYWORDS_FILE, 'r', encoding='utf-8') as f:
     keywords = [line.strip() for line in f if line.strip()]
 
 # Setup Jinja2
-env = Environment(loader=FileSystemLoader(TEMPLATE_FOLDER))
-template = env.get_template('page.html')
+env = Environment(loader=FileSystemLoader(TEMPLATES))
+templates = env.get_template('page.html')
 
 # Utility to slugify for filenames and URLs
 def slugify(text):
