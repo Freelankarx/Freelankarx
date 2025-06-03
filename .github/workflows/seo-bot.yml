@@ -32,7 +32,11 @@ jobs:
 
       - name: Run generator script
         run: |
-          python generator.py || (echo "Script failed" && exit 1)
+          python generator.py
+          if [ $? -ne 0 ]; then
+            echo "generator.py failed"
+            exit 1
+          fi
 
       - name: Git config
         run: |
@@ -42,4 +46,8 @@ jobs:
       - name: Commit and push changes
         run: |
           git add output/
-          git diff --cached --quiet && echo "No changes to commit" || (git commit -m "SEO update $(date)" && git push)
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "SEO update $(date)"
+            git push
