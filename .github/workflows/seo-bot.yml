@@ -2,7 +2,7 @@ name: Freelankarx SEO Automation
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -10,30 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install Python Dependencies
+      - name: 📦 Install Python Dependencies
         run: pip install jinja2
 
-      - name: Run the Generator Script
-        run: python generator.py
+      - name: 📁 Debug file structure before running
+        run: |
+          echo "✅ Listing current repo files..."
+          ls -R
+          echo "🧠 Showing keywords.txt preview:"
+          head -n 5 keywords.txt || echo "❌ keywords.txt missing!"
 
-      - name: Configure Git User
+      - name: 🧠 Run the Generator Script with Error Handling
+        run: |
+          echo "🚀 Running generator.py..."
+          python generator.py || (echo "❌ generator.py failed!" && exit 1)
+
+      - name: ⚙️ Configure Git
         run: |
           git config --global user.name "Freelankarx SEO Bot"
           git config --global user.email "seo-bot@freelankarx.io"
 
-      - name: Commit SEO Changes (if any)
+      - name: 🚀 Commit SEO Pages if Changed
         run: |
           git add output/
           if git diff --cached --quiet; then
-            echo "✅ No new pages to commit."
+            echo "✅ No changes to commit."
           else
-            git commit -m "🚀 Auto-generated SEO pages $(date)"
+            git commit -m '🚀 Auto-generate SEO pages: $(date)'
             git push
