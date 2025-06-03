@@ -1,0 +1,39 @@
+name: Freelankarx SEO Automation
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Python Dependencies
+        run: pip install jinja2
+
+      - name: Run the Generator Script
+        run: python generator.py
+
+      - name: Configure Git User
+        run: |
+          git config --global user.name "Freelankarx SEO Bot"
+          git config --global user.email "seo-bot@freelankarx.io"
+
+      - name: Commit SEO Changes (if any)
+        run: |
+          git add output/
+          if git diff --cached --quiet; then
+            echo "✅ No new pages to commit."
+          else
+            git commit -m "🚀 Auto-generated SEO pages $(date)"
+            git push
