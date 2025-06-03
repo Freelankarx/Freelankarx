@@ -19,16 +19,17 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install jinja2
+        run: |
+          pip install jinja2
 
       - name: List repo files
         run: |
-          echo "Root:"
+          echo "Root directory contents:"
           ls -la
-          echo "Templates:"
-          ls -la templates || echo "Missing templates"
-          echo "Output:"
-          ls -la output || echo "Missing output"
+          echo "Templates directory:"
+          ls -la templates || echo "Templates directory not found"
+          echo "Output directory:"
+          ls -la output || echo "Output directory not found"
 
       - name: Run generator script
         run: |
@@ -51,3 +52,4 @@ jobs:
           else
             git commit -m "SEO update $(date)"
             git push
+          fi
