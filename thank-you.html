@@ -1,72 +1,93 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>You're In! | Freelankarx</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f7fa;
-      color: #111;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #1f1a1a;
+      color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-    }
-    .thank-you {
-      background: #fff;
-      padding: 40px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 40px 20px;
       text-align: center;
     }
-    .thank-you h1 {
-      font-size: 2rem;
-      color: #0E77FF;
-      margin-bottom: 10px;
+
+    .logo {
+      width: 130px;
+      margin-bottom: 20px;
     }
-    .thank-you p {
-      font-size: 1rem;
-      margin-bottom: 24px;
+
+    h1 {
+      font-size: 28px;
+      color: #ffffff;
     }
-    .note {
-      background: #e6f0ff;
-      border-left: 4px solid #0E77FF;
-      padding: 12px;
-      margin-bottom: 24px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      color: #0a3b99;
+
+    p {
+      font-size: 16px;
+      color: #dddddd;
+      max-width: 500px;
+      margin: 20px 0;
     }
-    .cta-btn {
+
+    .highlight {
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .btn {
       display: inline-block;
-      padding: 14px 28px;
-      background-color: #0E77FF;
-      color: #fff;
-      font-weight: 600;
+      margin-top: 30px;
+      background-color: #ffffff;
+      color: #1f1a1a;
+      padding: 12px 24px;
       text-decoration: none;
+      font-weight: bold;
       border-radius: 6px;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
-    .cta-btn:hover {
-      background-color: #065fd0;
+
+    .btn:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 13px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="thank-you">
-    <h1>You're In! 🎉</h1>
-    <p>Your free AI eCommerce toolkit is on its way to your inbox.</p>
-    <div class="note">
-      If you don’t see it in the next 2–3 minutes, check your Promotions or Spam tab and drag it into Primary.
-    </div>
-    <a class="cta-btn" href="https://freelankarx.gumroad.com/l/lpguv" target="_blank">Grab the $37 Premium Guide</a>
-  </div>
+
+  <img src="/logo.png" alt="Freelankarx Logo" class="logo" />
+
+  <h1>🎉 You're in!</h1>
+
+  <p>
+    We’ve sent your <span class="highlight">Free Toolkit</span> to your email.
+  </p>
+
+  <p>
+    📥 Can’t find it? Check your <span class="highlight">Promotions</span> or <span class="highlight">Spam</span> folder and move it to your inbox manually so you never miss a thing!
+  </p>
+
+  <p>
+    💡 Tip: Mark us as “Not Spam” and drag it to your **Primary inbox** so the next emails reach you directly.
+  </p>
+
+  <a href="https://freelankarx.com" class="btn">← Back to Homepage</a>
+
+  <footer>
+    © 2025 Freelankarx. All rights reserved.
+  </footer>
+
 </body>
 </html>
