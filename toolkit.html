@@ -22,10 +22,54 @@
 header img { height: 46px; width: auto; }
 nav a { color: var(--accent); font-size: 0.95rem; text-decoration: none; }
 
-.hero { flex: 1; width: 100%; max-width: 1180px; margin: 0 auto; padding: 40px 24px 80px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.hero img.cover { width: 280px; height: auto; margin-bottom: 28px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
-h1 { font-size: 2.6rem; font-weight: 600; margin-bottom: 16px; line-height: 1.2; }
-p.sub { font-size: 1.05rem; max-width: 620px; color: var(--light-text); margin-bottom: 30px; }
+.hero { background-image: url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/4da80bfdb1c15c8d8858e436a00f85d98c074cad/Ai-toolkit-banner.png'); /* change to your banner image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay to boost text readability */
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--light-text);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
 
 .form-panel { background: var(--panel); padding: 30px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.4); width: 100%; max-width: 480px; }
 #mlb2-27696621.ml-form-embedContainer button.primary { background: var(--accent)!important; border:none!important; border-radius:6px!important; font-weight:600!important; transition:.3s; }
