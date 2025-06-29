@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /private/
 Allow: /
-Sitemap: https://freelankarx.github.io/Freelankarx/sitemap.xml
+
+Sitemap: https://freelankarx.com/sitemap.xml
