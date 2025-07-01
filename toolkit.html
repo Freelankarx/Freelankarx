@@ -4,247 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free AI Shopify Toolkit | Freelankarx</title>
-  <meta name="description" content="Download the exact AI toolkit 6‑figure Shopify brands use to launch, scale & automate with ease – free from Freelankarx."/>
+  <meta name="description" content="Download the exact AI toolkit 6-figure Shopify brands use to launch, scale & automate with ease – free from Freelankarx." />
+
+  <!-- Fonts & icon -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" />
-  <link rel="stylesheet" href="https://assets.mlcdn.com/fonts.css?version=1750852" />
+
   <style>
-    :root {
-      --bg: #1B1F2B;
-      --panel: #302525;
-      --accent: #0E77FF;
-      --text: #ffffff;
-      --light-text: #d0d3db;
+    :root{
+      --bg:#1B1F2B;
+      --panel:#302525;
+      --accent:#0E77FF;
+      --text:#ffffff;
+      --light:#d0d3db;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif; }
-    body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
-    header { width: 100%; max-width: 1180px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
-    header img { height: 46px; width: auto; }
-    nav a { color: var(--accent); font-size: 0.95rem; text-decoration: none; }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',Arial,sans-serif}
+    body{min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text)}
 
-    .hero {
-      background-image: url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/4da80bfdb1c15c8d8858e436a00f85d98c074cad/Ai-toolkit-banner.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      text-align: center;
-      padding: 60px 20px;
+    /* ---------- HEADER ---------- */
+    header{max-width:1180px;width:100%;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+    header img{height:46px;width:auto}
+    nav a{color:var(--accent);font-size:.95rem;text-decoration:none}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative;
+      background:url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/4da80bfdb1c15c8d8858e436a00f85d98c074cad/Ai-toolkit-banner.png') center/cover no-repeat;
+      text-align:center;
+      padding:60px 20px 80px;
     }
-
-    .hero-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 1;
+    .hero::before{
+      content:'';
+      position:absolute;inset:0;
+      background:rgba(0,0,0,.8);
     }
+    .hero>*{position:relative;z-index:1}      /* lift content above overlay */
+    .hero h1{font-size:2.8rem;font-weight:600;line-height:1.2;margin-bottom:16px}
+    .hero p.sub{font-size:1.2rem;max-width:620px;margin:0 auto 32px;color:var(--light)}
 
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #fff;
+    /* ---------- FORM PANEL ---------- */
+    .form-panel{
+      margin:0 auto;
+      background:var(--panel);
+      max-width:480px;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 6px 24px rgba(0,0,0,.4);
     }
-
-    .hero-text h1 {
-      font-size: 2.8rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .hero-text p {
-      font-size: 1.2rem;
-      color: var(--light-text);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 600px) {
-      .hero-text h1 { font-size: 1.9rem; }
-      .hero-text p { font-size: 1rem; }
-    }
-
-    .form-panel {
-      background: var(--panel);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.4);
-      width: 100%;
-      max-width: 480px;
-    }
-
-    /* Brevo form color fix */
+    /* Brevo overrides – fix input / placeholder colours */
     #sib-container input,
+    #sib-container textarea{background:#fff!important;color:#000!important;font-size:16px;border-radius:6px!important;border:none;padding:12px;width:100%}
     #sib-container input::placeholder,
-    #sib-container textarea::placeholder {
-      color: #ffffff !important;
-    }
+    #sib-container textarea::placeholder{color:#555!important;opacity:1!important}
+    #sib-container input:focus,
+    #sib-container textarea:focus{outline:none;border:2px solid var(--accent)!important}
 
-    #mlb2-27696621.ml-form-embedContainer button.primary {
-      background: var(--accent)!important;
-      border: none!important;
-      border-radius: 6px!important;
-      font-weight: 600!important;
-      transition: .3s;
-    }
+    /* submit button */
+    #sib-container button{display:block;width:100%;padding:12px;margin-top:10px;background:var(--accent);color:#fff;font-weight:600;font-size:16px;border:none;border-radius:18px;cursor:pointer;transition:.3s}
+    #sib-container button:hover{background:#065fd0}
 
-    #mlb2-27696621.ml-form-embedContainer button.primary:hover {
-      background: #065fd0!important;
-    }
+    .spam-note{font-size:.9rem;color:var(--light);margin-top:14px}
+    .privacy-note{font-size:.8rem;color:#9b9ea6;margin-top:6px}
 
-    #mlb2-27696621 input {
-      border-radius: 6px!important;
-    }
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial-box{display:flex;flex-direction:column;gap:28px;margin-top:60px;max-width:700px;margin-left:auto;margin-right:auto}
+    .testimonial{background:#22242e;border-left:4px solid var(--accent);border-radius:10px;padding:24px 28px;font-size:.95rem;color:#e4e6eb;font-style:italic}
+    .stars{color:gold;font-size:1.1rem;margin-bottom:6px;display:inline-block}
 
-    .spam-note { font-size: 0.9rem; color: var(--light-text); margin-top: 14px; }
-    .privacy-note { font-size: 0.8rem; color: #9b9ea6; margin-top: 6px; }
+    /* ---------- FOOTER ---------- */
+    footer{text-align:center;padding:30px 20px;font-size:.85rem;color:#8e9099;margin-top:auto}
 
-    .testimonial-box {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin-top: 60px;
-      max-width: 700px;
-    }
-
-    .testimonial {
-      background: #22242e;
-      padding: 24px 28px;
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      font-size: 0.95rem;
-      color: #e4e6eb;
-      font-style: italic;
-      position: relative;
-    }
-
-    .stars {
-      color: gold;
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-      display: inline-block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.85rem;
-      color: #8e9099;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.1rem; }
-      .hero img.cover { width: 200px; margin-bottom: 20px; }
-      .form-panel { padding: 22px; }
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:600px){
+      .hero h1{font-size:1.9rem}
+      .hero p.sub{font-size:1rem}
+      .form-panel{padding:22px}
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -------------------------------- -->
   <header>
-    <a href="https://freelankarx.com"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx logo" /></a>
-    <nav><a href="https://freelankarx.com">← Back to Home</a></nav>
+    <a href="https://freelankarx.com">
+      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx logo">
+    </a>
+    <nav><a href="https://freelankarx.com">← Back&nbsp;to&nbsp;Home</a></nav>
   </header>
 
+  <!-- Hero + Form --------------------------- -->
   <section class="hero">
     <h1>Download the Free AI Shopify Toolkit</h1>
-    <p class="sub">Get the exact tools & prompts 6‑figure stores use to launch, write copy, recover carts and run smart ads, all in one click.</p>
+    <p class="sub">Get the exact tools &amp; prompts 6-figure stores use to launch, write copy, recover carts and run smart ads — all in one click.</p>
+
+    <!-- Brevo FORM -->
     <div class="form-panel">
-      <!-- Brevo form embed -->
-      <style>
-        @font-face {
-          font-display: block;
-          font-family: Roboto;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
-        }
-        @font-face {
-          font-display: fallback;
-          font-family: Roboto;
-          font-weight: 600;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
-        }
-        @font-face {
-          font-display: fallback;
-          font-family: Roboto;
-          font-weight: 700;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
-        }
-        #sib-container input:-ms-input-placeholder, #sib-container input::placeholder, #sib-container textarea::placeholder {
-          text-align: left;
-          font-family: Helvetica, sans-serif;
-          color: #000000;
-        }
-        #sib-container a { text-decoration: underline; color: #2BB2FC; }
-      </style>
       <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-      <div class="sib-form" style="text-align: center; background-color: transparent;">
-        <div id="sib-form-container" class="sib-form-container">
-          <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="..."></path></svg>
-              <span class="sib-form-message-panel__inner-text">Your information could not be saved. Please try again.</span>
-            </div>
-          </div>
-          <div></div>
-          <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="..."></path></svg>
-              <span class="sib-form-message-panel__inner-text">Your toolkit is been delivered</span>
-            </div>
-          </div>
-          <div></div>
-          <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(71,54,54,1); max-width:540px; border-radius:24px; border-width:1px; border-color:#C0CCD9; border-style:solid; direction:ltr">
-            <form id="sib-form" method="POST" action="https://ecf41424.sibforms.com/serve/..." data-type="subscription">
-              <div style="padding: 8px 0;">
-                <div class="sib-input sib-form-block">
-                  <div class="form__entry entry_block">
-                    <div class="form__label-row">
-                      <div class="entry__field">
-                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="email" data-required="true" required />
-                      </div>
-                    </div>
-                    <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
-                  </div>
-                </div>
-              </div>
-              <div style="padding: 8px 0;">
-                <div class="sib-form-block" style="text-align: center">
-                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; text-align:center; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:18px; border-width:0px;" type="submit">
-                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="..."></path></svg>
-                    Get the Toolkit
-                  </button>
-                </div>
-              </div>
-              <input type="text" name="email_address_check" value="" class="input--hidden">
-              <input type="hidden" name="locale" value="en">
-            </form>
-          </div>
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="sib-container" class="sib-container sib-container--vertical" style="background:transparent;max-width:540px;margin:0 auto;">
+          <form id="sib-form" method="POST" action="https://ecf41424.sibforms.com/serve/..." data-type="subscription">
+            <input type="email" id="EMAIL" name="EMAIL" placeholder="Your best email" data-required="true" required>
+            <button type="submit">Get the Toolkit →</button>
+
+            <!-- hidden honeypot & locale -->
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="en">
+          </form>
         </div>
       </div>
       <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-      <!-- End Brevo form embed -->
+
+      <div class="spam-note">📥 If our email lands in “Promotions” or “Spam,” drag it to your Primary inbox so you never miss an update.</div>
+      <div class="privacy-note">We respect your privacy. Unsubscribe anytime.</div>
     </div>
 
+    <!-- Testimonials ------------------------- -->
     <div class="testimonial-box">
-      <blockquote class="testimonial">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        “I set up my first profitable AI‑powered store in 2 days using this toolkit. Absolute lifesaver!” – <strong>Maria&nbsp;G.</strong>
-      </blockquote>
-      <blockquote class="testimonial">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        “I thought I’d have to spend months learning ads… this kit literally wrote the strategy for me.” – <strong>Daniel&nbsp;A.</strong>
-      </blockquote>
-      <blockquote class="testimonial">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        “This is the first time I felt like I had control of my Shopify store. Everything just works.” – <strong>Jen&nbsp;T.</strong>
-      </blockquote>
+      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“I set up my first profitable AI-powered store in 2 days using this toolkit. Absolute lifesaver!” — <strong>Maria G.</strong></blockquote>
+      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“I thought I’d spend months learning ads… this kit literally wrote the strategy for me.” — <strong>Daniel A.</strong></blockquote>
+      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“First time I felt in control of my Shopify store. Everything just works.” — <strong>Jen T.</strong></blockquote>
     </div>
   </section>
 
+  <!-- Footer -------------------------------- -->
   <footer>© 2025 Freelankarx. All rights reserved.</footer>
 </body>
 </html>
