@@ -4,15 +4,136 @@
   <title>About Freelankarx | Your Digital Growth Partner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn why Freelankarx exists and how Olamilekan Muraina helps everyday entrepreneurs build freedom through e‑commerce and automation.">
-  <link rel="canonical" href="https://freelankarx.com/about.html">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" type="image/png">
+  <style>
+    :root {
+      --background: #1e1e2f;
+      --text: #ffffff;
+      --accent: #ffcc00;
+      --overlay: rgba(0, 0, 0, 0.6);
+    }* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--background); color: var(--text); font-family: 'Poppins', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+}
+.header-logo img {
+  height: 32px;
+}
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+.header-nav ul li a {
+  color: #fff;
+  font-weight: 500;
+}
+.header-nav ul li a.active {
+  color: var(--accent);
+}
+
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: url('bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--overlay);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.content-wrap {
+  padding: 3rem 1.5rem;
+  max-width: 960px;
+  margin: auto;
+}
+.content-wrap h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.card {
+  background: #2c2c40;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+.card h3 {
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: transform 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: #111;
+  color: #888;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="nav">
-    <a href="/" class="logo">Freelankarx</a>
-    <nav>
+  <div class="header">
+    <div class="header-logo">
+      <a href="/"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx logo"></a>
+    </div>
+    <div class="header-nav">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about.html" class="active">About</a></li>
@@ -20,20 +141,19 @@
         <li><a href="/#portfolio">Portfolio</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-    </nav>
-  </header>  <!-- Hero section with image background -->  <section class="hero-section" style="background-image: url('/bg.jpg');">
-    <div class="overlay"></div>
+    </div>
+  </div>  <section class="hero-section">
     <div class="hero-content">
-      <h1 class="highlight">Turning Bold Ideas into Online Freedom</h1>
+      <h1>Turning Bold Ideas into Online Freedom</h1>
       <p>Hello, I’m <strong>Olamilekan “Freelankarx” Muraina</strong>. I build automation‑driven Shopify stores and teach the exact playbooks that helped 300+ entrepreneurs move from side‑hustle to full‑time income—without burning out or breaking the bank.</p>
     </div>
-  </section>  <!-- About Content -->  <main class="content-wrap">
+  </section>  <main class="content-wrap">
     <section>
-      <h2 class="highlight">My Journey</h2>
+      <h2>My Journey</h2>
       <p>I started with a single laptop, a shaky internet connection in Ibadan, and a dream that the digital world could level the playing field. Ten years later, that dream has powered brands you now see trending on TikTok, stocked in big‑box stores and crossing 7‑figure run‑rates.</p>
       <p>But numbers only tell half the story. The real win is watching a founder’s eyes light up when their first sale notification hits—or when automation frees up their nights to tuck in their kids. That adrenaline‑rush is what keeps me pushing boundaries every day.</p>
     </section><section>
-  <h2 class="highlight">Why Entrepreneurs Trust Freelankarx</h2>
+  <h2>Why Entrepreneurs Trust Freelankarx</h2>
   <div class="card-container">
     <div class="card">
       <h3>Plain-English Clarity</h3>
@@ -55,18 +175,20 @@
 </section>
 
 <section>
-  <h2 class="highlight">Mission &amp; Vision</h2>
+  <h2>Mission &amp; Vision</h2>
   <p><strong>Mission:</strong> Equip everyday people with the digital tools, mindset and mentorship they need to build businesses that outlive algorithms.</p>
   <p><strong>Vision:</strong> A world where geography and capital are no barriers to creating wealth and impact online.</p>
 </section>
 
 <section class="cta-section">
-  <h2 class="highlight">Ready to Write Your Story?</h2>
+  <h2>Ready to Write Your Story?</h2>
   <p>If you’re tired of random hacks and want a mentor who treats your dream like their own, let’s connect. Whether you grab my free AI Toolkit or hire me for a full‑scale launch, you’ll walk away with clarity, confidence and a plan that actually works.</p>
   <a href="https://linktr.ee/Freelankarx" target="_blank" class="btn">Start a Conversation</a>
 </section>
 
   </main>  <footer>
     <p class="footer-text">© 2025 Freelankarx. All rights reserved.</p>
-  </footer>  <script src="/script.js"></script></body>
+  </footer>  <script>
+    console.log("About page now perfectly matches index.html layout and styles.");
+  </script></body>
 </html>
