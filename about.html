@@ -4,6 +4,10 @@
   <title>About Freelankarx | Your Digital Growth Partner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn why Freelankarx exists and how Olamilekan Muraina helps everyday entrepreneurs build freedom through e‑commerce and automation.">
+  <meta property="og:title" content="About Freelankarx">
+  <meta property="og:description" content="Helping everyday people build brands and automate their online income.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" type="image/png">
   <style>
     :root {
@@ -11,12 +15,13 @@
       --text: #ffffff;
       --accent: #ffcc00;
       --overlay: rgba(0, 0, 0, 0.6);
-    }* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--background); color: var(--text); font-family: 'Poppins', sans-serif; line-height: 1.6; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.header {
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--background); color: var(--text); font-family: 'Poppins', sans-serif; line-height: 1.6; scroll-behavior: smooth; transition: opacity 0.8s ease-in-out; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,6 +122,19 @@ a:hover { text-decoration: underline; }
   transform: scale(1.05);
 }
 
+.float-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
 footer {
   background: #111;
   color: #888;
@@ -143,16 +161,16 @@ footer {
       </ul>
     </div>
   </div>  <section class="hero-section">
-    <div class="hero-content">
+    <div class="hero-content fade-in">
       <h1>Turning Bold Ideas into Online Freedom</h1>
-      <p>Hello, I’m <strong>Olamilekan “Freelankarx” Muraina</strong>. I build automation‑driven Shopify stores and teach the exact playbooks that helped 300+ entrepreneurs move from side‑hustle to full‑time income—without burning out or breaking the bank.</p>
+      <p>Hello, I’m <strong>Olamilekan “Freelankarx” Muraina</strong>. I build automation‑driven Shopify stores and teach the exact playbooks that helped 300+ entrepreneurs move from side‑hustle to full‑time income without burning out or breaking the bank.</p>
     </div>
   </section>  <main class="content-wrap">
-    <section>
+    <section class="fade-in">
       <h2>My Journey</h2>
       <p>I started with a single laptop, a shaky internet connection in Ibadan, and a dream that the digital world could level the playing field. Ten years later, that dream has powered brands you now see trending on TikTok, stocked in big‑box stores and crossing 7‑figure run‑rates.</p>
       <p>But numbers only tell half the story. The real win is watching a founder’s eyes light up when their first sale notification hits—or when automation frees up their nights to tuck in their kids. That adrenaline‑rush is what keeps me pushing boundaries every day.</p>
-    </section><section>
+    </section><section class="fade-in">
   <h2>Why Entrepreneurs Trust Freelankarx</h2>
   <div class="card-container">
     <div class="card">
@@ -174,21 +192,30 @@ footer {
   </div>
 </section>
 
-<section>
+<section class="fade-in">
   <h2>Mission &amp; Vision</h2>
   <p><strong>Mission:</strong> Equip everyday people with the digital tools, mindset and mentorship they need to build businesses that outlive algorithms.</p>
   <p><strong>Vision:</strong> A world where geography and capital are no barriers to creating wealth and impact online.</p>
 </section>
 
-<section class="cta-section">
+<section class="cta-section fade-in">
   <h2>Ready to Write Your Story?</h2>
   <p>If you’re tired of random hacks and want a mentor who treats your dream like their own, let’s connect. Whether you grab my free AI Toolkit or hire me for a full‑scale launch, you’ll walk away with clarity, confidence and a plan that actually works.</p>
   <a href="https://linktr.ee/Freelankarx" target="_blank" class="btn">Start a Conversation</a>
 </section>
 
-  </main>  <footer>
+  </main><a href="https://linktr.ee/Freelankarx" class="float-cta" target="_blank">Let's Talk</a>
+
+  <footer>
     <p class="footer-text">© 2025 Freelankarx. All rights reserved.</p>
   </footer>  <script>
-    console.log("About page now perfectly matches index.html layout and styles.");
+    // Fade in scroll animation
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
   </script></body>
 </html>
