@@ -42,7 +42,7 @@ page_links = []
 for keyword in keywords:
     slug = slugify(keyword)
     filename = f"{slug}.html"
-    url = f"https://freelankarx.github.io/{quote(filename)}"
+    url = f"https://freelankarx.com/{quote(filename)}"
 
     page_links.append({
         'keyword': keyword,
@@ -92,7 +92,7 @@ with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
         f.write(f"    <loc>{page['url']}</loc>\n")
         f.write(f"    <lastmod>{datetime.utcnow().strftime('%Y-%m-%d')}</lastmod>\n")
         f.write("    <changefreq>monthly</changefreq>\n")
-        f.write("    <priority>0.8</priority>\n")
+        f.write("    <priority>1.0</priority>\n")
         f.write("  </url>\n")
     f.write('</urlset>\n')
 
