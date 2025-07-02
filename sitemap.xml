@@ -16,3 +16,34 @@
   </url>
   -->
 </urlset>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Home -->
+  <url>
+    <loc>https://freelankarx.com/</loc>
+  </url>
+
+  <!-- Blog homepage -->
+  <url>
+    <loc>https://freelankarx.com/blog/</loc>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://freelankarx.com/blog/Ai-side-hustle.html</loc>
+  </url>
+  <url>
+    <loc>https://freelankarx.com/blog/how-to-use-ai-tools.html</loc>
+  </url>
+  <url>
+    <loc>https://freelankarx.com/blog/ai-seo-for-beginners.html</loc>
+  </url>
+
+</urlset>
