@@ -1,59 +1,58 @@
-name: Freelankarx SEO Automation
+name: Freelankarx SEO Bot
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  build-and-deploy:
-    concurrency:
-      group: seo-job
-      cancel-in-progress: false
+  build-blog-and-sitemap:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
-      - name: Install dependencies
-        run: |
-          pip install jinja2
+      - name: Install Jinja2
+        run: pip install jinja2
 
-      - name: List repo files
-        run: |
-          echo "Root directory contents:"
-          ls -la
-          echo "Templates directory:"
-          ls -la templates || echo "Templates directory not found"
-          echo "Output directory:"
-          ls -la output || echo "Output directory not found"
+      - name: Run blog generator
+        run: python generator.py
 
-      - name: Run generator script
+      - name: Build sitemap.xml
         run: |
-          python generator.py
-          if [ $? -ne 0 ]; then
-            echo "generator.py failed"
-            exit 1
-          fi
+          BASE_URL="https://freelankarx.com/output"
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          echo '  <url><loc>https://freelankarx.com/</loc><priority>1.0</priority></url>' >> sitemap.xml
+          echo '  <url><loc>https://freelankarx.com/blog/</loc><priority>0.9</priority></url>' >> sitemap.xml
+          for f in output/*.html; do
+            fname=$(basename "$f")
+            loc="https://freelankarx.com/output/${fname}"
+            echo "  <url><loc>${loc}</loc><changefreq>daily</changefreq><priority>0.8</priority></url>" >> sitemap.xml
+          done
+          echo '</urlset>' >> sitemap.xml
 
-      - name: Git config
+      - name: Commit & Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config --global user.name "Freelankarx SEO Bot"
-          git config --global user.email "seo-bot@freelankarx.io"
+          git config user.name "Freelankarx SEO Bot"
+          git config user.email "info@freelankarx.com"
+          git add output/ sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update blog and sitemap $(date -u '+%Y-%m-%d %H:%M')"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
 
-      - name: Commit and Push changes
+      - name: Ping Google for Sitemap
         run: |
-          git config pull.rebase false
-          git pull origin main || true
-          git add output/
-          git commit -m "SEO update $(date -u)" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Freelankarx/Freelankarx.git HEAD:main
+          curl -s "https://www.google.com/ping?sitemap=https://freelankarx.com/sitemap.xml" && echo "✔️  Google pinged"
