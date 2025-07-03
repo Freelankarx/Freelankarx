@@ -10,13 +10,12 @@
     <loc>https://freelankarx.com/output/</loc>
   </url>
 
-  <!-- Add more pages below if you have them -->
-  <!-- Example:
+  
   <url>
     <loc>https://freelankarx.com/about</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
 
   <url>
