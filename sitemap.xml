@@ -35,17 +35,29 @@
   <!-- Blog homepage -->
   <url>
     <loc>https://freelankarx.com/blog/</loc>
+    <lastmod>2025-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <!-- Blog posts -->
   <url>
     <loc>https://freelankarx.com/blog/Ai-side-hustle.html</loc>
+<lastmod>2025-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://freelankarx.com/blog/how-to-use-ai-tools.html</loc>
+<lastmod>2025-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://freelankarx.com/blog/ai-seo-for-beginners.html</loc>
+<lastmod>2025-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
 
 </urlset>
