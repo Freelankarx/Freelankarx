@@ -20,7 +20,7 @@ with open(KEYWORDS_FILE, 'r', encoding='utf-8') as f:
 
 # Setup Jinja2
 env = Environment(loader=FileSystemLoader(TEMPLATE_FOLDER))
-template = env.get_template('page/index.html')
+template = env.get_template('page.html')
 
 # Utility to slugify for filenames and URLs
 def slugify(text):
@@ -41,7 +41,7 @@ page_links = []
 # First: prepare all page metadata
 for keyword in keywords:
     slug = slugify(keyword)
-    filename = f"{slug}.html"
+    filename = f"{slug}/index.html"
     url = f"https://freelankarx.com/{quote(filename)}"
 
     page_links.append({
