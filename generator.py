@@ -41,7 +41,7 @@ page_links = []
 # First: prepare all page metadata
 for keyword in keywords:
     slug = slugify(keyword)
-    filename = f"{slug}/index.html"
+    filename = f"{slug}/.html"
     url = f"https://freelankarx.com/{quote(filename)}"
 
     page_links.append({
