@@ -2,70 +2,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://freelankarx.com/</loc>
-    <lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>https://freelankarx.com/toolkit.html</loc>
-    <lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-   <url>
-    <loc>https://freelankarx.com/output/</loc>
-    <lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  
-  <url>
     <loc>https://freelankarx.com/about</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <url>
-  <loc>https://freelankarx.com/blog/ai-email-automation/</loc>
-  <lastmod>2025-07-03</lastmod>
-  <priority>1.0</priority>
-</url>
-  
-  <url>
-    <loc>https://freelankarx.com/</loc>
-  </url>
-
-  <!-- Blog homepage -->
-  <url>
-    <loc>https://freelankarx.com/blog/</loc>
-    <lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Blog posts -->
-  <url>
-    <loc>https://freelankarx.com/blog/Ai-side-hustle.html</loc>
-<lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://freelankarx.com/blog/how-to-use-ai-tools.html</loc>
-<lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://freelankarx.com/blog/ai-seo-for-beginners.html</loc>
-<lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
 </urlset>
