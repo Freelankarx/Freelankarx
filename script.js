@@ -151,13 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 document.addEventListener('DOMContentLoaded', function() {
   // Smooth scrolling for navigation links
-  document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-    });
+  document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = link.getAttribute('href');
+    if (href === '#' || href === '') {
+      e.preventDefault(); // only block fake links
+    }
   });
+});
 
   // GSAP Animations for Hero Section
   gsap.from('.hero-content h1', { opacity: 0, y: -50, duration: 1.5, ease: 'power2.out' });
