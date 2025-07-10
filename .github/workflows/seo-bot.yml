@@ -50,10 +50,13 @@ jobs:
           git config --global user.name "Freelankarx SEO Bot"
           git config --global user.email "seo-bot@freelankarx.io"
 
-      - name: Commit and Push changes
+            - name: Commit and Push changes
         run: |
           git config pull.rebase false
-          git pull origin main || true
+          git add output/
+          git stash
+          git pull origin main
+          git stash pop || true
           git add output/
           git commit -m "SEO update $(date -u)" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Freelankarx/Freelankarx.git HEAD:main
