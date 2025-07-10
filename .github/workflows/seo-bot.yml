@@ -49,8 +49,8 @@ jobs:
         run: |
           git config --global user.name "Freelankarx SEO Bot"
           git config --global user.email "seo-bot@freelankarx.io"
-
-            - name: Commit and Push changes
+          
+      - name: Commit and Push changes
         run: |
           git config pull.rebase false
           git add output/
