@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excellent Cakes N More</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+  </style>
+</head><body class="bg-pink-50 text-gray-800">  <!-- Hero Section -->  <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-4" style="background-image: url('https://picsum.photos/seed/cakes/1200/800');">
+    <h1 class="text-4xl md:text-6xl text-white drop-shadow-lg mb-4">Luxury Custom Cakes for Every Occasion</h1>
+    <p class="text-lg md:text-2xl text-white drop-shadow-md mb-8">Made fresh to order in Saskatoon — let your cake be the statement piece.</p>
+    <a href="#contact" class="bg-pink-200 hover:bg-pink-300 text-gray-800 font-semibold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105 animate-bounce">Order Now</a>
+  </section>  <!-- About Section -->  <section class="py-16 px-6 text-center bg-white">
+    <div class="max-w-3xl mx-auto fade-in">
+      <h2 class="text-3xl text-pink-800 mb-4">About Us</h2>
+      <p class="mb-4">Excellent Cakes N More is a Saskatoon-based home bakery specializing in luxury custom cakes for weddings, birthdays, and special occasions. Every design is one-of-a-kind. Every cake tells a story.</p>
+      <p class="font-semibold text-pink-700">Starting at $150 for custom cakes | $4.50 per cupcake</p>
+    </div>
+  </section>  <!-- Gallery Section -->  <section class="py-16 bg-pink-100 text-center">
+    <h2 class="text-3xl text-pink-800 mb-10">Our Creations</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <img src="https://picsum.photos/seed/cake1/400/400" alt="Cake 1" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
+      <img src="https://picsum.photos/seed/cake2/400/400" alt="Cake 2" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
+      <img src="https://picsum.photos/seed/cake3/400/400" alt="Cake 3" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
+    </div>
+  </section>  <!-- Testimonials Section -->  <section class="py-16 px-6 bg-white text-center">
+    <h2 class="text-3xl text-pink-800 mb-10">Happy Clients</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-pink-50 p-6 rounded-lg shadow fade-in">
+        <p class="italic">“The cake was stunning and delicious — it was the highlight of our wedding! Thank you for making it so special.”</p>
+        <p class="mt-4 font-semibold">— Sarah M.</p>
+      </div>
+      <div class="bg-pink-50 p-6 rounded-lg shadow fade-in">
+        <p class="italic">“Excellent Cakes N More never disappoints. Every cake I’ve ordered has been a masterpiece!”</p>
+        <p class="mt-4 font-semibold">— Jason L.</p>
+      </div>
+    </div>
+  </section>  <!-- Contact Section -->  <section id="contact" class="py-16 bg-pink-100 text-center px-6">
+    <h2 class="text-3xl text-pink-800 mb-6">Place Your Order</h2>
+    <form class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in">
+      <div class="mb-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300" required />
+      </div>
+      <div class="mb-4">
+        <input type="email" placeholder="Your Email" class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300" required />
+      </div>
+      <div class="mb-4">
+        <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300" required></textarea>
+      </div>
+      <button type="submit" class="bg-pink-200 hover:bg-pink-300 text-gray-800 font-semibold py-2 px-6 rounded-full shadow transition transform hover:scale-105">Send</button>
+    </form>
+    <p class="mt-6">📍Based in Saskatoon | Pre-order only</p>
+  </section>  <!-- WhatsApp Button -->  <a href="https://wa.me/" class="whatsapp-button" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M20.52 3.48A11.9 11.9 0 0012.07.01C5.65.01.52 5.13.52 11.56a11.6 11.6 0 001.58 5.96L.06 24l6.68-2.11a11.82 11.82 0 005.32 1.35h.01c6.42 0 11.56-5.13 11.56-11.55a11.52 11.52 0 00-3.11-7.6zm-8.45 17.9a9.5 9.5 0 01-4.83-1.32l-.35-.2-3.96 1.25 1.29-3.86-.22-.37a9.46 9.46 0 01-1.45-5.07c0-5.26 4.28-9.55 9.55-9.55 2.56 0 4.97 1 6.78 2.82a9.52 9.52 0 012.8 6.74c0 5.27-4.29 9.56-9.56 9.56zm5.28-7.17c-.29-.14-1.72-.85-1.98-.94s-.46-.14-.65.14-.75.94-.93 1.14-.34.21-.63.07a7.79 7.79 0 01-2.29-1.41 8.63 8.63 0 01-1.59-2c-.17-.29 0-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.65-1.56-.9-2.14-.24-.57-.49-.5-.65-.51h-.56c-.2 0-.52.07-.8.36s-1.05 1.03-1.05 2.52 1.07 2.93 1.22 3.14c.14.19 2.11 3.2 5.1 4.49.71.31 1.27.49 1.7.62.71.23 1.35.2 1.86.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.06-.12-.26-.19-.54-.33z" />
+    </svg>
+  </a>  <!-- Footer -->  <footer class="py-6 bg-white text-center text-sm text-gray-600">
+    <div class="mb-2">
+      <a href="#" class="mx-2 hover:text-pink-500">Instagram</a>
+      <a href="#" class="mx-2 hover:text-pink-500">Facebook</a>
+      <a href="#" class="mx-2 hover:text-pink-500">Email</a>
+    </div>
+    <p>&copy; 2025 Excellent Cakes N More. All rights reserved.</p>
+  </footer>  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script></body></html>
