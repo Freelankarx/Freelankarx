@@ -7,6 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+  .gallery img {
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    opacity: 0;
+  }
+
+  .gallery img.loaded {
+    opacity: 1;
+  }
+</style>
     html {
       scroll-behavior: smooth;
     }
@@ -61,14 +70,16 @@
       <p class="mb-4">Hi, I'm Adenike, founder of Cakekulture. My journey began with a love for baking and a passion for celebrating people. Every cake I create is personal made with care, creativity, and the desire to make your occasion shine. When you order from Cakekulture, you're not just buying a cake; you're investing in a beautiful memory.</p>
       <p class="italic">"I bake with purpose to spread joy, love, and a taste of celebration."</p>
     </div>
-  </section>  <!-- Gallery Section -->  <section class="py-16 bg-white text-center">
-    <h2 class="text-3xl text-yellow-800 mb-10">Our Cake Creations</h2>
-    <div class="flex flex-wrap justify-center gap-6">
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0015.jpg" alt="Cake 1" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0016.jpg" alt="Cake 2" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0020.jpg" alt="Cake 3" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0019.jpg" alt="Cake 4" class="rounded-lg shadow-md transform hover:scale-105 transition fade-in" />
-    </div>
+  </section>  
+<!-- Gallery Section -->  
+</section> class="py-16 bg-white text-center">
+  <h2 class="text-3xl text-yellow-800 mb-10">Our Cake Creations</h2>
+  <div class="gallery flex flex-wrap justify-center gap-6">
+    <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0015.jpg" alt="Cake 1" loading="lazy" class="rounded-lg shadow-md transform hover:scale-105 transition" />
+    <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0016.jpg" alt="Cake 2" loading="lazy" class="rounded-lg shadow-md transform hover:scale-105 transition" />
+    <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0020.jpg" alt="Cake 3" loading="lazy" class="rounded-lg shadow-md transform hover:scale-105 transition" />
+    <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0019.jpg" alt="Cake 4" loading="lazy" class="rounded-lg shadow-md transform hover:scale-105 transition" />
+  </div>
   </section>  <!-- Testimonials Section -->  <section class="py-16 px-6 bg-yellow-100 text-center">
     <h2 class="text-3xl text-yellow-800 mb-10">What Our Clients Say</h2>
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -128,5 +139,13 @@
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
+  document.addEventListener('DOMContentLoaded', () => {
+    const imgs = document.querySelectorAll('.gallery img');
+    imgs.forEach(img => {
+      img.onload = () => {
+        img.classList.add('loaded');
+      };
+    });
+  });
   </script></body>
 </html>
