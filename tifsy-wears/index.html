@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Core SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tifsy Wears | Bespoke & Ready-Made Fashion by Adenike</title>
+  <meta name="description" content="Tifsy Wears by Adenike — bespoke tailoring and ready-made outfits that fit, flatter, and empower. Thoughtful design, soft movement, luxury feel. Message on WhatsApp to start your look." />
+  <meta name="keywords" content="Tifsy Wears, Adenike, fashion designer, bespoke, ready made, custom dress, tailoring, alterations, Nigeria" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Social Cards -->
+  <meta property="og:title" content="Tifsy Wears | Bespoke & Ready-Made Fashion by Adenike">
+  <meta property="og:description" content="Designs that fit, flatter & feel like you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tifsy Wears | Bespoke & Ready-Made Fashion by Adenike">
+  <meta name="twitter:description" content="Thoughtful design, soft movement, luxury feel.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop">
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --gold:#C7A86D; --charcoal:#121212; --cream:#fff8ef; --blush:#f5e6e0 }
+    html{ scroll-behavior:smooth }
+    body{ font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1f2937; background:var(--cream) }
+    h1,h2,h3{ font-family:"Playfair Display", serif }
+    .reveal{ opacity:0; transform:translateY(18px); transition:opacity .9s ease, transform .9s ease }
+    .reveal.show{ opacity:1; transform:none }
+    .hero-tint{ background:linear-gradient(180deg, rgba(18,18,18,.55), rgba(18,18,18,.45)), radial-gradient(80% 60% at 50% 30%, rgba(0,0,0,.25), transparent 70%) }
+    .btn-gold{ background-image:linear-gradient(135deg,#f3e5c7,var(--gold)); color:#111827; border-radius:9999px; padding:.85rem 1.25rem; font-weight:600; transition:transform .2s, filter .2s, box-shadow .2s }
+    .btn-gold:hover{ transform:translateY(-2px) scale(1.02); filter:brightness(1.04); box-shadow:0 12px 22px rgba(199,168,109,.28) }
+    .img-soft{ border-radius:1rem; box-shadow:0 12px 28px rgba(17,24,39,.15) }
+    .ratio-3x4{ aspect-ratio:3/4; object-fit:cover }
+    .ratio-16x9{ aspect-ratio:16/9; object-fit:cover }
+    .rule{ height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent) }
+    .wa-float{ position:fixed; right:18px; bottom:18px; z-index:80; background:#25D366; color:white; width:56px; height:56px; display:grid; place-items:center; border-radius:9999px; box-shadow:0 10px 20px rgba(0,0,0,.18); transition:transform .2s }
+    .wa-float:hover{ transform:scale(1.06) }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Tifsy Wears",
+    "image":"https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop",
+    "description":"Bespoke tailoring and ready-to-wear pieces handcrafted by Adenike.",
+    "url":"https://example.com/",
+    "telephone":"+2348147545019",
+    "areaServed":"NG",
+    "sameAs":["https://wa.me/2348147545019"]
+  }
+  </script>
+</head>
+<body class="selection:bg-yellow-200/60">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-40 backdrop-blur bg-white/70 border-b border-black/5">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <span class="inline-block w-8 h-8 rounded-full bg-[var(--gold)]"></span>
+        <span class="font-semibold tracking-wide">Tifsy Wears</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-[var(--gold)]">About</a>
+        <a href="#services" class="hover:text-[var(--gold)]">Services</a>
+        <a href="#gallery" class="hover:text-[var(--gold)]">Gallery</a>
+        <a href="#process" class="hover:text-[var(--gold)]">Process</a>
+        <a href="#testimonials" class="hover:text-[var(--gold)]">Reviews</a>
+        <a href="#contact" class="hover:text-[var(--gold)]">Contact</a>
+      </nav>
+      <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold text-sm">Chat on WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-[92vh] grid place-items-center text-center">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop"
+         alt="Elegant dressmaking studio" class="absolute inset-0 w-full h-full object-cover ratio-16x9" loading="eager" fetchpriority="high">
+    <div class="absolute inset-0 hero-tint"></div>
+    <div class="relative z-10 max-w-3xl px-6 text-white">
+      <p class="uppercase tracking-[0.35em] text-xs md:text-sm mb-4 text-white/80">Bespoke • Ready-Made • Alterations</p>
+      <h1 class="text-4xl md:text-6xl leading-tight font-semibold">Designs that fit, flatter & <span class="text-[var(--gold)]">feel like you</span></h1>
+      <p class="mt-5 text-base md:text-lg text-white/90">Adenike crafts outfits that honor your shape and story—so you walk in with quiet confidence.</p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold">Start your outfit</a>
+        <a href="#gallery" class="rounded-full px-6 py-3 border border-white/40 hover:bg-white/10">See recent work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="https://images.unsplash.com/photo-1503342394125-480259ab4c9b?q=80&w=900&auto=format&fit=crop"
+           alt="Tailor at work" class="img-soft ratio-3x4 w-full" loading="lazy">
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl text-gray-900">Hi, I’m <span class="text-[var(--gold)]">Adenike</span> — your designer</h2>
+        <div class="rule my-5"></div>
+        <p class="text-gray-700 leading-relaxed">
+          Fashion is personal. I listen to your vision, study your fit, and shape pieces that carry your confidence.
+          Whether bespoke or ready-made, your outfit should whisper “this is me”.
+        </p>
+        <ul class="mt-6 space-y-2 text-gray-700">
+          <li>• Bespoke pieces for weddings, events & everyday elegance</li>
+          <li>• Ready-made collections in timeless, flattering cuts</li>
+          <li>• Alterations & styling support to perfect your look</li>
+        </ul>
+        <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold mt-8 inline-block">Message Adenike</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-white/70 py-18 md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl text-center">What we create</h2>
+      <p class="text-center text-gray-600 mt-2">Thoughtful design, soft movement, luxury feel.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="reveal bg-[var(--blush)]/60 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-semibold">Bespoke Tailoring</h3>
+          <p class="mt-2 text-gray-700">Unique pieces cut to your shape and story—bridal, occasion, and statement looks.</p>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-semibold">Ready-Made</h3>
+          <p class="mt-2 text-gray-700">A curated line of ready-to-wear styles in premium fabrics and timeless silhouettes.</p>
+        </div>
+        <div class="reveal bg-[var(--blush)]/60 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-semibold">Alterations & Styling</h3>
+          <p class="mt-2 text-gray-700">Refine the pieces you love—hems, fit adjustments, and outfit pairing tips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
+    <div class="reveal text-center">
+      <h2 class="text-3xl md:text-4xl">Recent pieces</h2>
+      <p class="text-gray-600 mt-2">Soft movement. Clean lines. Confident energy.</p>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Replace with real photos anytime -->
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?q=80&w=700&auto=format&fit=crop" alt="Elegant dress" />
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=700&auto=format&fit=crop" alt="Tailored outfit" />
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=700&auto=format&fit=crop" alt="Ready-made look" />
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=700&auto=format&fit=crop" alt="Evening wear" />
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=700&auto=format&fit=crop" alt="Two-piece set" />
+      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=700&auto=format&fit=crop" alt="Classic tailoring" />
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold">Ask about a piece</a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="bg-white/70">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="reveal text-center">
+        <h2 class="text-3xl md:text-4xl">How it works</h2>
+        <p class="text-gray-600 mt-2">Simple, personal, and pressure-free.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+          <span class="text-[var(--gold)] text-3xl font-bold">1</span>
+          <h3 class="text-lg font-semibold mt-3">Chat & Vision</h3>
+          <p class="text-gray-700 mt-1">Send a WhatsApp message. Share your event, vibe, and any inspo.</p>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+          <span class="text-[var(--gold)] text-3xl font-bold">2</span>
+          <h3 class="text-lg font-semibold mt-3">Measure & Design</h3>
+          <p class="text-gray-700 mt-1">We take measurements, choose fabrics, and sketch a look that’s “so you”.</p>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+          <span class="text-[var(--gold)] text-3xl font-bold">3</span>
+          <h3 class="text-lg font-semibold mt-3">Fit & Finish</h3>
+          <p class="text-gray-700 mt-1">Your piece is crafted, fitted, and refined—ready to wear with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="reveal text-center">
+      <h2 class="text-3xl md:text-4xl">Loved by clients</h2>
+      <p class="text-gray-600 mt-2">Words that keep us smiling at the sewing table.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-10">
+      <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+        <p class="italic">“Adenike listened like a friend. The dress fit like a dream and I felt beautiful—simple.”</p>
+        <p class="mt-4 font-semibold">— Funmi A.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
+        <p class="italic">“From WhatsApp chat to final fitting, everything was calm and professional. I got SO many compliments.”</p>
+        <p class="mt-4 font-semibold">— Amaka O.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Fabric and tools" class="w-full h-full object-cover" loading="lazy">
+      <div class="absolute inset-0 hero-tint"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6 py-16 text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-semibold">Let’s create your next favorite outfit</h2>
+      <p class="mt-3 text-white/90">No pressure. Just a friendly chat about what will make you feel amazing.</p>
+      <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold mt-6 inline-block">Message on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl">Say hello</h2>
+        <div class="rule my-5"></div>
+        <p class="text-gray-700">Tell me about the occasion, the mood, the fabric you love, or a photo that inspires you.</p>
+        <ul class="mt-6 space-y-2 text-gray-700">
+          <li>📍 Nigeria (remote fittings available)</li>
+          <li>🕒 Mon–Sat · 9am–6pm</li>
+          <li>💬 Fast replies on WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/2348147545019" target="_blank" class="btn-gold mt-8 inline-block">Chat with Adenike</a>
+      </div>
+
+      <!-- Optional email form (use your Formspree endpoint to activate) -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm reveal">
+        <form action="https://formspree.io/f/your-id" method="POST">
+          <label class="block mb-2 text-sm font-medium">Name</label>
+          <input name="name" required class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="Your full name" />
+          <label class="block mb-2 text-sm font-medium">Email</label>
+          <input name="email" type="email" class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="you@example.com" />
+          <label class="block mb-2 text-sm font-medium">Message</label>
+          <textarea name="message" rows="4" class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="Tell me what you have in mind…"></textarea>
+          <button class="btn-gold w-full" type="submit">Send message</button>
+          <p class="text-xs text-gray-500 mt-3">Prefer WhatsApp? <a class="underline" href="https://wa.me/2348147545019" target="_blank">Tap here</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white/70 border-t border-black/5">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold">Tifsy Wears</h3>
+        <p class="text-gray-600 mt-2 text-sm">Bespoke & ready-made fashion by Adenike. Designed to fit, flatter, and empower.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Quick links</h4>
+        <ul class="mt-2 space-y-1 text-sm">
+          <li><a href="#services" class="hover:text-[var(--gold)]">Services</a></li>
+          <li><a href="#gallery" class="hover:text-[var(--gold)]">Gallery</a></li>
+          <li><a href="#process" class="hover:text-[var(--gold)]">Process</a></li>
+          <li><a href="#contact" class="hover:text-[var(--gold)]">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="text-sm mt-2">WhatsApp: <a class="underline" href="https://wa.me/2348147545019" target="_blank">+234 814 754 5019</a></p>
+        <p class="text-xs text-gray-500 mt-4">© <span id="year"></span> Tifsy Wears. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348147545019" target="_blank" aria-label="Chat on WhatsApp" class="wa-float">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.52 3.48A11.9 11.9 0 0 0 12.07.01C5.65.01.52 5.13.52 11.56c0 2.09.55 4.05 1.58 5.96L.06 24l6.68-2.11c1.7.88 3.54 1.35 5.32 1.35h.01c6.42 0 11.56-5.13 11.56-11.55 0-3.08-1.2-5.98-3.11-7.6zM12.07 21.5a9.5 9.5 0 0 1-4.83-1.32l-.35-.2-3.96 1.25 1.29-3.86-.22-.37a9.46 9.46 0 0 1-1.45-5.07c0-5.26 4.28-9.55 9.55-9.55 2.56 0 4.97 1 6.78 2.82a9.52 9.52 0 0 1 2.8 6.74c0 5.27-4.29 9.56-9.56 9.56z"/>
+    </svg>
+  </a>
+
+  <!-- Minimal JS: reveal on scroll + year -->
+  <script>
+    // Reveal on scroll
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); }});
+    }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+    els.forEach(el=>io.observe(el));
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
