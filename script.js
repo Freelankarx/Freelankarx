@@ -200,3 +200,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+document.querySelector('input[name="videoFile"]').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const valid = file.type.startsWith('video/');
+  if (!valid) {
+    alert("Please upload a valid video file.");
+    event.target.value = "";
+    return;
+  }
+  // Optionally show a preview
+  const url = URL.createObjectURL(file);
+  const preview = document.createElement('video');
+  preview.src = url;
+  preview.controls = true;
+  preview.style.maxWidth = "100%";
+  const parent = event.target.parentNode;
+  // remove old preview if present
+  const existing = parent.querySelector('video');
+  if (existing) existing.remove();
+  parent.appendChild(preview);
+});
+// JS to toggle hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
