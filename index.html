@@ -103,49 +103,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
   
   <header> 
-    <div class="nav-inner">
-      <nav class="nav-links" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="breadcrumb" aria-hidden="true" style="margin-left:8px; display:none;">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="about.html">About</a>
+    </div>
+
+    <button id="hamburger" class="mobile-toggle" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">☰</button>
+
+    <div class="logo" aria-label="FreelankarX">
+      <a href="/">
+        <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/73821dffc1925e56088fbaec02702042713ad955/freelankarx_logo-removebg-preview.png" alt="FreelankarX logo">
+      </a>
+    </div>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true" aria-labelledby="hamburger" role="dialog">
+      <button id="closeBtn" class="close-btn" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="breadcrumb" aria-hidden="true" style="margin-left:8px;display:none">
-        <a href="index.html">Home</a>
-        <span class="sep">›</span>
-        <a href="about.html">About</a>
-      </div>
-      <button id="hamburger" class="mobile-toggle" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">☰</button>
+    </aside>
+  </div>
+</header>
 
-      <div class="logo" role="img" aria-label="FreelankarX">
-        <a href="/">
-          <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/73821dffc1925e56088fbaec02702042713ad955/freelankarx_logo-removebg-preview.png" alt="FreelankarX logo">
-        </a>
-      </div>
-      <aside id="sidebar" class="sidebar" aria-hidden="true" aria-labelledby="hamburger" role="dialog">
-        <button id="closeBtn" class="close-btn" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobile menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </aside>
-      <section class="hero">
-          <video autoplay loop muted playsinline preload="auto" class="hero-video">
-            <source src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/7b808773e9f3aad67c21e7bb5084ce8267d5a7d5/1000067383-vmake.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-          </video>
-          <div class="overlay"></div>
-          <div class="hero-content">
-            <h1>Your Shopify & E-Commerce Growth Partner</h1>
-            <p>We build more than stores, we build growth engines.</p>
-            <a href="#contact" class="btn">Book a Free Consultation</a>
-          </div>
-        </section>
-      </header>
+<section class="hero">
+  <video autoplay loop muted playsinline preload="auto" class="hero-video">
+    <source src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/7b808773e9f3aad67c21e7bb5084ce8267d5a7d5/1000067383-vmake.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Your Shopify & E-Commerce Growth Partner</h1>
+    <p>We build more than stores, we build growth engines.</p>
+    <a href="#contact" class="btn">Book a Free Consultation</a>
+  </div>
+</section>
+
       
         
         <main>
