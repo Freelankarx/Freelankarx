@@ -1,7 +1,20 @@
 /* ————————————— */
 /* Global & Base */
 /* ————————————— */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0B1E2D;
+  color: #FFFFFF;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* ————————————— */
 /* Top Navigation */
@@ -734,7 +747,5 @@ footer {
     height: 40px;
   }
 }
-
-
 
 
