@@ -63,73 +63,80 @@ body {
 .mobile-nav {
   display: none;
 }
+/* Hamburger (visible only on mobile) */
+#mobileNav {
+  display: none;
+}
 .hamburger {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
-  color: #fff;
-  background: var(--brand-blue);
-  border-radius: 8px;
+  font-size: 30px;
   cursor: pointer;
-  border: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  margin: 12px;
-}
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -320px;
-  width: 320px;
-  max-width: 85%;
-  height: 100%;
-  background: #07101a;
-  padding: 20px 16px;
-  transition: left .32s cubic-bezier(.2, .9, .3, 1);
-  z-index: 1200;
-  overflow-y: auto;
-}
-.sidebar.open {
-  left: 0;
-}
-.sidebar .close-btn {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-}
-.sidebar nav {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.sidebar nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 10px 12px;
-  border-radius: 8px;
-}
-.sidebar nav a:hover {
-  background: rgba(0, 0, 0, 0.12);
-  color: var(--brand-blue);
+  color: #00cfff; /* brand accent */
+  padding: 15px;
 }
 
-/* Show mobile nav, hide breadcrumb nav on small screens */
-@media (max-width: 880px) {
-  .breadcrumb-nav {
+/* Sidebar Navigation */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  background-color: #0a0f1c; /* brand dark background */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidenav a {
+  padding: 12px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #00cfff; /* brand highlight */
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: #fff;
+}
+
+/* Desktop breadcrumb nav */
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+}
+.desktop-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+.desktop-nav a:hover {
+  color: #00cfff;
+}
+
+/* Mobile/Desktop Behavior */
+@media screen and (max-width: 768px) {
+  .desktop-nav {
     display: none;
   }
-  .mobile-nav {
+  #mobileNav {
     display: block;
   }
-  .header-top {
-    position: fixed;
+}
+@media screen and (min-width: 769px) {
+  #mobileNav {
+    display: none;
   }
 }
 
@@ -756,4 +763,5 @@ footer {
   .testimonial-input h3 { font-size: 1rem; }
   .rating label { width: 34px; height: 34px; font-size: 18px; }
 }
+
 
