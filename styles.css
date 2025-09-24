@@ -12,43 +12,14 @@ body {
   background: #0B1E2D; /* Deep Navy background */
   color: #FFFFFF;
   overflow-x: hidden;
-}
-
-/* Navigation */
-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background: rgba(0, 0, 0, 0.85);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-nav .logo img {
-  height: 50px;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-}
-nav ul li {
-  margin-left: 20px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-nav ul li a:hover {
-  color: #00CFFF; /* Electric Blue hover */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Hero Section with Video Banner */
 header {
-  margin-top: 80px; /* Offset for fixed nav */
+  margin-top: 80px; /* offset if top nav used */
 }
 .hero {
   position: relative;
@@ -523,11 +494,55 @@ header {
 
 /* Contact Section */
 #contact {
-  padding: 80px 20px;
+  padding: 80px 20px 120px; /* Extra padding so bottom nav doesn't overlap */
   text-align: center;
 }
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #FFD232;
+}
+#contact p {
+  font-size: 1.2rem;
+  color: #CCCCCC;
+  margin-bottom: 20px;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+.contact-form button {
+  background: #00CFFF;
+  color: #0B1E2D;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.contact-form button:hover {
+  background: #FFD232;
+  transform: scale(1.05);
+}
 .social-icons {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -554,21 +569,50 @@ footer {
   color: #CCCCCC;
 }
 
+/* Bottom Navigation */
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #0D0D0F; /* Dark background for nav */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  z-index: 1000;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #CCCCCC; /* muted gray for inactive */
+  transition: color 0.3s;
+  font-size: 12px;
+  position: relative;
+}
+.nav-item.active {
+  color: #00CFFF; /* Freelankarx Electric Blue */
+}
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 6px;
+  height: 6px;
+  background: #FFD232; /* Yellow-Gold indicator */
+  border-radius: 50%;
+}
+.nav-item span {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    text-align: center;
-  }
-  nav ul.active {
-    display: flex;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -589,14 +633,4 @@ footer {
     width: 40px;
     height: 40px;
   }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
 }
