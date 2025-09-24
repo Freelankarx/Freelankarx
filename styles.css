@@ -1,6 +1,6 @@
-/* ---------------------------
-   Reset & variables
-   --------------------------- */
+Okay go on
+
+
 :root{
   --brand-blue: #00CFFF;
   --brand-gold: #FFD232;
@@ -11,7 +11,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height: 100%}
+html,body{height:100%}
 body{
   font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:var(--bg-dark);
@@ -182,7 +182,6 @@ a:focus, button:focus { outline: 3px solid rgba(0,204,255,0.12); outline-offset:
 /* ————————————— */
 header {
   margin-top: 80px;
-}
 }
 .hero {
   position: relative;
@@ -801,6 +800,7 @@ footer {
   .testimonial-input h3 { font-size: 1rem; }
   .rating label { width: 34px; height: 34px; font-size: 18px; }
 }
+
 
 
 
