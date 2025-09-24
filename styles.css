@@ -181,7 +181,7 @@ a:focus, button:focus { outline: 3px solid rgba(0,204,255,0.12); outline-offset:
 /* HERO SECTION */
 /* ————————————— */
 header {
-  margin-top: 0px;
+  margin-top: 80px;
 }
 }
 .hero {
