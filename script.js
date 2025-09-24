@@ -1,3 +1,23 @@
+// Sidebar toggle
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('closeBtn');
+
+hamburger.addEventListener('click', () => {
+  sidebar.style.left = "0";
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.style.left = "-250px";
+});
+
+// Optional: close sidebar if clicked outside
+window.addEventListener('click', (e) => {
+  if (e.target !== sidebar && e.target !== hamburger && !sidebar.contains(e.target)) {
+    sidebar.style.left = "-250px";
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize Firebase (using compat libraries)
   const firebaseConfig = {
@@ -228,4 +248,5 @@ const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
+
 
