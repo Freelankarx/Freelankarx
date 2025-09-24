@@ -19,71 +19,85 @@ body {
 /* ————————————— */
 /* Top Navigation */
 /* ————————————— */
-/* CSS for hamburger + nav links toggling */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px;
-  background: rgba(0, 0, 0, 0.85);
-}
-nav .logo img {
-  height: 50px;
-}
-.hamburger {
-  display: none; /* hidden on desktop */
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-.nav-links li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-.nav-links li a:hover {
-  color: #00CFFF;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Mobile styles */
+/* Desktop Breadcrumb Nav */
+.breadcrumb-nav {
+  background: #f8f8f8;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #333;
+}
+
+.breadcrumb-nav a {
+  color: #00CFFF;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.breadcrumb-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none; /* hidden on desktop */
+}
+
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  padding: 15px 20px;
+  color: #fff;
+  background: #00CFFF;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hidden off screen */
+  width: 250px;
+  height: 100%;
+  background: #111;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background: #00CFFF;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .breadcrumb-nav {
+    display: none; /* hide breadcrumbs */
   }
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #0D0D0F;
-    flex-direction: column;
-    width: 200px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  .nav-links.show {
-    transform: translateX(0);
-  }
-  .nav-links li {
-    margin: 15px 0;
-    text-align: right;
-    margin-right: 20px;
+  .mobile-nav {
+    display: block; /* show mobile nav */
   }
 }
 
@@ -733,5 +747,6 @@ footer {
     height: 40px;
   }
 }
+
 
 
