@@ -63,6 +63,7 @@ body {
   margin: 0 6px;
 }
 
+
 /* Mobile nav (hamburger + sidebar) */
 .mobile-nav {
   display: none;
@@ -115,7 +116,22 @@ body {
 }
 
 /* Desktop breadcrumb nav */
-.desktop-nav {
+.desktop-nav 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+nav .logo img {
+  height: 50px;
+}
+{
   display: flex;
   gap: 20px;
 }
@@ -126,7 +142,7 @@ body {
   font-size: 16px;
 }
 .desktop-nav a:hover {
-  color: #00cfff;
+  color: ##ffcc00;
 }
 
 /* Mobile/Desktop Behavior */
@@ -767,6 +783,7 @@ footer {
   .testimonial-input h3 { font-size: 1rem; }
   .rating label { width: 34px; height: 34px; font-size: 18px; }
 }
+
 
 
 
