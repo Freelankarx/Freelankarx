@@ -30,6 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
       sidebar.style.left = "-250px";
     });
 
+    // Select elements
+const navLinks = document.querySelector(".nav-links");
+const logo = document.querySelector(".logo");
+
+// Toggle nav on logo click (can change to menu icon if you prefer)
+logo.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
     // Close sidebar if clicked outside
     window.addEventListener('click', (e) => {
       if (e.target !== sidebar && e.target !== hamburger && !sidebar.contains(e.target)) {
@@ -205,5 +214,6 @@ logo.addEventListener("click", () => {
     });
   }
 });
+
 
 
