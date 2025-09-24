@@ -102,23 +102,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </html>
 <body>
   <!-- Header Section with Video Banner -->
-  <header>
-    <nav>
-      <!-- Updated Logo Image -->
-      <div class="logo">
-        <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/73821dffc1925e56088fbaec02702042713ad955/freelankarx_logo-removebg-preview.png" alt="FreelankarX Logo">
-      </div>
-      <ul>
-        <li><a href="/about/" class="active">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="/toolkit.html" class="active">Get Free Toolkit</a></li>
-        <li><a href="#recent-results">Recent Results</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="/blog/" class="active">Blogs</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- ========================== -->
+<!-- Navigation -->
+<!-- ========================== -->
+<header>
+  <!-- Desktop Breadcrumb Nav -->
+  <nav class="breadcrumb-nav">
+    <a href="index.html">Home</a> >
+    <a href="about.html">About</a> >
+    <a href="services.html">Services</a> >
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
     <section class="hero">
       <video autoplay loop muted playsinline preload="auto" class="hero-video">
         <source src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/7b808773e9f3aad67c21e7bb5084ce8267d5a7d5/1000067383-vmake.mp4" type="video/mp4">
@@ -132,7 +143,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a href="#contact" class="btn">Book a Free Consultation</a>
       </div>
     </section>
-  </header>
 
   <main>
     <!-- About Section -->
