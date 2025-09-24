@@ -37,6 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+  /* Overlay sidenav */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
 
   // ==========================
   // Section Reveal on Scroll
@@ -187,3 +196,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
