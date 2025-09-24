@@ -180,9 +180,6 @@ a:focus, button:focus { outline: 3px solid rgba(0,204,255,0.12); outline-offset:
 /* ————————————— */
 /* HERO SECTION */
 /* ————————————— */
-header {
-  margin-top: 0px;
-}
 }
 .hero {
   position: relative;
@@ -801,6 +798,7 @@ footer {
   .testimonial-input h3 { font-size: 1rem; }
   .rating label { width: 34px; height: 34px; font-size: 18px; }
 }
+
 
 
 
