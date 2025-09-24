@@ -151,6 +151,15 @@ function closeNav() {
   }
   loadReviews();
 
+  // Select elements
+const navLinks = document.querySelector(".nav-links");
+const logo = document.querySelector(".logo");
+
+// Toggle nav on logo click (can change to menu icon if you prefer)
+logo.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
   // ==========================
   // Portfolio Modal
   // ==========================
@@ -196,4 +205,5 @@ function closeNav() {
     });
   }
 });
+
 
