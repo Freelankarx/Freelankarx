@@ -1,25 +1,7 @@
-// Sidebar toggle
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-const closeBtn = document.getElementById('closeBtn');
-
-hamburger.addEventListener('click', () => {
-  sidebar.style.left = "0";
-});
-
-closeBtn.addEventListener('click', () => {
-  sidebar.style.left = "-250px";
-});
-
-// Optional: close sidebar if clicked outside
-window.addEventListener('click', (e) => {
-  if (e.target !== sidebar && e.target !== hamburger && !sidebar.contains(e.target)) {
-    sidebar.style.left = "-250px";
-  }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Firebase (using compat libraries)
+document.addEventListener('DOMContentLoaded', function () {
+  // ==========================
+  // Firebase Initialization
+  // ==========================
   const firebaseConfig = {
     apiKey: "AIzaSyAvgEkGU9xizy_XFg-aGD7NnkvtDBdGBtA",
     authDomain: "freelankarx-portfolio.firebaseapp.com",
@@ -31,11 +13,35 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
-  const storage = firebase.storage();
 
-  // Intersection Observer for Section Reveal
+  // ==========================
+  // Sidebar Toggle (Mobile Nav)
+  // ==========================
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  const closeBtn = document.getElementById('closeBtn');
+
+  if (hamburger && sidebar && closeBtn) {
+    hamburger.addEventListener('click', () => {
+      sidebar.style.left = "0";
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.style.left = "-250px";
+    });
+
+    // Close sidebar if clicked outside
+    window.addEventListener('click', (e) => {
+      if (e.target !== sidebar && e.target !== hamburger && !sidebar.contains(e.target)) {
+        sidebar.style.left = "-250px";
+      }
+    });
+  }
+
+  // ==========================
+  // Section Reveal on Scroll
+  // ==========================
   const sections = document.querySelectorAll('.section');
-  const observerOptions = { threshold: 0.1 };
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -43,88 +49,29 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
-  sections.forEach(section => {
-    revealObserver.observe(section);
-  });
+  }, { threshold: 0.1 });
 
-  // GSAP Animations for Hero Section
+  sections.forEach(section => revealObserver.observe(section));
+
+  // ==========================
+  // GSAP Animations (Hero + Socials)
+  // ==========================
   gsap.from('.hero-content h1', { opacity: 0, y: -50, duration: 1.5, ease: 'power2.out' });
   gsap.from('.hero-content p', { opacity: 0, y: 50, duration: 1.5, delay: 0.3, ease: 'power2.out' });
   gsap.from('.btn', { opacity: 0, scale: 0.8, duration: 1.5, delay: 0.6, ease: 'back.out(1.7)' });
 
-  // Social Icons Hover Effects using GSAP
   const socialLinks = document.querySelectorAll('.social-icons a');
   socialLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      gsap.to(link, { scale: 1.2, duration: 0.3 });
-    });
-    link.addEventListener('mouseleave', () => {
-      gsap.to(link, { scale: 1, duration: 0.3 });
-    });
+    link.addEventListener('mouseenter', () => gsap.to(link, { scale: 1.2, duration: 0.3 }));
+    link.addEventListener('mouseleave', () => gsap.to(link, { scale: 1, duration: 0.3 }));
   });
 
-  // Review Form Handling
+  // ==========================
+  // Reviews (Firestore + Cloudinary Upload)
+  // ==========================
   const reviewForm = document.getElementById('reviewForm');
   const reviewsContainer = document.getElementById('reviewsContainer');
-  if (reviewForm) {
-    reviewForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = reviewForm.name.value;
-      const reviewText = reviewForm.review.value;
-      const rating = reviewForm.rating.value;
-      const videoFile = reviewForm.video.files[0];
 
-      let videoURL = "";
-      if (videoFile) {
-        videoURL = await uploadVideoToCloudinary(videoFile);
-      }
-
-      // Save review to Firestore
-      await db.collection('reviews').add({
-        name: name,
-        review: reviewText,
-        rating: rating,
-        videoURL: videoURL,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      });
-      
-      reviewForm.reset();
-      loadReviews();
-    });
-  }
-
-  // Load and Display Reviews from Firestore
-  function loadReviews() {
-    reviewsContainer.innerHTML = "";
-    db.collection('reviews').orderBy('timestamp', 'desc').get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const reviewDiv = document.createElement('div');
-        reviewDiv.classList.add('review');
-        reviewDiv.innerHTML = `
-          <h4>${data.name}</h4>
-          <p>${data.review}</p>
-          <p>Rating: ${data.rating} / 5</p>
-          ${data.videoURL ? `<video controls src="${data.videoURL}" width="300"></video>` : ""}
-          <button class="delete-btn" data-id="${doc.id}">Delete</button>
-        `;
-        reviewsContainer.appendChild(reviewDiv);
-      });
-      // Attach delete functionality (for admin/demo purposes)
-      document.querySelectorAll('.delete-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-id');
-          db.collection('reviews').doc(id).delete().then(() => {
-            loadReviews();
-          });
-        });
-      });
-    });
-  }
-  loadReviews();
-
-  // Cloudinary Video Upload Function
   async function uploadVideoToCloudinary(file) {
     const cloudName = "dflqyatre";
     const unsignedPreset = "freelankarx portfolio";
@@ -143,110 +90,100 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Klaviyo Pop-Up Handling (if used)
-  const popup = document.getElementById('klaviyoPopup');
-  if (popup) {
-    const closeBtn = document.querySelector('.klaviyo-popup .popup-close');
-    const klaviyoForm = document.getElementById('klaviyoForm');
-    setTimeout(() => {
-      popup.style.display = 'block';
-    }, 7000);
-    closeBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-    window.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.style.display = 'none';
-      }
-    });
-    klaviyoForm.addEventListener('submit', (e) => {
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = klaviyoForm.email.value;
-      klaviyoForm.innerHTML = '<p class="thank-you">Thank you for subscribing! Check your inbox for a welcome message.</p>';
-      setTimeout(() => {
-        popup.style.display = 'none';
-      }, 3000);
+      const name = reviewForm.name.value;
+      const reviewText = reviewForm.review.value;
+      const rating = reviewForm.rating.value;
+      const videoFile = reviewForm.video.files[0];
+
+      let videoURL = "";
+      if (videoFile) {
+        videoURL = await uploadVideoToCloudinary(videoFile);
+      }
+
+      await db.collection('reviews').add({
+        name,
+        review: reviewText,
+        rating,
+        videoURL,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      reviewForm.reset();
+      loadReviews();
     });
   }
-});
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = link.getAttribute('href');
-    if (href === '#' || href === '') {
-      e.preventDefault(); // only block fake links
-    }
-  });
-});
 
-  // GSAP Animations for Hero Section
-  gsap.from('.hero-content h1', { opacity: 0, y: -50, duration: 1.5, ease: 'power2.out' });
-  gsap.from('.hero-content p', { opacity: 0, y: 50, duration: 1.5, delay: 0.3, ease: 'power2.out' });
-  gsap.from('.btn', { opacity: 0, scale: 0.8, duration: 1.5, delay: 0.6, ease: 'back.out(1.7)' });
-
-  // Lazy-loading for images (if using loading="lazy", IntersectionObserver is optional)
-  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-      }
+  function loadReviews() {
+    if (!reviewsContainer) return;
+    reviewsContainer.innerHTML = "";
+    db.collection('reviews').orderBy('timestamp', 'desc').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const reviewDiv = document.createElement('div');
+        reviewDiv.classList.add('review');
+        reviewDiv.innerHTML = `
+          <h4>${data.name}</h4>
+          <p>${data.review}</p>
+          <p>⭐ ${data.rating} / 5</p>
+          ${data.videoURL ? `<video controls src="${data.videoURL}" width="300"></video>` : ""}
+          <button class="delete-btn" data-id="${doc.id}">Delete</button>
+        `;
+        reviewsContainer.appendChild(reviewDiv);
+      });
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          db.collection('reviews').doc(btn.getAttribute('data-id')).delete().then(loadReviews);
+        });
+      });
     });
-  }, { threshold: 0.1 });
-  lazyImages.forEach(img => {
-    imageObserver.observe(img);
-  });
+  }
+  loadReviews();
 
-  // Portfolio Modal Functionality
+  // ==========================
+  // Portfolio Modal
+  // ==========================
   const modal = document.getElementById('portfolioModal');
   const modalImg = document.getElementById('modalImage');
   const closeModal = document.getElementById('closeModal');
-  
-  document.querySelectorAll('.portfolio-item img').forEach(img => {
-    img.addEventListener('click', function() {
-      modal.style.display = 'flex';
-      modalImg.src = this.src;
+
+  if (modal && modalImg && closeModal) {
+    document.querySelectorAll('.portfolio-item img').forEach(img => {
+      img.addEventListener('click', function () {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+      });
     });
-  });
-  
-  closeModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
-  
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
-document.querySelector('input[name="videoFile"]').addEventListener('change', function(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const valid = file.type.startsWith('video/');
-  if (!valid) {
-    alert("Please upload a valid video file.");
-    event.target.value = "";
-    return;
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
   }
-  // Optionally show a preview
-  const url = URL.createObjectURL(file);
-  const preview = document.createElement('video');
-  preview.src = url;
-  preview.controls = true;
-  preview.style.maxWidth = "100%";
-  const parent = event.target.parentNode;
-  // remove old preview if present
-  const existing = parent.querySelector('video');
-  if (existing) existing.remove();
-  parent.appendChild(preview);
+
+  // ==========================
+  // Video Upload Validation + Preview
+  // ==========================
+  const videoInput = document.querySelector('input[name="videoFile"]');
+  if (videoInput) {
+    videoInput.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('video/')) {
+        alert("Please upload a valid video file.");
+        event.target.value = "";
+        return;
+      }
+      const url = URL.createObjectURL(file);
+      const preview = document.createElement('video');
+      preview.src = url;
+      preview.controls = true;
+      preview.style.maxWidth = "100%";
+      const parent = event.target.parentNode;
+      const existing = parent.querySelector('video');
+      if (existing) existing.remove();
+      parent.appendChild(preview);
+    });
+  }
 });
-// JS to toggle hamburger
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-
