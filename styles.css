@@ -1,6 +1,6 @@
-Okay go on
-
-
+/* ---------------------------
+   Reset & variables
+   --------------------------- */
 :root{
   --brand-blue: #00CFFF;
   --brand-gold: #FFD232;
@@ -800,6 +800,7 @@ footer {
   .testimonial-input h3 { font-size: 1rem; }
   .rating label { width: 34px; height: 34px; font-size: 18px; }
 }
+
 
 
 
