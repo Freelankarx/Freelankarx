@@ -1,0 +1,116 @@
+/* Root Colors */
+:root {
+    --primary-color: #0ff; /* Electric Blue */
+    --bg-color: #000;      /* Black */
+    --text-color: #fff;
+    --accent-color: #0ff;
+    --cta-bg: #0ff;
+    --cta-text: #000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a.active {
+    color: var(--primary-color);
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+p, li {
+    font-size: 1.1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+table th, table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta a:hover {
+    background-color: #0cc;
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
