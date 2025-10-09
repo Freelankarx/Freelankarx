@@ -17,14 +17,4 @@
   <url>
     <loc>https://freelankarx.com/</loc>
   </url>
-
-  <!-- Blog homepage -->
-  <url>
-    <loc>https://freelankarx.com/blog/</loc>
-    <lastmod>2025-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-
 </urlset>
