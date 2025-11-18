@@ -4,188 +4,121 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ollies Delight — Custom Cakes & Treats</title>
-  <meta name="description" content="Ollies Delight — custom celebration cakes, cupcakes & dessert trays. Pickup & delivery available. Order via WhatsApp or our quick form." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Ollies Delight — bespoke celebration cakes, cupcakes & dessert trays. Pickup & delivery available. Order via WhatsApp or our quick form." />  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="top-cta">✨ Upgrade: Full website, payments & order automation — <a href="#upgrade">Get a quote</a></div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
+<body class="selection:bg-pink-100/60">  <!-- HEADER -->  <header class="fixed top-0 inset-x-0 z-40 backdrop-blur bg-cream/80 border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="logo-mark">OD</div>
         <div>
           <div class="brand-name">Ollies Delight</div>
           <div class="brand-sub">Custom cakes • Pickup & delivery</div>
         </div>
-      </div>
-      <nav class="nav-links">
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#gallery">Gallery</a>
         <a href="#how">How to order</a>
         <a href="#reviews">Reviews</a>
         <a href="#order" class="btn-outline">Order</a>
       </nav>
+      <a href="https://wa.me/14372439010" target="_blank" class="btn-primary-sm">WhatsApp</a>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Custom Cakes made with care for every moment</h1>
-          <p class="lead">Bespoke celebration cakes, cupcakes, dessert trays and more. Send a photo or message for a personalised quote. Pricing depends on design.</p>
-          <div class="hero-ctas">
-            <a href="https://wa.me/14372439010" class="btn-primary">Order on WhatsApp</a>
-            <a href="#order" class="btn-ghost">Quick order form</a>
-          </div>
-          <ul class="benefits">
-            <li>Pickup & delivery available for a fee</li>
-            <li>Custom designs — photo & theme matching</li>
-            <li>Prompt replies & secure payment options on upgrade</li>
-          </ul>
-        </div>
-
-        <div class="hero-gallery">
-          <!-- correct raw URLs (no %2F) -->
-          <div class="hero-main" id="hero-main" style="background-image: url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg')"></div>
-
-          <div class="hero-thumbs" role="list">
-            <img role="listitem" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" alt="Classic Chocolate Cake" data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg">
-            <img role="listitem" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Floral Buttercream" data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg">
-            <img role="listitem" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" alt="Themed Kids Cake" data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg">
-          </div>
-        </div>
+  </header>  <!-- HERO -->  <section id="home" class="hero-section">
+    <div class="hero-media" id="hero-main" style="background-image:url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Custom • Fresh • Delicious</p>
+      <h1>Handcrafted cakes for every moment</h1>
+      <p class="lead">Ollies Delight makes bespoke celebration cakes, cupcakes and dessert trays. Send a photo or message for a personalised quote — pricing depends on design.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/14372439010" target="_blank" class="btn-gold">Order on WhatsApp</a>
+        <a href="#order" class="btn-ghost">Quick order form</a>
       </div>
-    </section>
-
-    <section id="about" class="container about">
-      <div class="about-inner">
-        <div class="about-text">
-          <h2>About Ollies Delight</h2>
-          <p>At Ollies Delight we specialise in custom orders — every cake is handcrafted to match your vision. Send your idea, photo, or theme and we’ll provide options, timelines and a clear price based on size and decoration.</p>
-        </div>
-        <div class="about-quick">
-          <h3>Popular for</h3>
-          <ul>
-            <li>Birthdays & Parties</li>
-            <li>Weddings & Anniversaries</li>
-            <li>Corporate Events</li>
-            <li>Seasonal Specials</li>
-          </ul>
-        </div>
+      <div class="hero-thumbs" id="hero-thumbs">
+        <img data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" alt="Cake 1">
+        <img data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Cake 2">
+        <img data-full="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" alt="Cake 3">
       </div>
-    </section>
-
-    <section id="gallery" class="container gallery">
-      <h2>Featured Cakes</h2>
-      <p class="muted">Tap any image to enquire on WhatsApp for that exact design.</p>
-      <div class="grid">
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" alt="Classic Chocolate Cake"></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Floral Buttercream"></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" alt="Themed Kids Cake"></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0039.jpg" alt="Mini Celebration Cake"></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0040.jpg" alt="Luxury Wedding Cake"></div>
-        <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG_20251029_201017.jpg" alt="Cupcake Gift Box"></div>
-      </div>
-    </section>
-
-    <section id="how" class="container how">
-      <h2>How ordering works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h4>Send details</h4>
-          <p>Message via WhatsApp or use the quick form. Attach pictures or describe your idea.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h4>Confirm design & price</h4>
-          <p>We reply with size options, flavours and a clear price — photos you provided may already have a price attached.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h4>Delivery or pickup</h4>
-          <p>Choose pickup or delivery (delivery has a fee). We confirm time and finalise the order.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" class="container reviews">
-      <h2>What customers say</h2>
-      <div class="review-grid">
-        <div class="review">
-          <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-1.jpg" alt="customer">
-          <div>
-            <div class="stars">★★★★★</div>
-            <p class="text">"The cake was beyond what I imagined — delicious and exactly on theme. Guests couldn't stop talking about it!"</p>
-            <div class="meta">— Maya K.</div>
-          </div>
-        </div>
-
-        <div class="review">
-          <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-2.jpg" alt="customer">
-          <div>
-            <div class="stars">★★★★★</div>
-            <p class="text">"Great communication and fast delivery. The kids' cake was perfect for the party."</p>
-            <div class="meta">— Daniel O.</div>
-          </div>
-        </div>
-
-        <div class="review">
-          <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-3.jpg" alt="customer">
-          <div>
-            <div class="stars">★★★★★</div>
-            <p class="text">"Beautiful design and the flavour was incredible. Will order again."</p>
-            <div class="meta">— Aisha T.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="order" class="container order-section">
-      <h2>Quick order form</h2>
-      <p class="muted">Fill this and we'll reply on WhatsApp or email with a confirmation and price.</p>
-      <form id="orderForm" class="order-form">
-        <div class="grid-form">
-          <input name="name" placeholder="Full name" required>
-          <input name="phone" placeholder="Phone (with country code)" required>
-          <input name="date" placeholder="Event date (YYYY-MM-DD)">
-          <input name="pickup_or_delivery" placeholder="Pickup or Delivery (address if delivery)">
-        </div>
-        <textarea name="details" placeholder="Describe your cake / paste image link (optional)" rows="4"></textarea>
-        <div class="form-actions">
-          <button type="submit" class="btn-primary">Send request — we'll reply on WhatsApp</button>
-          <a class="btn-ghost" href="https://wa.me/14372439010">Or Message on WhatsApp</a>
-        </div>
-      </form>
-    </section>
-
-    <section id="upgrade" class="container upgrade">
-      <h2>Want a full site?</h2>
-      <p class="muted">Get a multi-page site with payment integration, booking automation and SEO. Perfect if you want to scale orders.</p>
-      <a href="https://wa.me/14372439010?text=Hi%20I%27m%20interested%20in%20the%20full%20website%20upgrade" class="btn-outline">Get upgrade quote on WhatsApp</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
+    </div>
+  </section>  <!-- ABOUT -->  <section id="about" class="section container about">
+    <div class="about-grid">
+      <img class="about-img" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Ollies Delight baking">
       <div>
-        <div class="brand-name small">Ollies Delight</div>
-        <div class="muted">WhatsApp: <a href="https://wa.me/14372439010">+1 (437) 243-9010</a> • Email: <a href="mailto:olliesdelight@gmail.com">olliesdelight@gmail.com</a></div>
-      </div>
-      <div class="socials">
-        <a href="https://instagram.com/ollies_delight">Instagram</a>
+        <h2>About Ollies Delight</h2>
+        <p>We specialise in custom orders — every cake is handcrafted to match your vision. Send your idea, photo, or theme and we’ll provide options, timelines and a clear price based on size and decoration.</p>
+        <ul class="bullets">
+          <li>Pickup & delivery available (delivery fee applies)</li>
+          <li>Custom designs & flavour options</li>
+          <li>Quick responses via WhatsApp</li>
+        </ul>
       </div>
     </div>
-
-    <!-- designer credit -->
-    <div class="designer-credit">
-      Designed by <a href="https://freelankarx.github.io" target="_blank">Freelankarx</a>
+  </section>  <!-- GALLERY -->  <section id="gallery" class="section container">
+    <h2 class="section-title">Featured Cakes</h2>
+    <p class="muted">Tap any image to enquire on WhatsApp for that exact design.</p>
+    <div class="grid gallery-grid">
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" alt="Classic Chocolate Cake"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Floral Buttercream"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" alt="Themed Kids Cake"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0039.jpg" alt="Mini Celebration Cake"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0040.jpg" alt="Luxury Wedding Cake"></div>
+      <div class="card"><img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG_20251029_201017.jpg" alt="Cupcake Gift Box"></div>
     </div>
-  </footer>
+  </section>  <!-- HOW TO ORDER -->  <section id="how" class="section container">
+    <h2 class="section-title">How ordering works</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>Send details</h4><p>WhatsApp or quick form — attach pictures or describe your idea.</p></div>
+      <div class="step"><div class="num">2</div><h4>Confirm price</h4><p>We reply with size, flavour options and a clear price (custom pricing).</p></div>
+      <div class="step"><div class="num">3</div><h4>Pickup or delivery</h4><p>Choose pickup or delivery (delivery fee applies).</p></div>
+    </div>
+  </section>  <!-- REVIEWS -->  <section id="reviews" class="section container">
+    <h2 class="section-title">What customers say</h2>
+    <div class="review-grid">
+      <div class="review">
+        <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-1.jpg" alt="customer">
+        <div><div class="stars">★★★★★</div><p>"The cake was beyond what I imagined — delicious and exactly on theme."</p><div class="meta">— Maya K.</div></div>
+      </div>
+      <div class="review">
+        <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-2.jpg" alt="customer">
+        <div><div class="stars">★★★★★</div><p>"Great communication and fast delivery. The kids' cake was perfect for the party."</p><div class="meta">— Daniel O.</div></div>
+      </div>
+      <div class="review">
+        <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/rev-3.jpg" alt="customer">
+        <div><div class="stars">★★★★★</div><p>"Beautiful design and the flavour was incredible. Will order again."</p><div class="meta">— Aisha T.</div></div>
+      </div>
+    </div>
+  </section>  <!-- ORDER FORM -->  <section id="order" class="section container">
+    <h2 class="section-title">Quick order form</h2>
+    <p class="muted">Fill this and we'll reply on WhatsApp or email with a confirmation and price.</p>
+    <form id="orderForm" class="order-form">
+      <div class="fields">
+        <input name="name" placeholder="Full name" required>
+        <input name="phone" placeholder="Phone (with country code)" required>
+        <input name="date" placeholder="Event date (YYYY-MM-DD)">
+        <input name="pickup_or_delivery" placeholder="Pickup or Delivery (address if delivery)">
+      </div>
+      <textarea name="details" placeholder="Describe your cake / paste image link (optional)" rows="4"></textarea>
+      <div class="form-actions">
+        <button type="submit" class="btn-cta">Send request — we'll reply on WhatsApp</button>
+        <a class="btn-ghost" href="https://wa.me/14372439010">Or Message on WhatsApp</a>
+      </div>
+    </form>
+  </section>  <!-- FOOTER -->  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Ollies Delight</h3>
+        <p class="muted">WhatsApp: <a href="https://wa.me/14372439010">+1 (437) 243-9010</a> • Email: <a href="mailto:olliesdelight@gmail.com">olliesdelight@gmail.com</a></p>
+      </div>
+      <div class="center-credit">Designed by <a href="https://freelankarx.github.io" target="_blank">Freelankarx</a></div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://instagram.com/ollies_delight" target="_blank">@ollies_delight</a>
+      </div>
+    </div>
+  </footer>  <!-- Floating WhatsApp --><a href="https://wa.me/14372439010" target="_blank" aria-label="Chat on WhatsApp" class="wa-float">WA</a>
 
-  <script src="script.js"></script>
-</body>
+  <script src="script.js"></script></body>
 </html>
