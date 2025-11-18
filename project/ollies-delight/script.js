@@ -1,11 +1,3 @@
-// Set year in footer
-(function(){
-  try{
-    const el = document.querySelector('.site-footer .brand-name.small');
-    // We leave the brand name; not overwriting year to avoid missing element errors
-  }catch(e){console.warn(e)}
-})();
-
 // Hero thumbnail click -> update hero image
 (function(){
   const main = document.getElementById('hero-main');
@@ -18,7 +10,7 @@
   }));
 })();
 
-// Gallery clicks -> open whatsapp with prefilled message
+// Gallery clicks -> open WhatsApp with prefilled message
 (function(){
   const galleryImgs = document.querySelectorAll('#gallery .card img');
   galleryImgs.forEach(img => img.addEventListener('click', ()=>{
@@ -28,7 +20,7 @@
   }));
 })();
 
-// Order form submit -> open whatsapp with summary (since no backend)
+// Order form submit -> open WhatsApp with summary
 (function(){
   const form = document.getElementById('orderForm');
   if(!form) return;
@@ -40,9 +32,8 @@
     const date = data.get('date')||'';
     const pickup = data.get('pickup_or_delivery')||'';
     const details = data.get('details')||'';
-    const message = `Hi Ollies Delight! I\'d like to order.\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nPickup/Delivery: ${pickup}\nDetails: ${details}`;
+    const message = `Hi Ollies Delight! I'd like to order.\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nPickup/Delivery: ${pickup}\nDetails: ${details}`;
     const wa = `https://wa.me/14372439010?text=${encodeURIComponent(message)}`;
-    // open WhatsApp and also show a small friendly confirmation
     window.open(wa,'_blank');
     alert('We opened WhatsApp with your order summary. If WhatsApp didn\'t open, please message +1 (437) 243-9010 manually.');
     form.reset();
