@@ -1,9 +1,0 @@
-/ DOM ready helpers (function(){ // Hero thumb switching const main = document.getElementById('hero-main'); const thumbs = document.querySelectorAll('.hero-thumbs img'); if(thumbs && thumbs.length){ thumbs.forEach((t,i)=>{ t.addEventListener('click', ()=>{ const src = t.dataset.full || t.src; if(main) main.style.backgroundImage = url('${src}'); thumbs.forEach(x=>x.classList.remove('active')); t.classList.add('active'); }); // make first active if(i===0) t.classList.add('active'); }); }
-
-// Gallery click -> WhatsApp document.querySelectorAll('#gallery .card img').forEach(img=>{ img.addEventListener('click', ()=>{ const text = Hi! I like this design (${img.alt}). Can I get a quote?; window.open(https://wa.me/14372439010?text=${encodeURIComponent(text)},'_blank'); }); });
-
-// Order form -> WhatsApp summary const form = document.getElementById('orderForm'); if(form){ form.addEventListener('submit', function(e){ e.preventDefault(); const data = new FormData(form); const name = data.get('name')||''; const phone = data.get('phone')||''; const date = data.get('date')||''; const pickup = data.get('pickup_or_delivery')||''; const details = data.get('details')||''; const message = Hi Ollies Delight! I'd like to order.\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nPickup/Delivery: ${pickup}\nDetails: ${details}; window.open(https://wa.me/14372439010?text=${encodeURIComponent(message)},'_blank'); setTimeout(()=>form.reset(),400); }); }
-
-// reveal on scroll const reveals = document.querySelectorAll('.reveal'); if('IntersectionObserver' in window && reveals.length){ const io = new IntersectionObserver((entries, obs)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('show'); obs.unobserve(en.target); } }); },{threshold:.12, rootMargin:'0px 0px -60px 0px'}); reveals.forEach(r=>io.observe(r)); }
-
-// footer year const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear(); })();
