@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ollies Delight — Custom cakes handcrafted with love. Freshly baked, beautifully designed, and made just for your special moments. Order custom cakes via WhatsApp or DM." />
+  <title>Ollies Delight | Custom Cakes Made With Love</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+
+<body class="bg-pink-50 text-gray-800">
+
+<!-- HERO SECTION -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-pink-100 to-pink-200">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-pink-900">Ollies Delight</h1>
+    <p class="text-lg md:text-2xl text-gray-700 mb-6 max-w-2xl">
+      Freshly baked, beautifully crafted, and made with love —  
+      every cake is a story, and yours deserves to be unforgettable.
+    </p>
+
+    <a href="https://wa.me/14372439010" class="bg-pink-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-pink-700 transition">
+      Order on WhatsApp
+    </a>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="py-16 bg-white px-6 text-center">
+  <h2 class="text-3xl font-semibold text-pink-800 mb-4">Baking Joy Into Every Moment</h2>
+  <p class="max-w-3xl mx-auto text-gray-700 leading-relaxed">
+    At Ollies Delight, every cake is more than a dessert — it’s a memory.  
+    Whether it’s birthdays, baby showers, weddings, or surprise celebrations,  
+    our cakes are made to bring happiness, warmth, and delight to your special moments.  
+    We specialize in **fully custom cakes**, tailored exactly to your taste, design, and creativity.
+  </p>
+</section>
+
+<!-- GALLERY -->
+<section class="py-16 bg-pink-50 text-center">
+  <h2 class="text-3xl text-pink-800 mb-10">Our Cake Creations</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0015.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0016.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0020.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0019.jpg" />
+  </div>
+
+  <p class="mt-6 text-gray-600">*Some cakes may already have fixed prices. Custom orders vary based on design.*</p>
+</section>
+
+<!-- HOW ORDERING WORKS -->
+<section class="py-16 bg-white px-6 text-center">
+  <h2 class="text-3xl text-pink-800 mb-6">How to Place Your Order</h2>
+
+  <div class="max-w-3xl mx-auto space-y-6 text-gray-700">
+    <p>Because every cake is custom-made, the price depends on your design, size, and details.</p>
+
+    <div class="bg-pink-100 p-6 rounded-xl shadow-md">
+      <p class="font-semibold">You can order in 3 simple ways:</p>
+      <ul class="mt-4 space-y-2">
+        <li>• Send a **WhatsApp Message**</li>
+        <li>• Send a **DM on Instagram**</li>
+        <li>• Use the **Order Form (coming soon)**</li>
+      </ul>
+    </div>
+
+    <p>If you're unsure about anything, you can always message to ask questions —  
+       we’re here to help you create something beautiful.</p>
+  </div>
+</section>
+
+<!-- PICKUP & DELIVERY -->
+<section class="py-16 bg-pink-50 text-center px-6">
+  <h2 class="text-3xl text-pink-800 mb-4">Pickup & Delivery</h2>
+  <p class="max-w-2xl mx-auto text-gray-700">
+    Pickup is available, and delivery is available for a small additional fee depending on your location.
+  </p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 bg-pink-100 px-6 text-center">
+  <h2 class="text-3xl text-pink-800 mb-6">Contact Ollies Delight</h2>
+
+  <div class="max-w-xl mx-auto space-y-4 text-gray-800">
+    <p><strong>WhatsApp:</strong> <a class="text-pink-700 font-semibold" href="https://wa.me/14372439010">+1 (437) 243-9010</a></p>
+    <p><strong>Email:</strong> <a class="text-pink-700 font-semibold" href="mailto:olliesdelight@gmail.com">olliesdelight@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a class="text-pink-700 font-semibold" href="https://instagram.com/ollies_delight">@ollies_delight</a></p>
+  </div>
+
+  <a href="https://wa.me/14372439010" class="mt-8 inline-block bg-pink-600 text-white py-3 px-8 rounded-full hover:bg-pink-700 shadow-lg transition">
+    Message on WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 bg-pink-900 text-center text-white text-sm">
+  © 2025 Ollies Delight. All Rights Reserved.
+</footer>
+
+</body>
+</html>
