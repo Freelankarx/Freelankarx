@@ -1,356 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Core SEO -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ollies Delight | Custom Cakes & Treats</title>
-  <meta name="description" content="Ollies Delight — custom cakes & treats. Order by WhatsApp, Instagram DM or use the order form. Pickup & delivery available for a fee." />
-  <meta name="keywords" content="Ollies Delight, custom cakes, cake shop, cake delivery, Toronto cakes, birthday cake, wedding cake" />
-  <link rel="canonical" href="https://freelankarx.com/ollies-delight" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ollies Delight — Custom cakes handcrafted with love. Freshly baked, beautifully designed, and made just for your special moments. Order custom cakes via WhatsApp or DM." />
+  <title>Ollies Delight | Custom Cakes Made With Love</title>
 
-  <!-- Social Cards -->
-  <meta property="og:title" content="Ollies Delight | Custom Cakes & Treats">
-  <meta property="og:description" content="Handcrafted cakes made with care. Order via WhatsApp, DM or the form.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freelankarx.com/ollies-delight">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1542942459-2f6a4b7f2e6f?q=80&w=1600&auto=format&fit=crop">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ollies Delight | Custom Cakes & Treats">
-  <meta name="twitter:description" content="Handcrafted cakes made with care.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542942459-2f6a4b7f2e6f?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Fonts + Tailwind -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    :root{ --gold:#C7A86D; --charcoal:#121212; --cream:#fff8ef; --blush:#f5e6e0 }
-    html{ scroll-behavior:smooth }
-    body{ font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#1f2937; background:var(--cream) }
-    h1,h2,h3{ font-family:"Playfair Display", serif }
-    .reveal{ opacity:0; transform:translateY(18px); transition:opacity .9s ease, transform .9s ease }
-    .reveal.show{ opacity:1; transform:none }
-    .hero-tint{ background:linear-gradient(180deg, rgba(18,18,18,.55), rgba(18,18,18,.45)), radial-gradient(80% 60% at 50% 30%, rgba(0,0,0,.25), transparent 70%) }
-    .btn-gold{ background-image:linear-gradient(135deg,#f3e5c7,var(--gold)); color:#111827; border-radius:9999px; padding:.85rem 1.25rem; font-weight:600; transition:transform .2s, filter .2s, box-shadow .2s }
-    .btn-gold:hover{ transform:translateY(-2px) scale(1.02); filter:brightness(1.04); box-shadow:0 12px 22px rgba(199,168,109,.28) }
-    .img-soft{ border-radius:1rem; box-shadow:0 12px 28px rgba(17,24,39,.15) }
-    .ratio-3x4{ aspect-ratio:3/4; object-fit:cover }
-    .ratio-16x9{ aspect-ratio:16/9; object-fit:cover }
-    .rule{ height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent) }
-    .wa-float{ position:fixed; right:18px; bottom:18px; z-index:80; background:#25D366; color:white; width:56px; height:56px; display:grid; place-items:center; border-radius:9999px; box-shadow:0 10px 20px rgba(0,0,0,.18); transition:transform .2s }
-    .wa-float:hover{ transform:scale(1.06) }
-
-    /* rainbow link for Freelankarx */
-    .rainbow-link{ background:linear-gradient(90deg,#ff4b4b,#ffb84b,#fff84b,#8bff64,#4bd4ff,#8b6bff,#ff6bce); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700 }
+    .fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Ollies Delight",
-    "image":"https://images.unsplash.com/photo-1542942459-2f6a4b7f2e6f?q=80&w=1200&auto=format&fit=crop",
-    "description":"Custom cakes & treats. Order via WhatsApp, Instagram DM or form. Pickup & delivery available for a fee.",
-    "url":"https://freelankarx.com/ollies-delight",
-    "telephone":"+14372439010",
-    "areaServed":"CA",
-    "sameAs":["https://wa.me/14372439010"]
-  }
-  </script>
 </head>
-<body class="selection:bg-yellow-200/60">
 
-  <!-- NAV -->
-  <header class="fixed top-0 inset-x-0 z-40 backdrop-blur bg-white/70 border-b border-black/5">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2">
-        <img src="assets/logo-placeholder.png" alt="Ollies Delight logo" class="w-8 h-8 rounded-full object-cover" />
-        <span class="font-semibold tracking-wide">Ollies Delight</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#about" class="hover:text-[var(--gold)]">About</a>
-        <a href="#services" class="hover:text-[var(--gold)]">Offerings</a>
-        <a href="#gallery" class="hover:text-[var(--gold)]">Gallery</a>
-        <a href="#process" class="hover:text-[var(--gold)]">How to Order</a>
-        <a href="#testimonials" class="hover:text-[var(--gold)]">Reviews</a>
-        <a href="#contact" class="hover:text-[var(--gold)]">Contact</a>
-      </nav>
-      <a href="https://wa.me/14372439010" target="_blank" class="btn-gold text-sm">Chat on WhatsApp</a>
-    </div>
-  </header>
+<body class="bg-pink-50 text-gray-800">
 
-  <!-- HERO -->
-  <section id="home" class="relative min-h-[92vh] grid place-items-center text-center">
-    <img src="https://images.unsplash.com/photo-1542942459-2f6a4b7f2e6f?q=80&w=1600&auto=format&fit=crop"
-         alt="Beautiful cake display" class="absolute inset-0 w-full h-full object-cover ratio-16x9" loading="eager" fetchpriority="high">
-    <div class="absolute inset-0 hero-tint"></div>
-    <div class="relative z-10 max-w-3xl px-6 text-white">
-      <p class="uppercase tracking-[0.35em] text-xs md:text-sm mb-4 text-white/80">Custom cakes • Birthday • Wedding • Special events</p>
-      <h1 class="text-4xl md:text-6xl leading-tight font-semibold">Crafted with love, served with joy — <span class="text-[var(--gold)]">Ollies Delight</span></h1>
-      <p class="mt-5 text-base md:text-lg text-white/90">Handmade cakes & treats tailored to your taste. Order via WhatsApp, Instagram DM or the form below.</p>
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="https://wa.me/14372439010" target="_blank" class="btn-gold">Order on WhatsApp</a>
-        <a href="#gallery" class="rounded-full px-6 py-3 border border-white/40 hover:bg-white/10">See gallery</a>
-      </div>
-    </div>
-  </section>
+<!-- HERO SECTION -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-pink-100 to-pink-200">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-pink-900">Ollies Delight</h1>
+    <p class="text-lg md:text-2xl text-gray-700 mb-6 max-w-2xl">
+      Freshly baked, beautifully crafted, and made with love —  
+      every cake is a story, and yours deserves to be unforgettable.
+    </p>
 
-  <!-- ABOUT -->
-  <section id="about" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <img src="https://images.unsplash.com/photo-1542827630-2d0b6f8b9b10?q=80&w=900&auto=format&fit=crop"
-           alt="Baker at work" class="img-soft ratio-3x4 w-full" loading="lazy">
-      <div class="reveal">
-        <h2 class="text-3xl md:text-4xl text-gray-900">Hi, we’re <span class="text-[var(--gold)]">Ollies Delight</span></h2>
-        <div class="rule my-5"></div>
-        <p class="text-gray-700 leading-relaxed">
-          We make custom cakes and sweet treats for your celebrations. Tell us your idea and we’ll craft it — from simple cupcakes to full-showstopper celebration cakes.
-        </p>
-        <ul class="mt-6 space-y-2 text-gray-700">
-          <li>• Custom celebration cakes & themed designs</li>
-          <li>• Cupcakes, cookies & dessert boxes</li>
-          <li>• Pickup & delivery (fee applies)</li>
-        </ul>
-        <a href="https://wa.me/14372439010" target="_blank" class="btn-gold mt-8 inline-block">Message us on WhatsApp</a>
-      </div>
-    </div>
-  </section>
+    <a href="https://wa.me/14372439010" class="bg-pink-600 text-white py-3 px-6 rounded-full shadow-lg hover:bg-pink-700 transition">
+      Order on WhatsApp
+    </a>
+</section>
 
-  <!-- SERVICES (Offerings) -->
-  <section id="services" class="bg-white/70 py-18 md:py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl text-center">What we bake</h2>
-      <p class="text-center text-gray-600 mt-2">Delicious flavours, clean finishes, and personalised details.</p>
+<!-- ABOUT SECTION -->
+<section class="py-16 bg-white px-6 text-center">
+  <h2 class="text-3xl font-semibold text-pink-800 mb-4">Baking Joy Into Every Moment</h2>
+  <p class="max-w-3xl mx-auto text-gray-700 leading-relaxed">
+    At Ollies Delight, every cake is more than a dessert — it’s a memory.  
+    Whether it’s birthdays, baby showers, weddings, or surprise celebrations,  
+    our cakes are made to bring happiness, warmth, and delight to your special moments.  
+    We specialize in **fully custom cakes**, tailored exactly to your taste, design, and creativity.
+  </p>
+</section>
 
-      <div class="grid md:grid-cols-3 gap-6 mt-10">
-        <div class="reveal bg-[var(--blush)]/60 rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-semibold">Custom Cakes</h3>
-          <p class="mt-2 text-gray-700">Made-to-order celebration cakes — birthdays, weddings, anniversaries and themed events.</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-semibold">Cupcakes & Treats</h3>
-          <p class="mt-2 text-gray-700">Cupcakes, cookie sets and dessert boxes ready for pick-up or delivery.</p>
-        </div>
-        <div class="reveal bg-[var(--blush)]/60 rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-semibold">Corporate & Bulk Orders</h3>
-          <p class="mt-2 text-gray-700">Event orders and bulk requests handled with care — message us for a quote.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- GALLERY -->
+<section class="py-16 bg-pink-50 text-center">
+  <h2 class="text-3xl text-pink-800 mb-10">Our Cake Creations</h2>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
-    <div class="reveal text-center">
-      <h2 class="text-3xl md:text-4xl">Featured cakes</h2>
-      <p class="text-gray-600 mt-2">Photos sent by our customers — replace with the real cakes you provided.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0015.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0016.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0020.jpg" />
+    <img class="rounded-lg shadow-md hover:scale-105 transition fade-in" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/Cakekulture/IMG-20250724-WA0019.jpg" />
+  </div>
+
+  <p class="mt-6 text-gray-600">*Some cakes may already have fixed prices. Custom orders vary based on design.*</p>
+</section>
+
+<!-- HOW ORDERING WORKS -->
+<section class="py-16 bg-white px-6 text-center">
+  <h2 class="text-3xl text-pink-800 mb-6">How to Place Your Order</h2>
+
+  <div class="max-w-3xl mx-auto space-y-6 text-gray-700">
+    <p>Because every cake is custom-made, the price depends on your design, size, and details.</p>
+
+    <div class="bg-pink-100 p-6 rounded-xl shadow-md">
+      <p class="font-semibold">You can order in 3 simple ways:</p>
+      <ul class="mt-4 space-y-2">
+        <li>• Send a **WhatsApp Message**</li>
+        <li>• Send a **DM on Instagram**</li>
+        <li>• Use the **Order Form (coming soon)**</li>
+      </ul>
     </div>
 
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Replace with the 4–6 real photos the client sent -->
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0030.jpg" alt="Cake 1" />
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0036.jpg" alt="Cake 2" />
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0037.jpg" alt="Cake 3" />
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0039.jpg" alt="Cake 4" />
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG-20251118-WA0040.jpg" alt="Cake 5" />
-      <img loading="lazy" class="img-soft ratio-3x4 w-full" src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/project/ollies-delight/IMG_20251029_201017.jpg" alt="Cake 6" />
-    </div>
+    <p>If you're unsure about anything, you can always message to ask questions —  
+       we’re here to help you create something beautiful.</p>
+  </div>
+</section>
 
-    <div class="text-center mt-10">
-      <a href="https://wa.me/14372439010" target="_blank" class="btn-gold">Ask about a cake</a>
-    </div>
-  </section>
+<!-- PICKUP & DELIVERY -->
+<section class="py-16 bg-pink-50 text-center px-6">
+  <h2 class="text-3xl text-pink-800 mb-4">Pickup & Delivery</h2>
+  <p class="max-w-2xl mx-auto text-gray-700">
+    Pickup is available, and delivery is available for a small additional fee depending on your location.
+  </p>
+</section>
 
-  <!-- HOW TO ORDER (Process) -->
-  <section id="process" class="bg-white/70">
-    <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="reveal text-center">
-        <h2 class="text-3xl md:text-4xl">How ordering works</h2>
-        <p class="text-gray-600 mt-2">Simple & flexible — WhatsApp, DM, or use the form below.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6 mt-10">
-        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-[var(--gold)] text-3xl font-bold">1</span>
-          <h3 class="text-lg font-semibold mt-3">Chat & Confirm</h3>
-          <p class="text-gray-700 mt-1">Message us on WhatsApp or DM with your idea — we’ll confirm availability and pricing.</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-[var(--gold)] text-3xl font-bold">2</span>
-          <h3 class="text-lg font-semibold mt-3">Deposit & Reserve</h3>
-          <p class="text-gray-700 mt-1">A deposit reserves your date (we suggest 50%). We'll share payment options.</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-[var(--gold)] text-3xl font-bold">3</span>
-          <h3 class="text-lg font-semibold mt-3">Bake & Deliver</h3>
-          <p class="text-gray-700 mt-1">We craft your cake, confirm pickup/delivery and deliver with care.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 bg-pink-100 px-6 text-center">
+  <h2 class="text-3xl text-pink-800 mb-6">Contact Ollies Delight</h2>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="max-w-6xl mx-auto px-6 py-20">
-    <div class="reveal text-center">
-      <h2 class="text-3xl md:text-4xl">Loved by customers</h2>
-      <p class="text-gray-600 mt-2">Sweet words from clients who trusted us with their celebrations.</p>
-    </div>
+  <div class="max-w-xl mx-auto space-y-4 text-gray-800">
+    <p><strong>WhatsApp:</strong> <a class="text-pink-700 font-semibold" href="https://wa.me/14372439010">+1 (437) 243-9010</a></p>
+    <p><strong>Email:</strong> <a class="text-pink-700 font-semibold" href="mailto:olliesdelight@gmail.com">olliesdelight@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a class="text-pink-700 font-semibold" href="https://instagram.com/ollies_delight">@ollies_delight</a></p>
+  </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mt-10">
-      <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-        <p class="italic">“The cake was stunning and tasted even better — 10/10!”</p>
-        <p class="mt-4 font-semibold">— Sarah M.</p>
-      </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-sm">
-        <p class="italic">“Prompt replies and beautiful finish. Delivery was on time.”</p>
-        <p class="mt-4 font-semibold">— Jason T.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER (Deposit / Payment) -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?q=80&w=1600&auto=format&fit=crop" alt="Baking scene" class="w-full h-full object-cover" loading="lazy">
-      <div class="absolute inset-0 hero-tint"></div>
-    </div>
-    <div class="relative max-w-6xl mx-auto px-6 py-16 text-center text-white">
-      <h2 class="text-3xl md:text-4xl font-semibold">Reserve your date — pay a deposit</h2>
-      <p class="mt-3 text-white/90">Secure your cake with a deposit. Click below to pay securely.</p>
-      <div class="mt-6 flex items-center justify-center gap-4">
-        <a href="https://pay.freelankarx.com" target="_blank" rel="noopener noreferrer" class="btn-gold inline-block">Pay & Reserve (Deposit)</a>
-        <a href="#order" class="rounded-full px-6 py-3 border border-white/40 hover:bg-white/10">Use order form</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / ORDER -->
-  <section id="contact" class="scroll-mt-24 max-w-6xl mx-auto px-6 py-20">
-    <div class="grid md:grid-cols-2 gap-10 items-start">
-      <div class="reveal">
-        <h2 class="text-3xl md:text-4xl">Say hello / Order</h2>
-        <div class="rule my-5"></div>
-        <p class="text-gray-700">Tell us the date, design idea, size and preferred delivery or pickup. We’ll confirm price and next steps.</p>
-        <ul class="mt-6 space-y-2 text-gray-700">
-          <li>📍 Pickup & delivery available (fee applies)</li>
-          <li>🕒 We reply fastest on WhatsApp</li>
-          <li>💬 Order method: WhatsApp, Instagram DM, or the form</li>
-        </ul>
-        <div class="mt-6">
-          <a href="https://wa.me/14372439010" target="_blank" class="btn-gold inline-block">Message on WhatsApp</a>
-          <a href="https://instagram.com/ollies_delight" target="_blank" class="ml-3 inline-block rounded-full px-4 py-2 border border-black/10">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Order form (mailto fallback) -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm reveal" id="order">
-        <form id="orderForm" onsubmit="return handleSubmit(event)">
-          <label class="block mb-2 text-sm font-medium">Full name</label>
-          <input id="name" required class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="Your full name" />
-
-          <label class="block mb-2 text-sm font-medium">Phone / WhatsApp</label>
-          <input id="phone" required class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="+1 437 243 9010" />
-
-          <label class="block mb-2 text-sm font-medium">Order details (flavour, size, date, message)</label>
-          <textarea id="details" rows="4" class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="E.g. 8-inch chocolate, delivery Dec 10, message: Happy Birthday!" required></textarea>
-
-          <label class="block mb-2 text-sm font-medium">Pickup or Delivery?</label>
-          <select id="pickup" class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4">
-            <option>Pickup</option>
-            <option>Delivery (fee applies)</option>
-          </select>
-
-          <label class="block mb-2 text-sm font-medium">If delivery, address</label>
-          <input id="address" class="w-full rounded-lg border border-black/10 px-4 py-3 mb-4" placeholder="Street, city, etc." />
-
-          <div class="flex gap-3">
-            <button type="submit" class="btn-gold">Send order by Email</button>
-            <button type="button" onclick="sendWhatsApp()" class="rounded-full px-6 py-3 border border-black/10">Send on WhatsApp</button>
-          </div>
-
-          <p class="text-xs text-gray-500 mt-3">Short booking message: "Hi! I’d like to order a cake — please confirm price and delivery availability."</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-white/70 border-t border-black/5">
-    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-      <div>
-        <h3 class="font-semibold">Ollies Delight</h3>
-        <p class="text-gray-600 mt-2 text-sm">Custom cakes & treats made with care. Pickup & delivery available for a fee.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold">Quick links</h4>
-        <ul class="mt-2 space-y-1 text-sm">
-          <li><a href="#services" class="hover:text-[var(--gold)]">Offerings</a></li>
-          <li><a href="#gallery" class="hover:text-[var(--gold)]">Gallery</a></li>
-          <li><a href="#process" class="hover:text-[var(--gold)]">How to Order</a></li>
-          <li><a href="#contact" class="hover:text-[var(--gold)]">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">Contact</h4>
-        <p class="text-sm mt-2">WhatsApp: <a class="underline" href="https://wa.me/14372439010" target="_blank">+1 (437) 243-9010</a></p>
-        <p class="text-sm mt-1">Email: <a class="underline" href="mailto:olliesdelight@gmail.com">olliesdelight@gmail.com</a></p>
-        <p class="text-xs text-gray-500 mt-4">© <span id="year"></span> Ollies Delight. All rights reserved.</p>
-      </div>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-6 pb-8 text-center text-sm">
-      Craft with care for <strong>Ollies Delight</strong> by <a class="rainbow-link" href="https://freelankarx.com" target="_blank" rel="noopener noreferrer">Freelankarx</a>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/14372439010" target="_blank" aria-label="Chat on WhatsApp" class="wa-float">
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.52 3.48A11.9 11.9 0 0 0 12.07.01C5.65.01.52 5.13.52 11.56c0 2.09.55 4.05 1.58 5.96L.06 24l6.68-2.11c1.7.88 3.54 1.35 5.32 1.35h.01c6.42 0 11.56-5.13 11.56-11.55 0-3.08-1.2-5.98-3.11-7.6zM12.07 21.5a9.5 9.5 0 0 1-4.83-1.32l-.35-.2-3.96 1.25 1.29-3.86-.22-.37a9.46 9.46 0 0 1-1.45-5.07c0-5.26 4.28-9.55 9.55-9.55 2.56 0 4.97 1 6.78 2.82a9.52 9.52 0 0 1 2.8 6.74c0 5.27-4.29 9.56-9.56 9.56z"/>
-    </svg>
+  <a href="https://wa.me/14372439010" class="mt-8 inline-block bg-pink-600 text-white py-3 px-8 rounded-full hover:bg-pink-700 shadow-lg transition">
+    Message on WhatsApp
   </a>
+</section>
 
-  <!-- Minimal JS: reveal on scroll + year + form handlers -->
-  <script>
-    // Reveal on scroll
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries, obs)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target); }});
-    }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
-    els.forEach(el=>io.observe(el));
+<!-- FOOTER -->
+<footer class="py-6 bg-pink-900 text-center text-white text-sm">
+  © 2025 Ollies Delight. All Rights Reserved.
+</footer>
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Order form handlers: mailto fallback & WhatsApp quick-send
-    function handleSubmit(e){
-      e.preventDefault();
-      const n = document.getElementById('name').value.trim();
-      const p = document.getElementById('phone').value.trim();
-      const d = document.getElementById('details').value.trim();
-      const m = document.getElementById('pickup').value;
-      const a = document.getElementById('address').value.trim();
-
-      const subject = encodeURIComponent('New order from ' + (n || 'Customer'));
-      const body = encodeURIComponent(`Name: ${n}\nPhone: ${p}\nPickup/Delivery: ${m}\nAddress: ${a}\n\nOrder details:\n${d}`);
-      // fallback to mailto (quick and simple)
-      window.location.href = `mailto:olliesdelight@gmail.com?subject=${subject}&body=${body}`;
-      return false;
-    }
-
-    function sendWhatsApp(){
-      const n = document.getElementById('name').value.trim() || 'Customer';
-      const p = document.getElementById('phone').value.trim() || '';
-      const d = document.getElementById('details').value.trim() || 'Order details not specified';
-      const m = document.getElementById('pickup').value;
-      const a = document.getElementById('address').value.trim() || '';
-      const message = encodeURIComponent(`Hi, my name is ${n}. I want to place an order.\n\nDetails: ${d}\nPickup/Delivery: ${m}\nAddress: ${a}\nPhone: ${p}`);
-      const wa = `https://wa.me/14372439010?text=${message}`;
-      window.open(wa, '_blank');
-    }
-  </script>
 </body>
 </html>
