@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.git/
+
+# Sitemaps
+Sitemap: https://author-edit-marketing.manus.space/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
