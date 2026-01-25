@@ -1,5 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     // ==========================
+    // Firebase Initialization
+    // ==========================
+    const firebaseConfig = {
+        apiKey: "AIzaSyAvgEkGU9xizy_XFg-aGD7NnkvtDBdGBtA",
+        authDomain: "freelankarx-portfolio.firebaseapp.com",
+        projectId: "freelankarx-portfolio",
+        storageBucket: "freelankarx-portfolio.firebasestorage.app",
+        messagingSenderId: "966215425239",
+        appId: "1:966215425239:web:237a699174bfa98b006492",
+        measurementId: "G-702ZQ97XWP"
+    };
+    if (typeof firebase !== 'undefined') {
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    }
+
+    // ==========================
     // Portfolio & Testimonial Data
     // ==========================
     const portfolioProjects = [
@@ -106,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
     if (backdrop) backdrop.addEventListener('click', toggleSidebar);
 
-    // Close sidebar on link click
     document.querySelectorAll('.sidebar nav a').forEach(link => {
         link.addEventListener('click', toggleSidebar);
     });
@@ -115,13 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // GSAP Animations
     // ==========================
     gsap.registerPlugin(ScrollTrigger);
-
-    // Hero Animations
     gsap.from('.hero-content h1', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
     gsap.from('.hero-content p', { opacity: 0, y: 30, duration: 1, delay: 0.3, ease: 'power3.out' });
     gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 1, delay: 0.6, ease: 'power3.out' });
 
-    // Section Reveals
     gsap.utils.toArray('.section').forEach(section => {
         gsap.from(section, {
             scrollTrigger: {
@@ -135,16 +148,107 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Portfolio & Testimonial Item Stagger
-    gsap.from('.portfolio-item', {
-        scrollTrigger: {
-            trigger: '#portfolio',
-            start: 'top 70%',
-        },
-        opacity: 0,
-        scale: 0.8,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: 'back.out(1.7)'
-    });
+    // ==========================
+    // Assistant Logic
+    // ==========================
+    const assistant = document.getElementById('flx-window');
+    const toggle = document.getElementById('flx-toggle');
+    if (toggle && assistant) {
+        toggle.onclick = () => {
+            assistant.style.display = assistant.style.display === 'flex' ? 'none' : 'flex';
+            assistant.style.flexDirection = 'column';
+            if (!assistant.dataset.started) startChat();
+        };
+    }
+
+    let answers = {};
+    const steps = [
+        { id: 'name', type: 'text', q: "Hey, I’m F‑LX. It’s really good to have you here. May I know your name?" },
+        { id: 'service', type: 'select', q: "Thanks! What do you feel you need most support with right now?", options: ["Shopify Store Setup", "Facebook/TikTok Ads", "Email Automation", "Dropshipping Setup", "Automation Online Store", "Other"] },
+        { id: 'urgency', type: 'select', q: "Got it. How soon are you hoping to get this moving?", options: ["1 Week+", "3–5 Days", "ASAP (24–48h)"] },
+        { id: 'budget', type: 'select', q: "To better guide you, could you give me an idea of your current budget for this?", options: ["$300–$600", "$700–$1200", "$2000+", "Not sure yet"] },
+        { id: 'email', type: 'text', q: "Where can I reach you with something helpful if needed? (Your email)" },
+        { id: 'whatsapp', type: 'text', q: "Would you like me to create a free, personal action checklist just for you — and send it to WhatsApp? Just drop your number:" }
+    ];
+
+    let currentStep = 0;
+    function startChat() {
+        assistant.dataset.started = true;
+        showNext();
+    }
+
+    function showNext() {
+        if (currentStep < steps.length) {
+            const step = steps[currentStep];
+            renderStep(step.q, step.type, step.id, false, step.options);
+        } else {
+            const finishMsg = document.createElement('div');
+            finishMsg.className = 'msg msg-bot';
+            finishMsg.innerText = "Thank you! I've received your details and will get back to you shortly.";
+            assistant.appendChild(finishMsg);
+        }
+    }
+
+    function renderStep(q, type, id, isCustom, options) {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'msg msg-bot';
+        botMsg.innerText = q;
+        assistant.appendChild(botMsg);
+
+        const inputContainer = document.createElement('div');
+        inputContainer.style.padding = "10px";
+
+        if (type === 'text') {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = "Type here...";
+            const btn = document.createElement('button');
+            btn.innerText = "Send";
+            btn.className = "btn-cta";
+            btn.style.width = "100%";
+            btn.style.marginTop = "5px";
+            btn.onclick = () => {
+                answers[id] = input.value;
+                currentStep++;
+                showNext();
+            };
+            inputContainer.appendChild(input);
+            inputContainer.appendChild(btn);
+        } else if (type === 'select') {
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.innerText = opt;
+                btn.style.display = "block";
+                btn.style.width = "100%";
+                btn.style.margin = "5px 0";
+                btn.className = "btn-outline";
+                btn.onclick = () => {
+                    answers[id] = opt;
+                    currentStep++;
+                    showNext();
+                };
+                inputContainer.appendChild(btn);
+            });
+        }
+        assistant.appendChild(inputContainer);
+        assistant.scrollTop = assistant.scrollHeight;
+    }
+
+    // ==========================
+    // Portfolio Modal
+    // ==========================
+    const modal = document.getElementById('portfolioModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+
+    if (modal && modalImg && closeModal) {
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.portfolio-item img')) {
+                modal.style.display = 'flex';
+                modalImg.src = e.target.src;
+            }
+        });
+        closeModal.onclick = () => modal.style.display = 'none';
+        modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+    }
 });
