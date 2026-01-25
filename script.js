@@ -1,219 +1,150 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // ==========================
-  // Firebase Initialization
-  // ==========================
-  const firebaseConfig = {
-    apiKey: "AIzaSyAvgEkGU9xizy_XFg-aGD7NnkvtDBdGBtA",
-    authDomain: "freelankarx-portfolio.firebaseapp.com",
-    projectId: "freelankarx-portfolio",
-    storageBucket: "freelankarx-portfolio.firebasestorage.app",
-    messagingSenderId: "966215425239",
-    appId: "1:966215425239:web:237a699174bfa98b006492",
-    measurementId: "G-702ZQ97XWP"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+    // ==========================
+    // Portfolio & Testimonial Data
+    // ==========================
+    const portfolioProjects = [
+        {"title": "Luxury Watch Store", "category": "Shopify", "description": "High-end Shopify store for luxury timepieces with automated inventory.", "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Eco-Friendly Apparel", "category": "Fashion", "description": "Sustainable fashion brand setup with Klaviyo email flows.", "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Gourmet Coffee Subscription", "category": "E-commerce", "description": "Recurring subscription model for a specialty coffee roaster.", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Fitness Equipment Funnel", "category": "Marketing", "description": "High-converting TikTok ad funnel for home workout gear.", "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Organic Skincare Brand", "category": "Beauty", "description": "Complete Shopify build for a natural beauty product line.", "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Tech Gadget Dropshipping", "category": "Dropshipping", "description": "Automated dropshipping store for trending electronics.", "image": "https://images.unsplash.com/photo-1526733158173-e1b2317199a2?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Handmade Jewelry Boutique", "category": "Fashion", "description": "Elegant storefront for custom artisan jewelry.", "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Home Decor Marketplace", "category": "Shopify", "description": "Multi-vendor platform for interior design products.", "image": "https://images.unsplash.com/photo-1513519247388-4e28371197df?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Pet Supplies Store", "category": "E-commerce", "description": "Pet-friendly UI/UX design with product bundle features.", "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Digital Course Platform", "category": "Education", "description": "Shopify setup for selling digital downloads and courses.", "image": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Gaming Accessories Hub", "category": "Niche", "description": "Dark-themed store for pro gamers and enthusiasts.", "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Baby Products Brand", "category": "Family", "description": "Safe and clean design for premium baby essentials.", "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Kitchenware Specialist", "category": "Home", "description": "Optimized product pages for high-ticket kitchen tools.", "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Outdoor Adventure Gear", "category": "Niche", "description": "Rugged Shopify store for camping and hiking equipment.", "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Supplement Brand Launch", "category": "Health", "description": "Compliant and professional store for health supplements.", "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Art Print Gallery", "category": "Creative", "description": "Portfolio-style store for digital and physical art prints.", "image": "https://images.unsplash.com/photo-1513519247388-4e28371197df?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Vintage Clothing Store", "category": "Fashion", "description": "Unique retro design for a curated vintage collection.", "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Smart Home Solutions", "category": "Tech", "description": "Clean, futuristic UI for IoT and smart home devices.", "image": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Subscription Box Service", "category": "E-commerce", "description": "Complex subscription logic for monthly surprise boxes.", "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Modern Furniture Outlet", "category": "Home", "description": "Minimalist design for high-end furniture pieces.", "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Yoga & Wellness Shop", "category": "Health", "description": "Calm, zen-inspired Shopify build for yoga gear.", "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Car Accessories Portal", "category": "Automotive", "description": "Search-optimized store for vehicle parts and mods.", "image": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Organic Tea Merchant", "category": "Food", "description": "Sophisticated store for premium loose-leaf teas.", "image": "https://images.unsplash.com/photo-1544787210-2283944749e8?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Sustainable Footwear", "category": "Fashion", "description": "Eco-conscious brand focusing on recycled materials.", "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Phone Case Designer", "category": "Niche", "description": "Customizable product options for unique phone cases.", "image": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Gardening Supply Store", "category": "Home", "description": "Seasonal marketing setup for garden enthusiasts.", "image": "https://images.unsplash.com/photo-1416870213410-67977533865b?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Luxury Bedding Brand", "category": "Home", "description": "Comfort-focused UI for high-thread-count linens.", "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Bespoke Suit Tailor", "category": "Fashion", "description": "Lead generation and booking system for custom suits.", "image": "https://images.unsplash.com/photo-1594932224828-b4b059b6f684?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Coffee Roastery Site", "category": "Food", "description": "Artisan coffee brand with local delivery setup.", "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Pet Tech Innovations", "category": "Tech", "description": "E-commerce for smart pet feeders and trackers.", "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Handcrafted Leather Goods", "category": "Fashion", "description": "Rustic, premium store for leather bags and belts.", "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"},
+        {"title": "Organic Snack Brand", "category": "Food", "description": "Wholesale and retail Shopify setup for healthy snacks.", "image": "https://images.unsplash.com/photo-1534422298391-e4f8c170db76?auto=format&fit=crop&w=800&q=80"}
+    ];
 
-  // ==========================
-  // Sidebar Toggle (Mobile Nav)
-  // ==========================
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.getElementById('sidebar');
-  const closeBtn = document.getElementById('closeBtn');
+    const testimonials = [
+        {"name": "Sarah Johnson", "role": "CEO, EcoStyle", "text": "Olamilekan transformed our Shopify store. Our conversion rate increased by 40% in just one month!", "rating": 5},
+        {"name": "Mark Thompson", "role": "Founder, TechHub", "text": "The best Shopify expert I've worked with. Fast, professional, and knows exactly what sells.", "rating": 5},
+        {"name": "Elena Rodriguez", "role": "Owner, GlowBeauty", "text": "Incredible attention to detail. The TikTok funnel he built for us is generating consistent sales.", "rating": 5},
+        {"name": "David Chen", "role": "Marketing Director, FitGear", "text": "A true growth partner. His email automation strategy recovered 15% of our abandoned carts.", "rating": 5},
+        {"name": "Jessica Lee", "role": "Designer, PureArt", "text": "My store looks stunning and performs even better. Highly recommend Freelankarx!", "rating": 5},
+        {"name": "Michael Brown", "role": "Entrepreneur", "text": "Professional service from start to finish. Olamilekan really understands the eCommerce landscape.", "rating": 4},
+        {"name": "Sophie Martin", "role": "Boutique Owner", "text": "Exceeded my expectations. The custom features he added to my Shopify theme are perfect.", "rating": 5},
+        {"name": "James Wilson", "role": "Dropshipper", "text": "He built an automated store that actually works. I'm finally seeing consistent daily profits.", "rating": 5},
+        {"name": "Linda Garcia", "role": "Wellness Coach", "text": "Smooth process and great communication. My digital products are selling like crazy!", "rating": 5},
+        {"name": "Robert Taylor", "role": "Furniture Importer", "text": "Managed our complex inventory setup with ease. A highly skilled Shopify developer.", "rating": 5}
+    ];
 
-  if (hamburger && sidebar && closeBtn) {
-    hamburger.addEventListener('click', () => {
-      sidebar.style.left = "0";
-    });
-
-    closeBtn.addEventListener('click', () => {
-      sidebar.style.left = "-250px";
-    });
-
-    // Select elements
-const navLinks = document.querySelector(".nav-links");
-const logo = document.querySelector(".logo");
-
-// Toggle nav on logo click (can change to menu icon if you prefer)
-logo.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-    // Close sidebar if clicked outside
-    window.addEventListener('click', (e) => {
-      if (e.target !== sidebar && e.target !== hamburger && !sidebar.contains(e.target)) {
-        sidebar.style.left = "-250px";
-      }
-    });
-  }
-  /* Overlay sidenav */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
-
-  // ==========================
-  // Section Reveal on Scroll
-  // ==========================
-  const sections = document.querySelectorAll('.section');
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => revealObserver.observe(section));
-
-  // ==========================
-  // GSAP Animations (Hero + Socials)
-  // ==========================
-  gsap.from('.hero-content h1', { opacity: 0, y: -50, duration: 1.5, ease: 'power2.out' });
-  gsap.from('.hero-content p', { opacity: 0, y: 50, duration: 1.5, delay: 0.3, ease: 'power2.out' });
-  gsap.from('.btn', { opacity: 0, scale: 0.8, duration: 1.5, delay: 0.6, ease: 'back.out(1.7)' });
-
-  const socialLinks = document.querySelectorAll('.social-icons a');
-  socialLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => gsap.to(link, { scale: 1.2, duration: 0.3 }));
-    link.addEventListener('mouseleave', () => gsap.to(link, { scale: 1, duration: 0.3 }));
-  });
-
-  // ==========================
-  // Reviews (Firestore + Cloudinary Upload)
-  // ==========================
-  const reviewForm = document.getElementById('reviewForm');
-  const reviewsContainer = document.getElementById('reviewsContainer');
-
-  async function uploadVideoToCloudinary(file) {
-    const cloudName = "dflqyatre";
-    const unsignedPreset = "freelankarx portfolio";
-    const url = `https://api.cloudinary.com/v1_1/${cloudName}/video/upload`;
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", unsignedPreset);
-
-    try {
-      const response = await fetch(url, { method: "POST", body: formData });
-      const data = await response.json();
-      return data.secure_url;
-    } catch (error) {
-      console.error("Error uploading video:", error);
-      return "";
-    }
-  }
-
-  if (reviewForm) {
-    reviewForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = reviewForm.name.value;
-      const reviewText = reviewForm.review.value;
-      const rating = reviewForm.rating.value;
-      const videoFile = reviewForm.video.files[0];
-
-      let videoURL = "";
-      if (videoFile) {
-        videoURL = await uploadVideoToCloudinary(videoFile);
-      }
-
-      await db.collection('reviews').add({
-        name,
-        review: reviewText,
-        rating,
-        videoURL,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      reviewForm.reset();
-      loadReviews();
-    });
-  }
-
-  function loadReviews() {
-    if (!reviewsContainer) return;
-    reviewsContainer.innerHTML = "";
-    db.collection('reviews').orderBy('timestamp', 'desc').get().then(snapshot => {
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        const reviewDiv = document.createElement('div');
-        reviewDiv.classList.add('review');
-        reviewDiv.innerHTML = `
-          <h4>${data.name}</h4>
-          <p>${data.review}</p>
-          <p>⭐ ${data.rating} / 5</p>
-          ${data.videoURL ? `<video controls src="${data.videoURL}" width="300"></video>` : ""}
-          <button class="delete-btn" data-id="${doc.id}">Delete</button>
-        `;
-        reviewsContainer.appendChild(reviewDiv);
-      });
-      document.querySelectorAll('.delete-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          db.collection('reviews').doc(btn.getAttribute('data-id')).delete().then(loadReviews);
+    // ==========================
+    // Inject Data
+    // ==========================
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    if (portfolioGrid) {
+        portfolioProjects.forEach(project => {
+            const item = document.createElement('div');
+            item.className = 'portfolio-item';
+            item.innerHTML = `
+                <img src="${project.image}" alt="${project.title}" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <span class="category-tag">${project.category}</span>
+                </div>
+            `;
+            portfolioGrid.appendChild(item);
         });
-      });
+    }
+
+    const testimonialGrid = document.getElementById('testimonialGrid');
+    if (testimonialGrid) {
+        testimonials.forEach(t => {
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+            card.innerHTML = `
+                <div class="stars">${'⭐'.repeat(t.rating)}</div>
+                <p>"${t.text}"</p>
+                <div class="client">
+                    <div class="client-info">
+                        <strong>${t.name}</strong>
+                        <span>${t.role}</span>
+                    </div>
+                </div>
+            `;
+            testimonialGrid.appendChild(card);
+        });
+    }
+
+    // ==========================
+    // Navigation
+    // ==========================
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeBtn');
+    const backdrop = document.getElementById('backdrop');
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('open');
+        backdrop.classList.toggle('show');
+    }
+
+    if (hamburger) hamburger.addEventListener('click', toggleSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+    if (backdrop) backdrop.addEventListener('click', toggleSidebar);
+
+    // Close sidebar on link click
+    document.querySelectorAll('.sidebar nav a').forEach(link => {
+        link.addEventListener('click', toggleSidebar);
     });
-  }
-  loadReviews();
 
-  // Select elements
-const navLinks = document.querySelector(".nav-links");
-const logo = document.querySelector(".logo");
+    // ==========================
+    // GSAP Animations
+    // ==========================
+    gsap.registerPlugin(ScrollTrigger);
 
-// Toggle nav on logo click (can change to menu icon if you prefer)
-logo.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+    // Hero Animations
+    gsap.from('.hero-content h1', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
+    gsap.from('.hero-content p', { opacity: 0, y: 30, duration: 1, delay: 0.3, ease: 'power3.out' });
+    gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 1, delay: 0.6, ease: 'power3.out' });
+
+    // Section Reveals
+    gsap.utils.toArray('.section').forEach(section => {
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 80%',
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power2.out'
+        });
+    });
+
+    // Portfolio & Testimonial Item Stagger
+    gsap.from('.portfolio-item', {
+        scrollTrigger: {
+            trigger: '#portfolio',
+            start: 'top 70%',
+        },
+        opacity: 0,
+        scale: 0.8,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'back.out(1.7)'
+    });
 });
-
-  // ==========================
-  // Portfolio Modal
-  // ==========================
-  const modal = document.getElementById('portfolioModal');
-  const modalImg = document.getElementById('modalImage');
-  const closeModal = document.getElementById('closeModal');
-
-  if (modal && modalImg && closeModal) {
-    document.querySelectorAll('.portfolio-item img').forEach(img => {
-      img.addEventListener('click', function () {
-        modal.style.display = 'flex';
-        modalImg.src = this.src;
-      });
-    });
-    closeModal.addEventListener('click', () => modal.style.display = 'none');
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-  }
-
-  // ==========================
-  // Video Upload Validation + Preview
-  // ==========================
-  const videoInput = document.querySelector('input[name="videoFile"]');
-  if (videoInput) {
-    videoInput.addEventListener('change', function (event) {
-      const file = event.target.files[0];
-      if (!file) return;
-      if (!file.type.startsWith('video/')) {
-        alert("Please upload a valid video file.");
-        event.target.value = "";
-        return;
-      }
-      const url = URL.createObjectURL(file);
-      const preview = document.createElement('video');
-      preview.src = url;
-      preview.controls = true;
-      preview.style.maxWidth = "100%";
-      const parent = event.target.parentNode;
-      const existing = parent.querySelector('video');
-      if (existing) existing.remove();
-      parent.appendChild(preview);
-    });
-  }
-});
-
-
-
