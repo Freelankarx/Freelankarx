@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     if (typeof firebase !== 'undefined') {
         firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
     }
 
     // ==========================
@@ -115,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const backdrop = document.getElementById('backdrop');
 
     function toggleSidebar() {
-        sidebar.classList.toggle('open');
-        backdrop.classList.toggle('show');
+        if (sidebar) sidebar.classList.toggle('open');
+        if (backdrop) backdrop.classList.toggle('show');
     }
 
     if (hamburger) hamburger.addEventListener('click', toggleSidebar);
@@ -130,23 +129,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================
     // GSAP Animations
     // ==========================
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from('.hero-content h1', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
-    gsap.from('.hero-content p', { opacity: 0, y: 30, duration: 1, delay: 0.3, ease: 'power3.out' });
-    gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 1, delay: 0.6, ease: 'power3.out' });
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.hero-content h1', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
+        gsap.from('.hero-content p', { opacity: 0, y: 30, duration: 1, delay: 0.3, ease: 'power3.out' });
+        gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 1, delay: 0.6, ease: 'power3.out' });
 
-    gsap.utils.toArray('.section').forEach(section => {
-        gsap.from(section, {
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-            },
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: 'power2.out'
+        gsap.utils.toArray('.section').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power2.out'
+            });
         });
-    });
+    }
 
     // ==========================
     // Assistant Logic
