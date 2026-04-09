@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Shopify Growth Solutions by Freelankarx</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .services-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.9)), url('../bg.jpg'); background-size: cover; background-position: center; }
+    .service-detail-card { background: var(--card-bg); padding: 50px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 40px; display: grid; grid-template-columns: 100px 1fr; gap: 40px; align-items: start; transition: var(--transition); }
+    .service-detail-card:hover { border-color: var(--brand-blue); transform: scale(1.01); }
+    .service-icon { width: 100px; height: 100px; background: rgba(0, 119, 255, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--brand-blue); }
+    .service-info h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--brand-gold); }
+    .service-info p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+    .service-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .feature-item { display: flex; align-items: center; gap: 10px; color: var(--text-white); font-weight: 600; }
+    .feature-item i { color: var(--brand-blue); }
+    @media (max-width: 768px) { .service-detail-card { grid-template-columns: 1fr; text-align: center; } .service-icon { margin: 0 auto; } .feature-item { justify-content: center; } }
+  </style>
+</head>
+<body>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="index.html" class="active">Services</a>
+        <a href="../results/index.html">Results</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../contact/index.html" class="btn-cta">Get Started</a>
+      </nav>
+      <div class="logo">
+        <a href="../index.html"><img src="../freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="services-hero">
+      <div class="container">
+        <span class="section-subtitle">What We Do</span>
+        <h1>Engineered for Growth</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          We provide a comprehensive suite of e-commerce services designed to take your brand from zero to hero.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="service-detail-card">
+          <div class="service-icon"><i class="fas fa-store"></i></div>
+          <div class="service-info">
+            <h2>Shopify Store Architecture</h2>
+            <p>We don't just "set up" stores. We architect high-converting sales machines. Every element is strategically placed to guide your customers toward the checkout.</p>
+            <div class="service-features">
+              <div class="feature-item"><i class="fas fa-check"></i> Custom Theme Dev</div>
+              <div class="feature-item"><i class="fas fa-check"></i> CRO Optimization</div>
+              <div class="feature-item"><i class="fas fa-check"></i> App Ecosystem</div>
+              <div class="feature-item"><i class="fas fa-check"></i> Mobile-First Design</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-detail-card">
+          <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="service-info">
+            <h2>Omnichannel Ad Management</h2>
+            <p>Dominate TikTok, Meta, and Google with data-backed advertising strategies. We focus on ROAS and long-term customer acquisition costs to ensure sustainable scaling.</p>
+            <div class="service-features">
+              <div class="feature-item"><i class="fas fa-check"></i> TikTok Ad Funnels</div>
+              <div class="feature-item"><i class="fas fa-check"></i> Meta Scaling</div>
+              <div class="feature-item"><i class="fas fa-check"></i> Google Shopping</div>
+              <div class="feature-item"><i class="fas fa-check"></i> Creative Strategy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-detail-card">
+          <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <div class="service-info">
+            <h2>Retention & Automation</h2>
+            <p>Turn one-time buyers into lifelong fans. Our advanced Klaviyo flows and SMS marketing strategies recover lost revenue and maximize customer lifetime value.</p>
+            <div class="service-features">
+              <div class="feature-item"><i class="fas fa-check"></i> Klaviyo Flows</div>
+              <div class="feature-item"><i class="fas fa-check"></i> SMS Marketing</div>
+              <div class="feature-item"><i class="fas fa-check"></i> CRM Integration</div>
+              <div class="feature-item"><i class="fas fa-check"></i> Loyalty Programs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = '../index.html';
+      });
+    }
+  </script>
+</body>
+</html>

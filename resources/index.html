@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free E-Commerce Resources | Grow Your Store with Freelankarx</title>
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .resources-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.9)), url('../bg.jpg'); background-size: cover; background-position: center; }
+    .resource-card { background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; transition: var(--transition); }
+    .resource-card:hover { border-color: var(--brand-blue); transform: translateY(-10px); }
+    .resource-card i { font-size: 3rem; color: var(--brand-gold); margin-bottom: 25px; }
+    .resource-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+    .resource-card p { color: var(--text-muted); margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../services/index.html">Services</a>
+        <a href="../results/index.html">Results</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../contact/index.html" class="btn-cta">Contact Me</a>
+      </nav>
+      <div class="logo">
+        <a href="../index.html"><img src="../freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="resources-hero">
+      <div class="container">
+        <span class="section-subtitle">Knowledge Hub</span>
+        <h1>Free Tools for E-Commerce Success</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          Download our exclusive guides, toolkits, and checklists designed to help you scale your Shopify store faster.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+          <div class="resource-card">
+            <i class="fas fa-tools"></i>
+            <h3>AI Shopify Toolkit</h3>
+            <p>The exact tools and prompts 6-figure stores use to launch, scale, and automate with ease.</p>
+            <a href="../toolkit.html" class="btn btn-outline">Download Now</a>
+          </div>
+          <div class="resource-card">
+            <i class="fas fa-gift"></i>
+            <h3>Free Website Offer</h3>
+            <p>Apply for a 100% free professional website design to kickstart your brand journey.</p>
+            <a href="../free-site.html" class="btn btn-outline">Apply Today</a>
+          </div>
+          <div class="resource-card">
+            <i class="fas fa-book"></i>
+            <h3>The Growth Blog</h3>
+            <p>In-depth guides on TikTok ads, SEO, and e-commerce strategy updated weekly.</p>
+            <a href="../blog/index.html" class="btn btn-outline">Read Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = '../index.html';
+      });
+    }
+  </script>
+</body>
+</html>

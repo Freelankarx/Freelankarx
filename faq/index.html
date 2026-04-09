@@ -3,153 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Freelankarx FAQs | AI Tools & Shopify Growth</title>
-  <meta name="description" content="Answers to your top questions about AI-powered ecommerce, automation tools, Shopify setup, and how to launch your online business with Freelankarx." />
-  <link rel="icon" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <title>Frequently Asked Questions | Freelankarx</title>
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1B1F2B;
-      --panel: #302525;
-      --accent: #0E77FF;
-      --text: #ffffff;
-      --light-text: #d0d3db;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-    }
-    header {
-      padding: 20px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--panel);
-    }
-    header img {
-      height: 46px;
-    }
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .hero h1 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--light-text);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .faq-section {
-      max-width: 1180px;
-      margin: 60px auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .post-card {
-      background: var(--panel);
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-    .post-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
-    }
-    .post-card h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-    .post-card p {
-      font-size: 0.95rem;
-      color: var(--light-text);
-      margin-bottom: 16px;
-    }
-    .post-card a {
-      text-decoration: none;
-      color: #fff;
-      background: var(--accent);
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      transition: background 0.3s ease;
-    }
-    .post-card a:hover {
-      background: #065fd0;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #8e9099;
-      font-size: 0.85rem;
-    }
+    .faq-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.9)), url('../bg.jpg'); background-size: cover; background-position: center; }
+    .faq-page-grid { max-width: 900px; margin: 50px auto; }
+    .faq-item { background: var(--card-bg); margin-bottom: 20px; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); transition: var(--transition); }
+    .faq-item:hover { border-color: var(--brand-blue); }
+    .faq-q { width: 100%; padding: 25px; text-align: left; background: none; border: none; color: var(--text-white); font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
+    .faq-q i { font-size: 1rem; color: var(--brand-blue); transition: transform 0.3s ease; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(255, 255, 255, 0.02); }
+    .faq-a p { padding: 0 25px 25px; color: var(--text-muted); line-height: 1.8; }
+    .faq-item.active .faq-a { max-height: 500px; }
+    .faq-item.active .faq-q i { transform: rotate(180deg); }
+    .faq-category { margin-top: 60px; margin-bottom: 30px; text-align: center; }
+    .faq-category h2 { font-size: 2rem; color: var(--brand-gold); }
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://freelankarx.com">
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx Logo">
-    </a>
-    <nav><a href="https://freelankarx.com">← Back to Home</a></nav>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../services/index.html">Services</a>
+        <a href="../results/index.html">Results</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="../contact/index.html" class="btn-cta">Contact Me</a>
+      </nav>
+      <div class="logo">
+        <a href="../index.html"><img src="../freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Freelankarx FAQs</h1>
-    <p>Real answers to the questions people ask about starting and scaling with AI no fluff, just action-ready guidance.</p>
-  </section>
+  <main>
+    <section class="faq-hero">
+      <div class="container">
+        <span class="section-subtitle">Help Center</span>
+        <h1>Your Questions, Answered</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          Everything you need to know about building, launching, and scaling your Shopify empire with Freelankarx.
+        </p>
+      </div>
+    </section>
 
-  <section class="faq-section">
-    <div class="post-card">
-  <h2>Why isn’t my Shopify store getting any sales?</h2>
-  <p>You're getting traffic but no orders? Learn how to fix low intent, build trust, and plug leaky funnels fast.</p>
-  <a href="/blog/why-shopify-no-sales/index.html">Read Answer →</a>
-</div>
+    <section class="section">
+      <div class="container">
+        <div class="faq-category"><h2>General Questions</h2></div>
+        <div class="faq-page-grid">
+          <div class="faq-item">
+            <button class="faq-q">What is the "Done-For-You" Shopify setup? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-a"><p>Our "Done-For-You" service is a complete end-to-end solution. We handle everything from product research and niche selection to theme customization, app integration, and ad funnel setup. You get a turnkey business ready to generate sales.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">How long does it take to launch? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-a"><p>Typically, a standard Shopify build takes 2-4 weeks. For more complex projects, the timeline can be 6-8 weeks. We prioritize quality and conversion optimization over speed.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Do you provide ongoing support? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-a"><p>Yes! Depending on your chosen plan, we provide 30 to 90 days of post-launch support. This includes ad optimization, technical maintenance, and strategy consulting to ensure your store scales successfully.</p></div>
+          </div>
+        </div>
 
-    <div class="post-card">
-  <h2>Is Shopify Too Saturated in 2025?</h2>
-  <p>It feels crowded but that’s your chance. Learn how to stand out with story, branding, and smart funnels.</p>
-  <a href="/faq/is-shopify-too-saturated/index.html">Read Answer →</a>
-</div>
+        <div class="faq-category"><h2>Marketing & Ads</h2></div>
+        <div class="faq-page-grid">
+          <div class="faq-item">
+            <button class="faq-q">Which platforms do you run ads on? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-a"><p>We specialize in TikTok, Meta (Facebook & Instagram), and Google Ads. We choose the platform based on your product niche and target audience to ensure the highest Return on Ad Spend (ROAS).</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">What is the recommended ad budget? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-a"><p>For new stores, we recommend starting with at least $500 - $1,000 monthly ad spend for testing. Once we find winning products and creative angles, we scale the budget based on profitability.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="post-card">
-  <h2>I Launched My Shopify Store… Now What?</h2>
-  <p>Launched your store but have no sales or traffic? Learn what to do next this guide breaks down the exact post-launch steps that work in 2025.</p>
-  <a href="/faq/what-to-do-after-launch/index.html">Read Answer →</a>
-</div>
+    <section class="final-cta">
+      <div class="container">
+        <h2>Still have questions?</h2>
+        <p style="margin-bottom: 30px; color: var(--text-muted);">We're here to help you every step of the way.</p>
+        <a href="../contact/index.html" class="btn btn-cta">Message Us Directly</a>
+      </div>
+    </section>
+  </main>
 
-  <div class="post-card">
-  <h2>Are Shopify Ads Even Worth It Anymore?</h2>
-  <p>Think ads are the answer? Not without a funnel. Learn why most Shopify ads fail and what to fix first in 2025.</p>
-  <a href="/faq/shopify-ads-worth-it/index.html">Read Answer →</a>
-</div>
-<div class="post-card">
-  <h2>Is It Still Possible to Start Shopify With No Money?</h2>
-  <p>Yes, in 2025 you can launch a real Shopify store without paying anything upfront. Free tools, smart funnels, zero-risk. Learn how.</p>
-  <a href="/faq/start-shopify-with-no-money/index.html">Read Answer →</a>
-</div>
-  </section>
-
-  <footer>
-    © 2025 Freelankarx. All rights reserved.
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = '../index.html';
+      });
+    }
+  </script>
 </body>
 </html>

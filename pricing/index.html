@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Plans | Transparent E-Commerce Growth by Freelankarx</title>
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .pricing-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.9)), url('../bg.jpg'); background-size: cover; background-position: center; }
+    .pricing-page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 50px; }
+    .pricing-card { background: var(--card-bg); padding: 50px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.05); position: relative; overflow: hidden; transition: var(--transition); }
+    .pricing-card:hover { border-color: var(--brand-blue); transform: translateY(-10px); }
+    .pricing-card.featured { border-color: var(--brand-gold); box-shadow: 0 20px 40px rgba(255, 204, 0, 0.1); }
+    .badge { position: absolute; top: 30px; right: -40px; background: var(--brand-gold); color: #000; padding: 10px 50px; transform: rotate(45deg); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+    .pricing-card h3 { font-size: 2rem; margin-bottom: 15px; color: #fff; }
+    .pricing-card .price { font-size: 3.5rem; font-weight: 700; color: var(--brand-blue); margin-bottom: 30px; display: block; }
+    .pricing-card .price span { font-size: 1.2rem; color: var(--text-muted); font-weight: 400; }
+    .pricing-card ul { list-style: none; margin-bottom: 40px; }
+    .pricing-card ul li { margin-bottom: 15px; color: var(--text-muted); display: flex; align-items: center; gap: 15px; }
+    .pricing-card ul li i { color: var(--brand-blue); }
+  </style>
+</head>
+<body>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../services/index.html">Services</a>
+        <a href="../results/index.html">Results</a>
+        <a href="../blog/index.html">Blog</a>
+        <a href="index.html" class="active btn-cta">Pricing</a>
+      </nav>
+      <div class="logo">
+        <a href="../index.html"><img src="../freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pricing-hero">
+      <div class="container">
+        <span class="section-subtitle">Investment Plans</span>
+        <h1>Scale at Your Own Pace</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          No hidden fees. No complicated contracts. Just transparent, result-driven pricing for every stage of your e-commerce journey.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="pricing-page-grid">
+          <div class="pricing-card">
+            <h3>Starter Path</h3>
+            <span class="price">$300 <span>/ Project</span></span>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">Perfect for launching your first high-converting store.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Standard Shopify Build</li>
+              <li><i class="fas fa-check"></i> Essential App Setup</li>
+              <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+              <li><i class="fas fa-check"></i> 14-Day Support</li>
+              <li><i class="fas fa-check"></i> SEO Foundations</li>
+            </ul>
+            <a href="../contact/index.html" class="btn btn-outline" style="width: 100%;">Start Now</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="badge">Most Popular</div>
+            <h3>Builder Path</h3>
+            <span class="price">$700 <span>/ Project</span></span>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">The sweet spot for serious entrepreneurs scaling fast.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Custom High-Converting Design</li>
+              <li><i class="fas fa-check"></i> Advanced App Ecosystem</li>
+              <li><i class="fas fa-check"></i> Klaviyo Email Flow Setup</li>
+              <li><i class="fas fa-check"></i> 30-Day Premium Support</li>
+              <li><i class="fas fa-check"></i> TikTok/Meta Ad Strategy</li>
+            </ul>
+            <a href="../contact/index.html" class="btn btn-cta" style="width: 100%;">Get Started</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Boss Path</h3>
+            <span class="price">$2,000 <span>/ Month</span></span>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">Full e-commerce management and elite growth scaling.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Full Done-For-You Operations</li>
+              <li><i class="fas fa-check"></i> Unlimited Ad Management</li>
+              <li><i class="fas fa-check"></i> Weekly Strategy Sessions</li>
+              <li><i class="fas fa-check"></i> 24/7 Priority Access</li>
+              <li><i class="fas fa-check"></i> Team Training & Handover</li>
+            </ul>
+            <a href="../contact/index.html" class="btn btn-outline" style="width: 100%;">Go Boss Mode</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = '../index.html';
+      });
+    }
+  </script>
+</body>
+</html>
