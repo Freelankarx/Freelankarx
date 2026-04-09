@@ -42,7 +42,7 @@ page_links = []
 for keyword in keywords:
     slug = slugify(keyword)
     filename = f"{slug}.html"
-    url = f"https://freelankarx.com/output/{quote(filename)}"
+    url = f"https://freelankarx.github.io/Freelankarx/output/{quote(filename)}"
 
     page_links.append({
         'keyword': keyword,

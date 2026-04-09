@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         appId: "1:966215425239:web:237a699174bfa98b006492",
         measurementId: "G-702ZQ97XWP"
     };
+    let db;
     if (typeof firebase !== 'undefined') {
         firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
     }
 
     // ==========================
@@ -106,6 +108,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ==========================
+    // Review Form Submission
+    // ==========================
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(reviewForm);
+            const data = {
+                name: formData.get('name'),
+                review: formData.get('review'),
+                rating: parseInt(document.querySelector('input[name="rating"]:checked')?.value || 5),
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            };
+            if (db) {
+                db.collection('reviews').add(data).then(() => {
+                    alert('Thank you for your review!');
+                    reviewForm.reset();
+                }).catch(err => console.error('Error adding review: ', err));
+            } else {
+                alert('Review system is currently offline. Please try again later.');
+            }
+        });
+    }
+
+    // ==========================
     // Navigation
     // ==========================
     const hamburger = document.getElementById('hamburger');
@@ -187,6 +214,12 @@ document.addEventListener('DOMContentLoaded', function () {
             finishMsg.className = 'msg msg-bot';
             finishMsg.innerText = "Thank you! I've received your details and will get back to you shortly.";
             assistant.appendChild(finishMsg);
+            if (db) {
+                db.collection('leads').add({
+                    ...answers,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).catch(err => console.error('Error adding lead: ', err));
+            }
         }
     }
 

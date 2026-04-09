@@ -1,167 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://freelankarx.com/blog/" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Freelankarx Blog | AI & Automation for Growth</title>
-  <meta name="description" content="Read our latest blogs on AI tools, automation, Shopify growth hacks, and beginner-friendly guides to make money online. Updated by Freelankarx." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" type="image/png" />
+  <title>Freelankarx Blog | AI, Automation & E-Commerce Guides</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1B1F2B;
-      --panel: #302525;
-      --accent: #0E77FF;
-      --text: #ffffff;
-      --light-text: #d0d3db;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: var(--bg); color: var(--text); padding: 20px; }
-
-    header { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; max-width: 1180px; margin: auto; }
-    header img { height: 48px; }
-    header a { color: var(--accent); text-decoration: none; font-weight: 500; }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/Ai-toolkit-banner.png') no-repeat center/cover;
-      border-radius: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: auto;
-    }
-    .hero h1 { font-size: 2.8rem; margin-bottom: 16px; }
-    .hero p { font-size: 1.1rem; color: var(--light-text); }
-
-    .blog-list { max-width: 1180px; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 0 20px; }
-    .post-card {
-      background: var(--panel);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform .2s;
-    }
-    .post-card:hover { transform: translateY(-5px); }
-    .post-card h2 { font-size: 1.3rem; color: var(--text); margin-bottom: 10px; }
-    .post-card p { font-size: 0.95rem; color: var(--light-text); margin-bottom: 14px; }
-    .post-card a { text-decoration: none; color: var(--accent); font-weight: 500; }
-
-    footer {
-      text-align: center;
-      margin-top: 80px;
-      padding: 40px 20px;
-      font-size: 0.85rem;
-      color: #888a91;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-    }
+    .blog-page-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.8), rgba(5, 11, 20, 0.8)), url('../Ai-toolkit-banner.png'); background-size: cover; background-position: center; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+    .blog-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); transition: var(--transition); display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-10px); border-color: var(--brand-blue); }
+    .blog-card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+    .blog-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-white); line-height: 1.4; }
+    .blog-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+    .blog-card .read-more { color: var(--brand-blue); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .blog-card .read-more:hover { gap: 12px; }
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://freelankarx.com">
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx Logo" />
-    </a>
-    <a href="https://freelankarx.com">← Back to Home</a>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../service/index.html">Services</a>
+        <a href="../index.html#portfolio">Portfolio</a>
+        <a href="../index.html#reviews">Reviews</a>
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../index.html#contact" class="btn-cta">Contact Me</a>
+      </nav>
+      <div class="logo">
+        <a href="../index.html"><img src="../freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Explore the Freelankarx Blog</h1>
-      <p>Learn how to grow faster using AI, automation & proven digital strategies. Fresh guides weekly.</p>
-    </div>
-  </section>
+  <main>
+    <section class="blog-page-hero">
+      <div class="container">
+        <span class="section-subtitle">Insights & Guides</span>
+        <h1>The Freelankarx Blog</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          Master the art of e-commerce with our latest guides on AI, automation, and growth strategies.
+        </p>
+      </div>
+    </section>
 
-  <section class="blog-list">
-    <div class="post-card">
-      <h2>How to Start a Profitable AI Side Hustle in 2025</h2>
-      <p>Learn how digital beginners are building real income with AI tools. Step-by-step breakdown inside.</p>
-      <a href="/blog/Ai-side-hustle.html">Read Now →</a>
-    </div>
-    <div class="post-card">
-    <h2>Boost Your Shopify Revenue 40% with AI Email Automation</h2>
-    <p>Discover the 5 AI flows adding 25–40% more revenue, and how to copy them in under an hour.</p>
-    <a href="/blog/ai-email-automation/">Read Now →</a>
-  </div>
-  <div class="post-card">
-    <h2>1,000 Visitors, $0 in Sales? 3 Fixes That Work Overnight</h2>
-    <p>If your Shopify store gets traffic but no sales, you’re not alone. Here’s how to fix it tonight using trust triggers, heatmaps, and one smart email.</p>
-    <a href="/blog/shopify-traffic-no-sales">Read Now →</a>
-  </div>
-    <div class="post-card">  
-  <h2>Stop Picking Random Products: 5 AI Hacks to Find High-Ticket Winners</h2>  
-  <p>Tired of testing random dropshipping products with no results? Learn how to use AI to predict viral winners, validate niches, and build high-ticket stores that convert in 2025.</p>  
-  <a href="/blog/ai-product-research-2025/index.html">Read Now →</a>  
-</div>
- <div class="post-card">
-  <h2>This Free AI Store Audit Fixed My Sales Overnight</h2>
-  <p>Think your store looks good but isn’t selling? This AI tool spotted 3 deadly issues and fixed them overnight.</p>
-  <a href="/blog/ai-store-audit-fix-sales/index.html">Read Now →</a>
-</div>
-<div class="post-card">
-  <h2>What I Learned From Analyzing 100 Dead Shopify Stores</h2>
-  <p>After reviewing 100 failed stores, the same mistakes keep showing up—no funnel, no trust, no traffic plan. Learn how to avoid them from day one.</p>
-  <a href="/blog/lesson-from-100-dead-stores/index.html">Read Now →</a>
-</div>
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>How to Start a Profitable AI Side Hustle in 2025</h3>
+              <p>Learn how digital beginners are building real income with AI tools. Step-by-step breakdown inside.</p>
+              <a href="Ai-side-hustle.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>Boost Your Shopify Revenue 40% with AI Email Automation</h3>
+              <p>Discover the 5 AI flows adding 25–40% more revenue, and how to copy them in under an hour.</p>
+              <a href="ai-email-automation/index.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>1,000 Visitors, $0 in Sales? 3 Fixes That Work Overnight</h3>
+              <p>If your Shopify store gets traffic but no sales, you’re not alone. Here’s how to fix it tonight.</p>
+              <a href="shopify-traffic-no-sales/index.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>Stop Picking Random Products: 5 AI Hacks to Find Winners</h3>
+              <p>Learn how to use AI to predict viral winners, validate niches, and build high-ticket stores.</p>
+              <a href="ai-product-research-2025/index.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>This Free AI Store Audit Fixed My Sales Overnight</h3>
+              <p>Think your store looks good but isn’t selling? This AI tool spotted 3 deadly issues and fixed them.</p>
+              <a href="ai-store-audit-fix-sales/index.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-card-content">
+              <h3>How to Make Your Shopify Store Look Trustworthy</h3>
+              <p>Buyers decide in 3 seconds if they trust your store. This guide gives you the exact trust signals to add.</p>
+              <a href="shopify-trustworthy-guide-2025/index.html" class="read-more">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="post-card">
-  <h2>You Don’t Need a Winning Product. You Need a Winning Offer.</h2>
-  <p>Stop chasing “unicorn products.” Learn how to build offers with real value, urgency, and emotion so your sales don’t rely on one viral hit.</p>
-  <a href="/blog/winning-offer-vs-product/index.html">Read Now →</a>
-</div>
-<div class="post-card">
-  <h2>Stop Overthinking It: Build This 1‑Page Store First</h2>
-  <p>Launch a fully working Shopify store today with just one product and one page. Fast, focused, and free — includes Notion template + AI prompts.</p>
-  <a href="/blog/one-page-shopify-setup/index.html">Read Full Guide →</a>
-</div>
-<div class="post-card">
-  <h2>How I Got My First Shopify Sale Without Ads</h2>
-  <p>I used TikTok, Reddit, and a free AI funnel to get my first sale in 3 days — without spending a dollar. Follow this exact no-ad strategy step-by-step.</p>
-  <a href="/blog/get-first-shopify-sale-no-ads/index.html">Read Answer →</a>
-</div>
-    <div class="post-card">  
-  <h2>What No One Tells You About Choosing a Niche in 2025</h2>  
-  <p>Most niche lists are wrong. This guide shows the 3 traits of a high-converting niche — and gives you the free worksheet to pick yours fast.</p>  
-  <a href="/blog/choose-shopify-niche-2025">Read Answer →</a>  
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
     </div>
-    <div class="post-card">  
-  <h2>How to Make Your Shopify Store Look Trustworthy in 2025</h2>  
-  <p>Buyers decide in 3 seconds if they trust your store. This guide gives you the exact trust signals to add — plus a free audit checklist & setup offer.</p>  
-  <a href="/blog/shopify-trustworthy-guide-2025">Read Answer →</a>  
-    </div>
-    <div class="post-card">  
-  <h2>How To Get Your Tik Tok Shop Approved</h2>  
-  <p>Step-by-step guide to get TikTok Shop approved fast. Learn TikTok Shop setup, Seller Center, login, and same-day approval strategies.</p>  
-  <a href="/blog/how-to-get-tiktok-shop-approved">Read Now →</a>  
-    </div>
-</section>
-    <!-- You can duplicate the block below to add more blogs -->
-    
-  </section>
-
-  <footer>
-    © 2025 Freelankarx. All rights reserved.
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = '../index.html';
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,172 +1,107 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TST9PM9S');</script>
-<!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB0HYEBTPD"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TB0HYEBTPD');
-</script>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://freelankarx.github.io/sitemap.xml" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get a 100% free website design tailored for your brand. Limited spots daily. High-converting, SEO-optimized, and emotionally engaging design.">
-  <meta name="keywords" content="free website design, custom web design, build my website, business site, professional web developer, grow my brand online, modern website free">
-  <meta name="author" content="Freelankarx">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claim Your Free Website Today | Freelankarx</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Claim Your Free Website Today",
-    "description": "Get a professional website built 100% free by Freelankarx in exchange for a testimonial. Offer is limited daily. Act fast.",
-    "url": "https://freelankarx.github.io/Freelankarx/free-site.html",
-    "author": {
-      "@type": "Person",
-      "name": "Freelankarx"
-    }
-  }
-  </script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f3f4f6; color: #1f2937; }
-    header.hero {
-      background: linear-gradient(120deg, #000428, #004e92);
-      color: white; padding: 4rem 2rem; text-align: center;
-    }
-    .hero h1 { font-size: 2.75rem; margin-bottom: 1rem; animation: fadeInDown 1s ease; }
-    .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; animation: fadeInUp 1s ease; }
-    .cta-btn {
-      padding: 1rem 2rem; font-size: 1rem; background-color: #ff5722;
-      color: white; border: none; border-radius: 12px; cursor: pointer;
-      transition: all 0.3s ease; animation: fadeInUp 1.2s ease;
-    }
-    .cta-btn:hover { background-color: #e64a19; }
-    .section {
-      padding: 4rem 2rem; max-width: 1100px; margin: auto;
-    }
-    .section h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
-    .section p { font-size: 1.1rem; line-height: 1.7; text-align: center; }
-    .features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem; margin-top: 3rem;
-    }
-    .feature {
-      background: white; padding: 2rem; border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-      text-align: center;
-    }
-    .feature i {
-      font-size: 2rem; color: #004e92; margin-bottom: 1rem;
-    }
-    .testimonial-box {
-      background: white; padding: 2rem; border-radius: 12px; margin: 1rem auto;
-      max-width: 800px; box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-    .testimonial-box p { font-style: italic; }
-    .testimonial-box span { display: block; margin-top: 0.5rem; font-weight: 600; }
-    .countdown {
-      text-align: center; font-size: 1.2rem; margin-top: 2rem;
-    }
-    .countdown strong { display: block; font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .countdown-time { font-size: 2rem; color: #ff5722; }
-    footer { text-align: center; padding: 2rem; background: #111827; color: #fff; margin-top: 4rem; }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .section h2 { font-size: 1.5rem; }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .free-site-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.8), rgba(5, 11, 20, 0.8)), url('bg.jpg'); background-size: cover; background-position: center; }
+    .offer-box { max-width: 800px; margin: 50px auto; background: var(--card-bg); padding: 40px; border-radius: 20px; border: 2px solid var(--brand-blue); text-align: center; }
+    .countdown-timer { font-size: 3rem; font-weight: 700; color: var(--brand-gold); margin: 20px 0; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+    .benefit-card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
+    .benefit-card i { font-size: 2.5rem; color: var(--brand-blue); margin-bottom: 20px; }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Claim Your 100% Free Website Today</h1>
-    <p>Business owner? Entrepreneur? Personal brand? I’ll design you a high-quality professional website — completely free. Just give a simple testimonial after it's done. That's it.</p>
-    <a href="https://linktr.ee/Freelankarx"><button class="cta-btn">Get Your Free Website</button></a>
-  </header>  <section class="section">
-    <h2>Why I’m Doing This</h2>
-    <p>I’m building a portfolio with real impact. Instead of pitching, I create results. You get a stunning website that drives growth — no catch.</p>
-    <div class="features">
-      <div class="feature">
-        <i class="fa-solid fa-star"></i>
-        <h3>Premium Design</h3>
-        <p>Modern, mobile-friendly websites designed to stand out and convert.</p>
-      </div>
-      <div class="feature">
-        <i class="fa-solid fa-code"></i>
-        <h3>Fast & Functional</h3>
-        <p>Clean, responsive code built with performance and user experience in mind.</p>
-      </div>
-      <div class="feature">
-        <i class="fa-solid fa-globe"></i>
-        <h3>Global SEO</h3>
-        <p>Optimized to show up on Google, fast — with buyer-intent keywords.</p>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about/index.html">About</a>
+        <a href="service/index.html">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#contact" class="btn-cta">Contact Me</a>
+      </nav>
+      <div class="logo">
+        <a href="index.html"><img src="freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
       </div>
     </div>
-  </section>  <section class="section">
-    <h2>What Others Are Saying</h2>
-    <div class="testimonial-box">
-      <p>"I can’t believe this was free — it’s more professional than websites I paid for!"</p>
-      <span>– Michelle, Fashion Brand Owner</span>
+  </header>
+
+  <main>
+    <section class="free-site-hero">
+      <div class="container">
+        <span class="section-subtitle">Limited Time Offer</span>
+        <h1>Get a Professional Website — 100% Free</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          I’m building my portfolio and I want to help you grow. I’ll design your site for free in exchange for a video testimonial.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="offer-box">
+          <h3>Hurry! Only 2 Spots Left for Today</h3>
+          <div id="countdown" class="countdown-timer">05:45:12</div>
+          <p style="margin-bottom: 30px;">Once the timer hits zero, this offer will be hidden.</p>
+          <a href="https://wa.me/2349068526805?text=I'm%20interested%20in%20the%20free%20website%20offer!" class="btn btn-cta">Claim My Free Site Now</a>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <i class="fas fa-magic"></i>
+            <h3>Premium Design</h3>
+            <p>Modern, mobile-friendly websites designed to stand out and convert visitors.</p>
+          </div>
+          <div class="benefit-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Fast Performance</h3>
+            <p>Clean code built for speed and optimal user experience on all devices.</p>
+          </div>
+          <div class="benefit-card">
+            <i class="fas fa-search"></i>
+            <h3>SEO Optimized</h3>
+            <p>Built with search engines in mind so you can start ranking from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
     </div>
-    <div class="testimonial-box">
-      <p>"This guy knows what he’s doing. Clean, sharp, and built to convert."</p>
-      <span>– James, Startup Founder</span>
-    </div>
-    <div class="testimonial-box">
-      <p>"Delivered way more than I expected. I highly recommend Freelankarx."</p>
-      <span>– Anita, Business Coach</span>
-    </div>
-  </section>  <section class="section">
-    <h2>Spots Are Limited</h2>
-    <p>I can only build a few each day. If you’re seeing this, you’re early enough. Don’t miss it.</p>
-    <div class="countdown">
-      <strong>Offer expires in:</strong>
-      <div id="countdown" class="countdown-time">Loading...</div>
-    </div>
-    <a href="https://linktr.ee/Freelankarx"><button class="cta-btn">Start Your Free Site</button></a>
-  </section>  <footer>
-    Built with heart by Freelankarx. Your dream site is just a message away.
-  </footer>  <script>
+  </footer>
+
+  <script>
     const countdown = document.getElementById('countdown');
-    const deadline = new Date();
-    deadline.setHours(deadline.getHours() + 6); // 6-hour countdown
+    let time = 6 * 60 * 60 + 45 * 60 + 12; // 6h 45m 12s
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const t = deadline.getTime() - now;
-      if (t < 0) {
-        countdown.innerHTML = "Time’s up!";
-        return;
-      }
-      const hrs = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((t % (1000 * 60)) / 1000);
-      countdown.innerHTML = `${hrs}h ${mins}m ${secs}s`;
+      const hrs = Math.floor(time / 3600);
+      const mins = Math.floor((time % 3600) / 60);
+      const secs = time % 60;
+      countdown.innerHTML = `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      if (time > 0) time--;
     }
     setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+    }
   </script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TST9PM9S"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </body>
 </html>

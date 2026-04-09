@@ -1,115 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://freelankarx.com/toolkit.html" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free AI Shopify Toolkit | Freelankarx</title>
-  <meta name="description" content="Download the exact AI toolkit 6-figure Shopify brands use to launch, scale & automate with ease – free from Freelankarx.">
-
-  <!-- Fonts & Favicon -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png">
-
-  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #1B1F2B; --panel: #302525; --accent: #0E77FF; --text: #ffffff; --light: #d0d3db;
-    }
-    * {
-      box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', Arial, sans-serif;
-    }
-    body {
-      display: flex; flex-direction: column; min-height: 100vh; background: var(--bg); color: var(--text);
-    }
-    header {
-      max-width: 1180px; width: 100%; margin: 0 auto; padding: 20px 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    header img { height: 46px; }
-    nav a {
-      color: var(--accent); font-size: .95rem; text-decoration: none;
-    }
-    .hero {
-      position: relative; text-align: center; padding: 60px 20px 80px;
-      background: url('https://raw.githubusercontent.com/Freelankarx/Freelankarx/4da80bfdb1c15c8d8858e436a00f85d98c074cad/Ai-toolkit-banner.png') center/cover no-repeat;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.8);
-    }
-    .hero > * {
-      position: relative; z-index: 1;
-    }
-    .hero h1 {
-      font-size: 2.8rem; font-weight: 600; line-height: 1.2; margin-bottom: 16px;
-    }
-    .hero p.sub {
-      font-size: 1.2rem; max-width: 620px; margin: 0 auto 32px; color: var(--light);
-    }
-    .form-panel {
-      margin: 0 auto; background: var(--panel); max-width: 540px;
-      padding: 30px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.4);
-    }
-    .spam-note {
-      font-size: .9rem; color: var(--light); margin-top: 14px;
-    }
-    .privacy-note {
-      font-size: .8rem; color: #9b9ea6; margin-top: 6px;
-    }
-    .testimonial-box {
-      display: flex; flex-direction: column; gap: 28px; margin: 60px auto 0; max-width: 700px;
-    }
-    .testimonial {
-      background: #22242e; border-left: 4px solid var(--accent);
-      border-radius: 10px; padding: 24px 28px; font-size: .95rem;
-      color: #e4e6eb; font-style: italic;
-    }
-    .stars {
-      color: gold; font-size: 1.1rem; margin-bottom: 6px; display: inline-block;
-    }
-    footer {
-      text-align: center; padding: 30px 20px; font-size: .85rem;
-      color: #8e9099; margin-top: auto;
-    }
-    @media(max-width:600px){
-      .hero h1{font-size:1.9rem}
-      .hero p.sub{font-size:1rem}
-      .form-panel{padding:22px}
-    }
+    .toolkit-page-hero { padding: 150px 0 80px; text-align: center; background: linear-gradient(rgba(5, 11, 20, 0.8), rgba(5, 11, 20, 0.8)), url('Ai-toolkit-banner.png'); background-size: cover; background-position: center; }
+    .form-container { max-width: 600px; margin: 50px auto; background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); }
+    .toolkit-testimonial { margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .toolkit-testimonial-card { background: rgba(255, 255, 255, 0.02); padding: 30px; border-radius: 15px; border-left: 4px solid var(--brand-blue); font-style: italic; }
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://freelankarx.com">
-      <img src="https://raw.githubusercontent.com/Freelankarx/Freelankarx/main/freelankarx%20logo.png" alt="Freelankarx logo">
-    </a>
-    <nav><a href="https://freelankarx.com">← Back&nbsp;to&nbsp;Home</a></nav>
+  <header class="header-top">
+    <div class="nav-inner">
+      <div class="mobile-toggle" id="hamburger"><i class="fas fa-bars"></i></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about/index.html">About</a>
+        <a href="service/index.html">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#contact" class="btn-cta">Contact Me</a>
+      </nav>
+      <div class="logo">
+        <a href="index.html"><img src="freelankarx_logo-removebg-preview.png" alt="FreelankarX logo" style="height: 50px;"></a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Download the Free AI Shopify Toolkit</h1>
-    <p class="sub">Get the exact tools & prompts 6-figure stores use to launch, write copy, recover carts and run smart ads — all in one click.</p>
+  <main>
+    <section class="toolkit-page-hero">
+      <div class="container">
+        <span class="section-subtitle">Free Resource</span>
+        <h1>Download the AI Shopify Toolkit</h1>
+        <p style="max-width: 800px; margin: 20px auto; color: var(--text-muted); font-size: 1.2rem;">
+          Get the exact tools & prompts 6-figure stores use to launch, scale & automate with ease.
+        </p>
+      </div>
+    </section>
 
-    <div class="form-panel">
-      <!-- ✅ Brevo Form Embed via iframe -->
-      <iframe width="540" height="305" src="https://ecf41424.sibforms.com/serve/MUIFANxWaPccBdyRW4mMJzyeBWokr4NtbGPryAMkaLVOqCRHz88sZH2vUvClWos1dtasmxYFlk74IeAj-H4ozHDOsPRgBXgPP4uCQijh1KK9HGf4C-UQx3N35itLwOrV1cw6ViKZaWYmVBZZqdzgQ_Kgiv4xF38u43RiPJWCPaNbPW48mqmXnbOKxrDKolu-LrTelYUVWjs5-AGu"
-        frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;">
-      </iframe>
-      <!-- /iframe -->
+    <section class="section">
+      <div class="container">
+        <div class="form-container">
+          <iframe width="100%" height="400" src="https://ecf41424.sibforms.com/serve/MUIFANxWaPccBdyRW4mMJzyeBWokr4NtbGPryAMkaLVOqCRHz88sZH2vUvClWos1dtasmxYFlk74IeAj-H4ozHDOsPRgBXgPP4uCQijh1KK9HGf4C-UQx3N35itLwOrV1cw6ViKZaWYmVBZZqdzgQ_Kgiv4xF38u43RiPJWCPaNbPW48mqmXnbOKxrDKolu-LrTelYUVWjs5-AGu"
+            frameborder="0" scrolling="auto" allowfullscreen style="display: block; border-radius: 10px;">
+          </iframe>
+          <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+            <i class="fas fa-info-circle"></i> If the email lands in Spam, drag it to Primary. Unsubscribe anytime.
+          </p>
+        </div>
 
-      <div class="spam-note">📥 If our email lands in “Promotions” or “Spam,” drag it to your Primary inbox so you never miss an update.</div>
-      <div class="privacy-note">We respect your privacy. Unsubscribe anytime.</div>
+        <div class="toolkit-testimonial">
+          <div class="toolkit-testimonial-card">
+            <div style="color: var(--brand-gold); margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p>“I set up my first profitable AI-powered store in 2 days using this toolkit. Absolute lifesaver!”</p>
+            <strong style="display: block; margin-top: 15px; color: var(--brand-blue);">— Maria G.</strong>
+          </div>
+          <div class="toolkit-testimonial-card">
+            <div style="color: var(--brand-gold); margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+            <p>“I thought I’d spend months learning ads… this kit literally wrote the strategy for me.”</p>
+            <strong style="display: block; margin-top: 15px; color: var(--brand-blue);">— Daniel A.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+    <div class="container">
+      <p>© 2026 Freelankarx — Official Shopify Partner. All Rights Reserved.</p>
     </div>
+  </footer>
 
-    <div class="testimonial-box">
-      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“I set up my first profitable AI-powered store in 2 days using this toolkit. Absolute lifesaver!” — <strong>Maria G.</strong></blockquote>
-      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“I thought I’d spend months learning ads… this kit literally wrote the strategy for me.” — <strong>Daniel A.</strong></blockquote>
-      <blockquote class="testimonial"><span class="stars">⭐⭐⭐⭐⭐</span>“First time I felt in control of my Shopify store. Everything just works.” — <strong>Jen T.</strong></blockquote>
-    </div>
-  </section>
-
-  <footer>© 2025 Freelankarx. All rights reserved.</footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+    }
+  </script>
 </body>
 </html>
