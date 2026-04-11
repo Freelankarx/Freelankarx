@@ -268,27 +268,58 @@
       gsap.registerPlugin(ScrollTrigger);
 
       // Hero Animations
-      gsap.to('#hero-title', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out', delay: 0.2 });
-      gsap.to('#hero-desc', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out', delay: 0.5 });
-      gsap.to('#hero-actions', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out', delay: 0.8 });
+      gsap.fromTo("#hero-title", { opacity: 0, y: 50, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "power3.out", delay: 0.2 });
+      gsap.fromTo("#hero-desc", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.5 });
+      gsap.fromTo("#hero-actions", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.8 });
 
-      // Floating Glow Animation
-      gsap.to('#glow1', {
-        x: 'random(-100, 100)',
-        y: 'random(-100, 100)',
-        duration: 10,
+      // Staggered fade-in for services
+      gsap.from(".service", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".services-grid",
+          start: "top 80%",
+        }
+      });
+
+      // Parallax effect for results section
+      gsap.to(".results-image-grid", {
+        yPercent: -10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".results-teaser",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      });
+
+      // Floating elements animation
+      gsap.to("#glow1", {
+        x: "random(-200, 200)",
+        y: "random(-200, 200)",
+        rotation: "random(0, 360)",
+        scale: "random(0.8, 1.2)",
+        duration: 20,
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut'
+        ease: "sine.inOut"
       });
-      gsap.to('#glow2', {
-        x: 'random(-100, 100)',
-        y: 'random(-100, 100)',
-        duration: 12,
+      gsap.to("#glow2", {
+        x: "random(-200, 200)",
+        y: "random(-200, 200)",
+        rotation: "random(0, 360)",
+        scale: "random(0.8, 1.2)",
+        duration: 22,
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut'
+        ease: "sine.inOut"
       });
+
+
 
       // Parallax Video
       gsap.to('.hero-video', {
