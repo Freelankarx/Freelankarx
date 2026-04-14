@@ -297,41 +297,6 @@
         }
       });
 
-      // Floating elements animation
-      gsap.to("#glow1", {
-        x: "random(-200, 200)",
-        y: "random(-200, 200)",
-        rotation: "random(0, 360)",
-        scale: "random(0.8, 1.2)",
-        duration: 20,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-      gsap.to("#glow2", {
-        x: "random(-200, 200)",
-        y: "random(-200, 200)",
-        rotation: "random(0, 360)",
-        scale: "random(0.8, 1.2)",
-        duration: 22,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-
-
-      // Parallax Video
-      gsap.to('.hero-video', {
-        yPercent: 30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
-
       // Section Fade-ins
       gsap.utils.toArray('.section').forEach(section => {
         gsap.from(section, {
