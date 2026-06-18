@@ -2,12 +2,52 @@
   "identifier": "freelankarx",
   "type": "personal_brand",
   "owner": "Olamilekan Muraina",
-  "url": "https://freelankarx.github.io/Freelankarx/",
+  "url": "https://freelankarx.com",
   "social_links": [
     "https://www.linkedin.com/in/muraina-olamilekan-a09543298/",
     "https://www.instagram.com/freelankarxx",
-    "https://www.tiktok.com/@freelankarx"
+    "https://www.tiktok.com/@freelankarx",
+    "https://wa.me/2349068526805"
   ],
-  "tags": ["Shopify Expert", "Digital Marketer", "eCommerce Specialist", "Freelankarx", "Olamilekan Muraina"],
-  "description": "I help entrepreneurs explode their Shopify growth with expert store builds, viral ads, and automated marketing systems."
+  "service_pillars": [
+    {
+      "name": "Full-Stack Web Development",
+      "description": "Custom web apps, MVPs, and business websites built end-to-end"
+    },
+    {
+      "name": "Shopify & eCommerce",
+      "description": "Store builds, conversion optimization, and ad funnel integration"
+    },
+    {
+      "name": "Career Branding & Resume Writing",
+      "description": "Executive resumes, LinkedIn positioning, and career documents"
+    },
+    {
+      "name": "Online Reputation Management",
+      "description": "Reputation monitoring, repair, and protection for businesses"
+    },
+    {
+      "name": "AI Assistant Development",
+      "description": "Custom chatbots and AI-powered business process automations"
+    }
+  ],
+  "tags": [
+    "Full-Stack Developer",
+    "Shopify Expert",
+    "Career Branding Expert",
+    "AI Builder",
+    "ORM Specialist",
+    "Freelankarx",
+    "Olamilekan Muraina"
+  ],
+  "description": "World-class digital execution from code to career docs delivered by one trusted expert. Olamilekan Muraina is a multi-skill freelance powerhouse serving founders, startups, and companies worldwide.",
+  "brand_values": [
+    "Excellence",
+    "Innovation",
+    "Transparency",
+    "Impact",
+    "Reliability"
+  ],
+  "currencies": ["USD", "GBP", "EUR"],
+  "payment_methods": ["Wise", "Payoneer", "International Bank Transfer"]
 }
