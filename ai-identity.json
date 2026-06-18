@@ -49,5 +49,5 @@
     "Reliability"
   ],
   "currencies": ["USD", "GBP", "EUR"],
-  "payment_methods": ["Wise", "Payoneer", "International Bank Transfer"]
+  "payment_methods": ["Wise", "Payoneer", "paystack", "International Bank Transfer"]
 }
