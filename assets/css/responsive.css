@@ -1,0 +1,49 @@
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Tablet landscape and below */
+@media (max-width: 1024px) {
+  :root {
+    --fs-h1: clamp(2rem, 5vw, 3rem);
+    --fs-h2: clamp(1.75rem, 4vw, 2.5rem);
+    --fs-h3: clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .container { padding-inline: var(--space-4); }
+  .section { padding-block: var(--space-16); }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --space-12: 2rem;
+    --space-16: 3rem;
+    --space-20: 4rem;
+    --space-24: 5rem;
+  }
+
+  .btn { padding: var(--space-3) var(--space-6); }
+  .btn-lg { padding: var(--space-4) var(--space-8); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* High contrast / accessibility */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-muted: #D1D5DB;
+    --color-border: rgba(255, 255, 255, 0.2);
+  }
+}

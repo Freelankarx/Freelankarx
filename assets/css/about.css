@@ -1,0 +1,312 @@
+/* ============================================
+   ABOUT PAGE — FOUNDER IMAGE SECTION
+   ============================================ */
+
+/* Founder grid layout */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Image wrapper */
+.founder-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Animated glow behind image */
+.founder-image-glow {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.4), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.3), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.2), transparent 60%);
+  filter: blur(60px);
+  animation: glow-rotate 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glow-rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Image frame (with gradient border) */
+.founder-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899, #06B6D4);
+  padding: 4px;
+  box-shadow:
+    0 30px 80px rgba(139, 92, 246, 0.4),
+    0 0 100px rgba(139, 92, 246, 0.2);
+  z-index: 1;
+  transition: transform 0.6s var(--ease-elegant);
+}
+
+.founder-image-frame:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* The actual image */
+.founder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: calc(var(--radius-2xl) - 4px);
+  display: block;
+  background: linear-gradient(135deg, #1d0b4a, #2d0a4f);
+}
+
+/* Fallback when image is missing */
+.founder-image-frame.fallback {
+  background: linear-gradient(135deg, #8B5CF6, #EC4899, #06B6D4);
+  display: grid;
+  place-items: center;
+}
+
+.founder-image-frame.fallback::before {
+  content: "F";
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 25vw, 15rem);
+  font-weight: var(--fw-black);
+  color: white;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
+}
+
+/* Decorative badges on image */
+.image-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(10, 4, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: white;
+  z-index: 2;
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.image-badge-top {
+  top: 1.5rem;
+  left: -1rem;
+  animation-delay: 0s;
+}
+
+.image-badge-bottom {
+  bottom: 1.5rem;
+  right: -1rem;
+  animation-delay: 2s;
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+/* Floating stats around image */
+.floating-stat {
+  position: absolute;
+  padding: 1rem 1.25rem;
+  background: rgba(10, 4, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  z-index: 2;
+  box-shadow: var(--shadow-lg);
+  animation: float-stat 6s ease-in-out infinite;
+}
+
+.floating-stat-1 {
+  top: 8%;
+  right: -2rem;
+  animation-delay: 0s;
+}
+
+.floating-stat-2 {
+  bottom: 25%;
+  left: -2.5rem;
+  animation-delay: 2s;
+}
+
+.floating-stat-3 {
+  bottom: 5%;
+  right: -1.5rem;
+  animation-delay: 4s;
+}
+
+@keyframes float-stat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: var(--fw-black);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+/* Quick facts grid */
+.quick-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+}
+
+.quick-fact {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quick-fact-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.quick-fact-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.quick-fact-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 0.15rem;
+}
+
+/* Founder content */
+.founder-content {
+  max-width: 600px;
+}
+
+.founder-content h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .founder-image-wrapper {
+    max-width: 400px;
+  }
+
+  .floating-stat-1 {
+    right: -1rem;
+  }
+
+  .floating-stat-2 {
+    left: -1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .founder-grid {
+    gap: 2rem;
+  }
+
+  .founder-image-wrapper {
+    max-width: 320px;
+  }
+
+  .floating-stat {
+    padding: 0.75rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+  }
+
+  .image-badge {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .image-badge-top {
+    top: 1rem;
+    left: 0;
+  }
+
+  .image-badge-bottom {
+    bottom: 1rem;
+    right: 0;
+  }
+
+  .quick-facts {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .founder-image-glow,
+  .image-badge,
+  .floating-stat {
+    animation: none;
+  }
+}

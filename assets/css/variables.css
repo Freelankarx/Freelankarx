@@ -1,0 +1,127 @@
+/* ============================================
+   FREELANKARX DESIGN TOKENS — ENHANCED
+   ============================================ */
+
+:root {
+  /* ===== COLORS — Richer Cosmic Palette ===== */
+  --color-primary: #0a0420;            /* Deep cosmic violet-black */
+  --color-secondary: #14082e;          /* Royal violet */
+  --color-tertiary: #1d0b4a;           /* Deep indigo */
+
+  /* Vibrant accents */
+  --color-accent: #8B5CF6;             /* Electric purple */
+  --color-accent-2: #06B6D4;           /* Neon cyan */
+  --color-accent-3: #EC4899;           /* Hot pink */
+  --color-accent-4: #3B82F6;           /* Sky blue */
+  --color-accent-5: #10B981;           /* Mint green */
+
+  /* Glows */
+  --color-accent-glow: rgba(139, 92, 246, 0.5);
+  --color-cyan-glow: rgba(6, 182, 212, 0.5);
+  --color-pink-glow: rgba(236, 72, 153, 0.5);
+
+  /* Text */
+  --color-text: #FFFFFF;
+  --color-text-muted: #C7C9D1;
+  --color-text-dim: #8B8D98;
+
+  /* Status */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-bright: rgba(255, 255, 255, 0.18);
+
+  /* Glass */
+  --color-glass-bg: rgba(20, 8, 46, 0.55);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+
+  --fs-display: clamp(3rem, 8vw, 5.5rem);
+  --fs-h1: clamp(2.5rem, 6vw, 4rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3rem);
+  --fs-h3: clamp(1.5rem, 3vw, 2.25rem);
+  --fs-h4: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-body-lg: 1.25rem;
+  --fs-body: 1.125rem;
+  --fs-small: 1rem;
+  --fs-caption: 0.875rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* ===== SPACING ===== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+
+  /* ===== CONTAINERS ===== */
+  --container-sm: 768px;
+  --container-md: 1024px;
+  --container-lg: 1280px;
+  --container-xl: 1440px;
+  --container-2xl: 1600px;
+
+  /* ===== RADII ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-full: 9999px;
+
+  /* ===== SHADOWS — More Glow ===== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 50px var(--color-accent-glow);
+  --shadow-glow-cyan: 0 0 50px var(--color-cyan-glow);
+  --shadow-glow-pink: 0 0 50px var(--color-pink-glow);
+
+  /* ===== Z-INDEX ===== */
+  --z-base: 1;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-cursor: 9999;
+
+  /* ===== TRANSITIONS ===== */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-elegant: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --dur-fast: 200ms;
+  --dur-normal: 400ms;
+  --dur-slow: 700ms;
+  --dur-cinematic: 1200ms;
+
+  /* ===== BLURS ===== */
+  --blur-sm: 8px;
+  --blur-md: 20px;
+  --blur-lg: 40px;
+  --blur-xl: 60px;
+}

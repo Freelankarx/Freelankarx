@@ -1,0 +1,22 @@
+﻿/* ============================================
+   UNIVERSAL UNICODE FONT SUPPORT
+   Ensures all Unicode symbols display correctly
+   ============================================ */
+
+:root {
+  --font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", "EmojiOne Color", "Android Emoji", sans-serif;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif, var(--font-emoji);
+}
+
+/* Force all text elements to use emoji-supporting fonts */
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, li {
+  font-family: inherit;
+}
+
+/* Specifically for unicode decorative symbols */
+.eyebrow, .text-shimmer, [class*="emoji"] {
+  font-family: var(--font-emoji), var(--font-display);
+}

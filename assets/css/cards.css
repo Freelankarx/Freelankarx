@@ -1,0 +1,159 @@
+/* ============================================
+   CARDS & GLASS PANELS — MOBILE-FIRST
+   ============================================ */
+
+.glass {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 50%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  padding: 1.25rem;                /* Mobile-first (was 2rem) */
+  border-radius: var(--radius-lg);
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--color-border);
+  transition: all var(--dur-normal) var(--ease-elegant);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);     /* Reduced from -6px */
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.card-glow {
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity var(--dur-normal);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.card:hover .card-glow { opacity: 0.3; }
+
+.card-icon {
+  width: 44px;                     /* Smaller on mobile (was 56px) */
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.875rem;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.card-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.card-icon svg {
+  width: 22px;
+  height: 22px;
+  color: white;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;              /* Mobile-first */
+  line-height: 1.25;
+}
+
+.card p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent);
+  font-weight: var(--fw-semibold);
+  font-size: 0.8125rem;
+  text-decoration: none;
+  transition: gap var(--dur-normal);
+}
+
+.card:hover .card-link { gap: var(--space-4); }
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (min-width: 640px) {
+  .card {
+    padding: 1.75rem;
+  }
+  .card-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .card-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .card h3 {
+    font-size: 1.25rem;
+  }
+  .card p {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: var(--space-8);      /* 2rem on desktop */
+  }
+  .card-icon {
+    width: 56px;
+    height: 56px;
+  }
+  .card-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  .card h3 {
+    font-size: var(--fs-h4);       /* 1.5rem on desktop */
+  }
+  .card p {
+    font-size: var(--fs-small);    /* 1rem on desktop */
+  }
+  .card:hover {
+    transform: translateY(-6px);   /* Desktop only - full hover */
+  }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+  }
+}

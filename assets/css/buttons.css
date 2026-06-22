@@ -1,0 +1,154 @@
+/* ============================================
+   BUTTONS — MOBILE-FIRST
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;       /* Was 1rem 2rem (smaller on mobile) */
+  min-height: 48px;              /* Touch target size */
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-elegant);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  color: white;
+  box-shadow: 0 4px 24px var(--color-accent-glow);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-accent-2), var(--color-accent));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);    /* Less movement on mobile */
+  box-shadow: 0 12px 36px var(--color-accent-glow);
+}
+
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary > * { position: relative; z-index: 1; }
+
+/* Active state (mobile tap feedback) */
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-bright);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-elegant);
+}
+
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* =====================
+   FLOATING WHATSAPP BUTTON
+   ===================== */
+.floating-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: grid;
+  place-items: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s;
+  animation: pulse-glow 3s ease-in-out infinite;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-btn:hover { transform: scale(1.1); }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 8px 48px rgba(37, 211, 102, 0.7); }
+}
+
+/* =====================
+   MOBILE BUTTON FIXES
+   ===================== */
+@media (max-width: 640px) {
+  .btn {
+    padding: 0.875rem 1.25rem;     /* Slightly smaller */
+    font-size: 0.875rem;
+    min-height: 48px;             /* Keep tap target */
+  }
+
+  .btn-lg {
+    padding: 1rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .floating-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 380px) {
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .btn-lg {
+    padding: 0.875rem 1.25rem;
+  }
+}

@@ -1,0 +1,175 @@
+/* ============================================
+   ANIMATED AURORA BACKGROUND
+   Multiple floating colored orbs + grid
+   ============================================ */
+
+/* Base body gets cosmic gradient */
+body {
+  background:
+    radial-gradient(ellipse at top, #1d0b4a 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, #2d0a4f 0%, transparent 50%),
+    linear-gradient(180deg, #0a0420 0%, #14082e 50%, #0a0420 100%);
+  background-attachment: fixed;
+}
+
+/* Aurora layer — sits behind everything */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Individual orbs */
+.aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  will-change: transform;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+.aurora-orb-1 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #8B5CF6 0%, #6D28D9 30%, transparent 70%);
+  top: -250px;
+  left: -200px;
+  animation: orb-float-1 28s ease-in-out infinite;
+}
+
+.aurora-orb-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #06B6D4 0%, #0891B2 30%, transparent 70%);
+  top: 20%;
+  right: -200px;
+  animation: orb-float-2 32s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.aurora-orb-3 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #EC4899 0%, #BE185D 30%, transparent 70%);
+  bottom: -300px;
+  left: 25%;
+  animation: orb-float-3 36s ease-in-out infinite;
+  opacity: 0.55;
+}
+
+.aurora-orb-4 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3B82F6 0%, #1D4ED8 30%, transparent 70%);
+  top: 50%;
+  left: 30%;
+  animation: orb-float-4 30s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.aurora-orb-5 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #10B981 0%, #047857 30%, transparent 70%);
+  top: 70%;
+  right: 20%;
+  animation: orb-float-5 34s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.aurora-orb-6 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #F59E0B 0%, #D97706 30%, transparent 70%);
+  top: 10%;
+  left: 50%;
+  animation: orb-float-6 40s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+/* Orb float animations — each unique */
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40vw, 20vh) scale(1.2); }
+  50% { transform: translate(20vw, 60vh) scale(0.9); }
+  75% { transform: translate(60vw, 40vh) scale(1.1); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-50vw, 30vh) scale(1.15); }
+  50% { transform: translate(-30vw, -20vh) scale(0.95); }
+  75% { transform: translate(-60vw, 10vh) scale(1.1); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40vw, -50vh) scale(1.3); }
+  66% { transform: translate(-30vw, -30vh) scale(0.85); }
+}
+
+@keyframes orb-float-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50vw, -40vh) scale(1.25); }
+}
+
+@keyframes orb-float-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40vw, -40vh) scale(1.1); }
+  50% { transform: translate(-20vw, -60vh) scale(0.9); }
+  75% { transform: translate(-50vw, -20vh) scale(1.15); }
+}
+
+@keyframes orb-float-6 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30vw, 50vh) scale(1.2); }
+}
+
+/* Animated grid overlay — subtle perspective */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  animation: grid-drift 60s linear infinite;
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+/* Noise overlay for texture */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .aurora-orb { filter: blur(80px); }
+  .aurora-orb-1 { width: 400px; height: 400px; }
+  .aurora-orb-2 { width: 350px; height: 350px; }
+  .aurora-orb-3 { width: 500px; height: 500px; }
+  .aurora-orb-4, .aurora-orb-5, .aurora-orb-6 { display: none; }
+  .bg-grid { background-size: 40px 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-orb { animation: none; }
+  .bg-grid { animation: none; }
+}
