@@ -1,16 +1,20 @@
-## Hi there 👋
+# Freelankarx
 
-<!--
-**Freelankarx/Freelankarx** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A premium digital execution brand website built with pure HTML, CSS, and JavaScript.
 
-Here are some ideas to get you started:
+## 🌟 Overview
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Freelankarx is a premium digital studio offering Shopify development, web development, AI automation, resume writing, SEO, and digital growth services.
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3 (Custom Design System)
+- Vanilla JavaScript
+- Three.js (3D)
+- GSAP + ScrollTrigger (Animations)
+- Lenis (Smooth Scrolling)
+- tsParticles (Background Effects)
+
+## 📂 Structure
+

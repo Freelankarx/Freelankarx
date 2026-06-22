@@ -1,0 +1,13 @@
+{
+  "name": "Freelankarx",
+  "short_name": "Freelankarx",
+  "description": "Premium digital execution brand",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#8B5CF6",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

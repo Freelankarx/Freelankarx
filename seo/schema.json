@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Freelankarx",
+  "alternateName": "Freelankarx Digital Studio",
+  "url": "https://freelankarx.com",
+  "logo": "https://freelankarx.com/assets/images/logo.png",
+  "description": "Premium digital execution brand. Web development, Shopify, AI automation, business automation, task bots, email marketing, social media marketing, SEO, resume writing, UI/UX design, and reputation management.",
+  "founder": {
+    "@type": "Person",
+    "name": "Olamilekan Muraina",
+    "jobTitle": "Founder & Creative Director"
+  },
+  "foundingDate": "2018",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lagos",
+    "addressCountry": "NG"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-906-852-6805",
+    "contactType": "Customer Service",
+    "email": "freelankarx@gmail.com",
+    "availableLanguage": ["English"],
+    "contactOption": "TollFree"
+  },
+  "sameAs": [
+    "https://twitter.com/freelankarx",
+    "https://instagram.com/freelankarx",
+    "https://facebook.com/freelankarx",
+    "https://tiktok.com/@freelankarx",
+    "https://pinterest.com/freelankarx",
+    "https://t.me/freelankarx",
+    "https://youtube.com/@freelankarx"
+  ],
+  "areaServed": [
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "United Kingdom"},
+    {"@type": "Country", "name": "Canada"},
+    {"@type": "Country", "name": "Australia"},
+    {"@type": "Country", "name": "Nigeria"},
+    {"@type": "Country", "name": "Worldwide"}
+  ],
+  "knowsAbout": [
+    "Web Development",
+    "Shopify Development",
+    "Ecommerce",
+    "AI Automation",
+    "Business Automation",
+    "Task Bot Development",
+    "Email Marketing",
+    "Social Media Marketing",
+    "SEO",
+    "Resume Writing",
+    "UI/UX Design"
+  ],
+  "priceRange": "$$",
+  "openingHours": "Mo-Sat 09:00-18:00"
+}

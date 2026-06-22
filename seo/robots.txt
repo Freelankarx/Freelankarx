@@ -1,0 +1,47 @@
+# ============================================
+# FREELANKARX — ROBOTS.TXT
+# ============================================
+
+# Allow all well-behaved bots
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (when added later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Disallow legal pages from indexing
+Disallow: /legal/
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://freelankarx.com/sitemap.xml
+
+# Host
+Host: https://freelankarx.com

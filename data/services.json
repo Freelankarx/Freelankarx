@@ -1,0 +1,319 @@
+{
+  "services": [
+    {
+      "id": "shopify-development",
+      "title": "Shopify Development",
+      "slug": "shopify-development",
+      "icon": "🛍️",
+      "shortDescription": "Custom Shopify stores that convert visitors into customers.",
+      "fullDescription": "We build premium Shopify stores that don't just look beautiful — they sell. From custom theme development to advanced app integrations, every element is designed to maximize conversions and create memorable customer experiences.",
+      "features": [
+        "Custom theme development",
+        "Store setup & configuration",
+        "Payment gateway integration",
+        "Product page optimization",
+        "Checkout flow optimization",
+        "Mobile-first design",
+        "Speed optimization",
+        "Third-party app integration"
+      ],
+      "startingPrice": "$1,500",
+      "timeline": "3-6 weeks",
+      "category": "development"
+    },
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "slug": "web-development",
+      "icon": "⚡",
+      "shortDescription": "Premium websites built to stand out and convert.",
+      "fullDescription": "From business websites to complex web applications, we create custom digital experiences that tell your story and drive growth. Every site is fast, accessible, and built to scale.",
+      "features": [
+        "Custom website design",
+        "Responsive development",
+        "Performance optimization",
+        "SEO foundation",
+        "Content management",
+        "Analytics integration",
+        "Accessibility compliance",
+        "Ongoing support"
+      ],
+      "startingPrice": "$1,500",
+      "timeline": "2-4 weeks",
+      "category": "development"
+    },
+    {
+      "id": "ecommerce-development",
+      "title": "Ecommerce Development",
+      "slug": "ecommerce-development",
+      "icon": "🛒",
+      "shortDescription": "Custom ecommerce solutions beyond Shopify.",
+      "fullDescription": "Beyond Shopify — we build custom ecommerce experiences on any platform. WooCommerce, headless commerce, fully custom solutions. Built for scale, designed for conversion.",
+      "features": [
+        "WooCommerce development",
+        "Headless commerce setup",
+        "Custom platform builds",
+        "Multi-vendor marketplaces",
+        "Subscription commerce",
+        "B2B ecommerce solutions",
+        "International commerce",
+        "Custom checkout flows"
+      ],
+      "startingPrice": "$2,500",
+      "timeline": "4-8 weeks",
+      "category": "development"
+    },
+    {
+      "id": "ai-automation",
+      "title": "AI Automation",
+      "slug": "ai-automation",
+      "icon": "🤖",
+      "shortDescription": "Intelligent systems that save time and grow businesses.",
+      "fullDescription": "We build AI assistants, chatbots, and workflow automations that save your team time, reduce costs, and create better customer experiences. From simple chatbots to complex multi-step agents.",
+      "features": [
+        "Custom AI chatbots",
+        "Workflow automation",
+        "Lead qualification bots",
+        "Customer support AI",
+        "Process automation",
+        "Integration with existing tools",
+        "Training & documentation",
+        "Ongoing optimization"
+      ],
+      "startingPrice": "$2,000",
+      "timeline": "4-8 weeks",
+      "category": "automation"
+    },
+    {
+      "id": "automation",
+      "title": "Business Automation",
+      "slug": "automation",
+      "icon": "⚙️",
+      "shortDescription": "Streamline operations. Eliminate repetitive tasks. Scale faster.",
+      "fullDescription": "Stop wasting hours on repetitive tasks. We build custom automation systems that connect your tools, sync your data, and run your operations on autopilot. From simple workflows to complex multi-step processes.",
+      "features": [
+        "Workflow automation (Zapier, Make, n8n)",
+        "CRM automation & sync",
+        "Email sequence automation",
+        "Data pipeline automation",
+        "Cross-platform integrations",
+        "Automated reporting",
+        "Lead routing & distribution",
+        "Custom API integrations"
+      ],
+      "startingPrice": "$1,200",
+      "timeline": "2-4 weeks",
+      "category": "automation"
+    },
+    {
+      "id": "task-bot-development",
+      "title": "Task Bot Development",
+      "slug": "task-bot-development",
+      "icon": "🛠️",
+      "shortDescription": "Custom bots that handle tasks 24/7 without breaks.",
+      "fullDescription": "Custom-built bots that handle specific tasks for your business — data entry, monitoring, posting, scraping, customer outreach, and more. Your digital workforce that never sleeps.",
+      "features": [
+        "Custom task-specific bots",
+        "Telegram & Discord bots",
+        "Slack workflow bots",
+        "Data scraping & monitoring bots",
+        "Social media posting bots",
+        "Lead generation bots",
+        "Customer service bots",
+        "Bot maintenance & updates"
+      ],
+      "startingPrice": "$800",
+      "timeline": "1-3 weeks",
+      "category": "automation"
+    },
+    {
+      "id": "email-marketing",
+      "title": "Email Marketing",
+      "slug": "email-marketing",
+      "icon": "📧",
+      "shortDescription": "Email campaigns that get opened, clicked, and convert.",
+      "fullDescription": "Strategic email marketing that builds relationships and drives sales. From list building and segmentation to automation sequences and newsletters — every email earns its place in the inbox.",
+      "features": [
+        "Email strategy & planning",
+        "List building & segmentation",
+        "Welcome sequences",
+        "Nurture campaigns",
+        "Sales sequences",
+        "Newsletter design & writing",
+        "A/B testing & optimization",
+        "Deliverability management"
+      ],
+      "startingPrice": "$800/mo",
+      "timeline": "Ongoing",
+      "category": "marketing"
+    },
+    {
+      "id": "social-media-marketing",
+      "title": "Social Media Marketing",
+      "slug": "social-media-marketing",
+      "icon": "📱",
+      "shortDescription": "Build presence. Engage audiences. Drive real growth.",
+      "fullDescription": "Strategic social media management that builds your brand, engages your audience, and drives measurable business results. Content, community, growth — all aligned with your goals.",
+      "features": [
+        "Social media strategy",
+        "Content creation & curation",
+        "Posting schedule management",
+        "Community engagement",
+        "Hashtag & trend strategy",
+        "Influencer outreach",
+        "Analytics & reporting",
+        "Paid social advertising"
+      ],
+      "startingPrice": "$1,000/mo",
+      "timeline": "Ongoing",
+      "category": "marketing"
+    },
+    {
+      "id": "shopify-seo",
+      "title": "Shopify SEO",
+      "slug": "shopify-seo",
+      "icon": "📈",
+      "shortDescription": "Rank higher. Get more traffic. Sell more products.",
+      "fullDescription": "Tailored SEO strategies for Shopify stores. Technical SEO, content optimization, link building, and ongoing strategy — all designed to drive organic traffic that converts into customers.",
+      "features": [
+        "Technical SEO audit",
+        "Keyword research & strategy",
+        "On-page optimization",
+        "Content strategy",
+        "Link building",
+        "Schema markup",
+        "Speed optimization",
+        "Monthly reporting"
+      ],
+      "startingPrice": "$800/mo",
+      "timeline": "Ongoing",
+      "category": "marketing"
+    },
+    {
+      "id": "conversion-rate-optimization",
+      "title": "Conversion Rate Optimization",
+      "slug": "conversion-rate-optimization",
+      "icon": "🎯",
+      "shortDescription": "Turn more visitors into customers with data-driven CRO.",
+      "fullDescription": "Data-driven conversion optimization that turns more of your existing traffic into customers. A/B testing, funnel analysis, and continuous improvement — measurable results.",
+      "features": [
+        "Conversion audit",
+        "User behavior analysis",
+        "A/B testing",
+        "Funnel optimization",
+        "Landing page optimization",
+        "Checkout flow improvement",
+        "Heatmap analysis",
+        "Monthly reporting"
+      ],
+      "startingPrice": "$1,200/mo",
+      "timeline": "Ongoing",
+      "category": "marketing"
+    },
+    {
+      "id": "resume-writing",
+      "title": "Resume Writing",
+      "slug": "resume-writing",
+      "icon": "📄",
+      "shortDescription": "Executive resumes that get interviews and land jobs.",
+      "fullDescription": "Executive resumes that get interviews. ATS-optimized, professionally written, designed to position you for the opportunities you deserve. For professionals who refuse to be overlooked.",
+      "features": [
+        "Executive resume writing",
+        "ATS optimization",
+        "Cover letter writing",
+        "LinkedIn profile optimization",
+        "Career positioning strategy",
+        "Industry-specific writing",
+        "Achievement-focused copy",
+        "Multiple revision rounds"
+      ],
+      "startingPrice": "$300",
+      "timeline": "1-2 weeks",
+      "category": "career"
+    },
+    {
+      "id": "linkedin-optimization",
+      "title": "LinkedIn Optimization",
+      "slug": "linkedin-optimization",
+      "icon": "💼",
+      "shortDescription": "Stand out on LinkedIn to recruiters, clients, and partners.",
+      "fullDescription": "Transform your LinkedIn profile into a powerful personal brand that attracts opportunities. Optimized for visibility, engagement, and conversion — whether you're job hunting or building authority.",
+      "features": [
+        "Profile overhaul & optimization",
+        "Headline & summary rewrite",
+        "Experience section enhancement",
+        "Skills & endorsements strategy",
+        "Content strategy & planning",
+        "Network growth tactics",
+        "Recommendation strategy",
+        "Profile analytics review"
+      ],
+      "startingPrice": "$400",
+      "timeline": "1-2 weeks",
+      "category": "career"
+    },
+    {
+      "id": "online-reputation-management",
+      "title": "Online Reputation Management",
+      "slug": "online-reputation-management",
+      "icon": "⭐",
+      "shortDescription": "Build, monitor, and protect your online reputation.",
+      "fullDescription": "Build a strong online presence, monitor what people say about you, and protect your reputation from negative content. Strategic ORM for individuals and businesses.",
+      "features": [
+        "Reputation audit",
+        "Review generation strategy",
+        "Review response management",
+        "Negative content suppression",
+        "Brand mention monitoring",
+        "Crisis management",
+        "Positive content creation",
+        "Monthly reporting"
+      ],
+      "startingPrice": "$600/mo",
+      "timeline": "Ongoing",
+      "category": "career"
+    },
+    {
+      "id": "ui-ux-design",
+      "title": "UI / UX Design",
+      "slug": "ui-ux-design",
+      "icon": "🎨",
+      "shortDescription": "Beautiful interfaces backed by research and psychology.",
+      "fullDescription": "Beautiful interfaces backed by research and psychology. Designs that users love and that drive measurable results. From wireframes to pixel-perfect production-ready assets.",
+      "features": [
+        "User research & testing",
+        "Wireframing & prototyping",
+        "Visual design",
+        "Design systems creation",
+        "Mobile app design",
+        "Web app design",
+        "Usability testing",
+        "Developer handoff"
+      ],
+      "startingPrice": "$1,200",
+      "timeline": "2-4 weeks",
+      "category": "design"
+    },
+    {
+      "id": "maintenance-support",
+      "title": "Maintenance & Support",
+      "slug": "maintenance-support",
+      "icon": "🔧",
+      "shortDescription": "Keep your digital assets running flawlessly. Always.",
+      "fullDescription": "Ongoing maintenance, updates, security, and support for your digital assets. Peace of mind knowing your site, store, or app is in expert hands — 24/7 monitoring and rapid response.",
+      "features": [
+        "Regular backups",
+        "Security monitoring",
+        "Performance monitoring",
+        "Software updates",
+        "Bug fixes & troubleshooting",
+        "Content updates",
+        "Uptime monitoring",
+        "Priority support"
+      ],
+      "startingPrice": "$300/mo",
+      "timeline": "Ongoing",
+      "category": "support"
+    }
+  ]
+}

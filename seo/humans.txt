@@ -1,0 +1,24 @@
+/* TEAM */
+Founder & Creative Director: Olamilekan Muraina
+Contact: freelankarx@gmail.com
+WhatsApp: +2349068526805
+Location: Lagos, Nigeria
+
+/* SITE */
+Last update: 2025/01/15
+Standards: HTML5, CSS3, JavaScript
+Components: Custom-built
+Animations: GSAP-inspired
+3D: Three.js
+
+/* THANKS */
+- Three.js community
+- GSAP creators
+- Open source contributors
+- All clients who trusted Freelankarx
+
+/* TOOLS */
+Editor: VS Code
+Design: Figma-inspired
+Hosting: GitHub Pages
+Performance: Lighthouse 95+
