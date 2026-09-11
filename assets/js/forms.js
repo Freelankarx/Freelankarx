@@ -98,7 +98,7 @@ window.FreelankarxForms = (function() {
     // Simulate delay then open mailto
     setTimeout(() => {
       if (status) {
-        status.innerHTML = '✓ Perfect! Your email client should be opening now. If it didn\'t open, you can email us directly at <a href="mailto:hello@freelankarx.com" style="color:var(--color-accent);text-decoration:underline;">hello@freelankarx.com</a>';
+        status.innerHTML = '✓ Perfect! Your email client should be opening now. If it didn\'t open, you can email us directly at <a href="mailto:info@freelankarx.com" style="color:var(--color-accent);text-decoration:underline;">hello@freelankarx.com</a>';
         status.style.cssText = 'display:block;color:#10B981;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);padding:1rem;';
       }
 
