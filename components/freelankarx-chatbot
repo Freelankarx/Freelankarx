@@ -1,8 +1,9 @@
 <!-- Freelankarx Chatbot Widget Embed -->
 <iframe 
     src="https://freelankarx-chatbot-frontend.vercel.app/" 
-    style="position: fixed; bottom: 100px; right: 24px; width: 420px; height: 650px; border: none; z-index: 9998; background: transparent;"
+    style="position: fixed; bottom: 100px; right: 24px; width: 420px; height: 650px; border: none; z-index: 9998; background: transparent; overflow: hidden;"
     allow="microphone"
-    title="Freelankarx AI Assistant">
+    title="Freelankarx AI Assistant"
+    scrolling="no">
 </iframe>
 <!-- End Chatbot Widget -->
