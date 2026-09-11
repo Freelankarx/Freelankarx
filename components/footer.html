@@ -73,32 +73,14 @@
     </div>
   </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <!-- Freelankarx Chatbot Widget -->
+    <!-- Freelankarx Chatbot Widget Embed -->
 <iframe 
-    id="freelankarx-chatbot"
     src="https://freelankarx-chatbot-frontend.vercel.app/" 
-    style="position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; border: none; z-index: 9998; background: transparent; overflow: hidden;"
+    style="position: fixed; bottom: 0; right: 0; width: 450px; height: 700px; border: none; z-index: 9999; background: transparent;"
     allow="microphone"
-    title="Freelankarx AI Assistant"
-    scrolling="no">
+    title="Freelankarx AI Assistant">
 </iframe>
 <!-- End Chatbot Widget -->
-
-<script>
-// Dynamically resize iframe when chat opens
-window.addEventListener('message', function(event) {
-    const iframe = document.getElementById('freelankarx-chatbot');
-    if (event.data.type === 'chat-opened') {
-        iframe.style.width = '400px';
-        iframe.style.height = '600px';
-        iframe.style.bottom = '20px';
-        iframe.style.right = '20px';
-    } else if (event.data.type === 'chat-closed') {
-        iframe.style.width = '80px';
-        iframe.style.height = '80px';
-    }
-});
-</script>
 
   <!-- App Scripts -->
   <script src="/assets/js/particles.js" defer></script>
