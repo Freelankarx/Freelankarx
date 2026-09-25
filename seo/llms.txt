@@ -8,59 +8,48 @@ Freelankarx is a one-person premium digital studio led by Olamilekan Muraina, ba
 
 Founded on the philosophy that businesses deserve digital experiences that don't just look beautiful but create real growth, trust, and transformation.
 
+## Pages
+
+- [Services](https://freelankarx.com/services/): Full list of offerings including web development, Shopify, AI automation, and SEO
+- [Portfolio](https://freelankarx.com/portfolio/): Case studies and completed client work
+- [Pricing](https://freelankarx.com/pricing/): Project and retainer pricing details
+- [FAQ](https://freelankarx.com/faq/): Common questions about process, cost, and timelines
+- [Blog](https://freelankarx.com/blog/): Articles on digital strategy and growth
+- [Contact](https://freelankarx.com/contact/): Get in touch to start a project
+
 ## Services
 
-- Web Development (custom websites, web applications)
-- Shopify Development (custom stores, conversion optimization)
-- Ecommerce Development (WooCommerce, headless commerce, custom builds)
-- AI Automation (chatbots, workflow automation, AI agents)
-- Business Automation (Zapier, Make, custom integrations)
-- Task Bot Development (Telegram bots, Discord bots, Slack bots, scrapers)
-- Email Marketing (Klaviyo, Mailchimp, ConvertKit, automations)
-- Social Media Marketing (Instagram, TikTok, LinkedIn, Facebook)
-- Shopify SEO (technical SEO, content optimization, link building)
-- Conversion Rate Optimization (A/B testing, funnel optimization)
-- Resume Writing (executive resumes, ATS optimization)
-- LinkedIn Optimization (profile overhaul, content strategy)
-- Online Reputation Management (reviews, monitoring, crisis management)
-- UI/UX Design (user research, wireframing, prototypes)
-- Maintenance & Support (updates, security, backups, monitoring)
+- [Web Development](https://freelankarx.com/services/web-development/): Custom websites and web applications
+- [Shopify Development](https://freelankarx.com/services/shopify-development/): Custom stores and conversion optimization
+- [AI Automation](https://freelankarx.com/services/ai-automation/): Chatbots, workflow automation, AI agents
+- [Shopify SEO](https://freelankarx.com/services/shopify-seo/): Technical SEO, content optimization, link building
+- [Resume Writing](https://freelankarx.com/services/resume-writing/): Executive resumes, ATS optimization
+- [UI/UX Design](https://freelankarx.com/services/ui-ux-design/): User research, wireframing, prototypes
 
 ## Target Audience
 
-- Small to medium business owners
-- Ecommerce brands
-- Startups and entrepreneurs
-- Agencies and consultants
-- Personal brands and professionals
-- Anyone seeking premium digital services
+Small to medium business owners, ecommerce brands, startups and entrepreneurs, agencies and consultants, personal brands and professionals.
 
 ## Pricing
 
-Project-based starting at $300 (resume writing)
-Retainer services starting at $300/month (maintenance)
-Premium services $1,500-$6,000+
-Custom quotes available
+Project-based starting at $300 (resume writing). Retainer services starting at $300/month (maintenance). Premium services $1,500 to $6,000+. Custom quotes available.
 
 ## Geographic Reach
 
-Lagos, Nigeria (headquarters)
-Serving: USA, UK, Canada, Australia, Europe, Middle East
+Headquartered in Lagos, Nigeria. Serving clients in the USA, UK, Canada, Australia, Europe, and the Middle East.
 
 ## Contact
 
 - Email: freelankarx@gmail.com
-- Business: info@freelankarx.com
+- Business inquiries: info@freelankarx.com
 - WhatsApp: +2349068526805
-- Location: Lagos, Nigeria
 
-## Social Media
+## Social
 
-- Twitter/X: https://twitter.com/freelankarx
-- Instagram: https://instagram.com/freelankarx
-- Facebook: https://facebook.com/freelankarx
-- TikTok: https://tiktok.com/@freelankarx
-- Pinterest: https://pinterest.com/freelankarx
-- Telegram: https://t.me/freelankarx
-- YouTube: https://youtube.com/@freelankarx
-
+- [Twitter/X](https://twitter.com/freelankarx)
+- [Instagram](https://instagram.com/freelankarx)
+- [Facebook](https://facebook.com/freelankarx)
+- [TikTok](https://tiktok.com/@freelankarx)
+- [Pinterest](https://pinterest.com/freelankarx)
+- [Telegram](https://t.me/freelankarx)
+- [YouTube](https://youtube.com/@freelankarx)
